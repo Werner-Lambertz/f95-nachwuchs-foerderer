@@ -155,7 +155,7 @@ export default function NewsSection({ images }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 40 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl top-1/2 -translate-y-1/2 z-50 bg-pure-oxygen shadow-2xl max-h-[80vh] overflow-y-auto"
+              className="fixed inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl top-1/2 -translate-y-1/2 z-50 bg-pure-oxygen shadow-2xl max-h-[80vh] overflow-y-scroll"
             >
               <div className="sticky top-0 bg-pure-oxygen border-b border-stadium-concrete px-6 py-4 flex items-start justify-between gap-4">
                 <div>
