@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Calendar, X } from 'lucide-react';
+import { ArrowRight, Calendar, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const NEWS_ITEMS = [
   {
@@ -38,8 +38,15 @@ Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus d
 
 export default function NewsSection({ images }) {
   const ref = useRef(null);
+  const scrollRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [openItem, setOpenItem] = useState(null);
+
+  const scroll = (dir) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: dir * 460, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="news" ref={ref} className="relative py-24 md:py-32 bg-stadium-concrete overflow-hidden">
@@ -62,8 +69,24 @@ export default function NewsSection({ images }) {
           </h2>
         </motion.div>
 
+        {/* Scroll buttons */}
+        <div className="flex justify-end gap-2 mb-4">
+          <button
+            onClick={() => scroll(-1)}
+            className="w-10 h-10 flex items-center justify-center border border-pitch-black/20 text-pitch-black hover:bg-victory-red hover:border-victory-red hover:text-white transition-all duration-300"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={() => scroll(1)}
+            className="w-10 h-10 flex items-center justify-center border border-pitch-black/20 text-pitch-black hover:bg-victory-red hover:border-victory-red hover:text-white transition-all duration-300"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
         {/* Film-strip scroll */}
-        <div className="flex gap-6 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div ref={scrollRef} className="flex gap-6 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {NEWS_ITEMS.map((item, i) => (
             <motion.article
               key={item.id}
