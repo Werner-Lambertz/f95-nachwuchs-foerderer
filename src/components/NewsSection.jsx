@@ -5,7 +5,7 @@ import { ArrowRight, Calendar, X } from 'lucide-react';
 const NEWS_ITEMS = [
   {
     id: 1,
-    date: '28. Mai 2026',
+    date: '20. Mai 2026',
     category: 'Erfolg',
     title: 'U17 holt den Niederrheinpokal',
     excerpt: 'Ein weiterer großartiger Erfolg für unsere Jugendabteilung — die U17 holt den Niederrheinpokal nach einem packenden Finale erfolgreich.',
