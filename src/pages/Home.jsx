@@ -11,7 +11,7 @@ import StickySupport from '../components/StickySupport';
 const IMAGES = {
   hero: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/110b81c87_generated_05274896.png',
   player: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/565ecf9a5_generated_498324f5.png',
-  facility: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/421da0bf5_generated_724e2db1.png',
+  facility: 'https://www.f95.de/media/files/fotos/news/2025-2026/August/20250815_HP_NLZ.png',
   football: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/76cae97f0_generated_d01aeead.png',
   team: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/cd04dcbf9_generated_70f9cb31.png',
   aerial: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/13cdf9784_generated_e6c7a3d0.png',
