@@ -9,6 +9,11 @@ const TIMELINE = [
 },
 {
   year: '2013',
+  title: 'Eintragung in das Vereinsregister',
+  desc: 'Der Förderverein erhält seine offizielle Satzung und wird in das Vereinsregister eingetragen.'
+},
+{
+  year: '2013',
   title: 'Das Musical-Projekt',
   desc: '95 OLE - Das Düsseldorfer Fußballmusical für die ganze Familie - Der Förderverein richtet in Zusammenarbeit mit dem Schauspielhaus ein Musical aus.'
 },
