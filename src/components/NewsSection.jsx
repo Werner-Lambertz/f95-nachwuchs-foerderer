@@ -122,17 +122,13 @@ export default function NewsSection({ images }) {
                 {item.excerpt}
               </p>
 
-              {item.fullText ? (
+              {item.fullText && (
                 <button
                   onClick={() => setOpenItem(item)}
                   className="inline-flex items-center gap-2 font-display text-xs tracking-[0.15em] uppercase text-victory-red hover:gap-3 transition-all duration-300"
                 >
                   Weiterlesen <ArrowRight className="w-4 h-4" />
                 </button>
-              ) : (
-                <span className="inline-flex items-center gap-2 font-display text-xs tracking-[0.15em] uppercase text-victory-red group-hover:gap-3 transition-all duration-300">
-                  Weiterlesen <ArrowRight className="w-4 h-4" />
-                </span>
               )}
             </motion.article>
           ))}
