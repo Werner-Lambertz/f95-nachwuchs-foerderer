@@ -22,7 +22,7 @@ export default function Home() {
     <div className="min-h-screen bg-pitch-black">
       <Navigation />
       <HeroSection heroImage={IMAGES.hero} />
-      <NewsSection images={[IMAGES.player, IMAGES.facility, IMAGES.football, IMAGES.aerial]} />
+      <NewsSection images={[IMAGES.facility, IMAGES.player, IMAGES.football, IMAGES.aerial]} />
       <SupportSection />
       <AboutSection facilityImage={IMAGES.facility} teamImage={IMAGES.team} />
       <ContactSection />
