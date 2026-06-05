@@ -8,8 +8,8 @@ const TIMELINE = [
     desc: 'Engagierte Fans und Eltern schließen sich zusammen, um die Nachwuchsarbeit von Fortuna Düsseldorf nachhaltig zu stärken.',
   },
   {
-    year: '2008',
-    title: 'Erste Ausbauphasen',
+    year: '2013',
+    title: 'Das Musical-Projekt',
     desc: 'Mit vereinten Kräften werden die ersten Trainingsanlagen modernisiert und neue Geräte angeschafft.',
   },
   {
