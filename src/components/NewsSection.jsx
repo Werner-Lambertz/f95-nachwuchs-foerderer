@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { ArrowRight, Calendar } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Calendar, X } from 'lucide-react';
 
 const NEWS_ITEMS = [
   {
@@ -9,6 +9,9 @@ const NEWS_ITEMS = [
     category: 'Erfolg',
     title: 'U17 verteidigt den Niederrheinpokal',
     excerpt: 'Ein weiterer großartiger Erfolg für unsere Jugendabteilung — die U17 verteidigt den Niederrheinpokal nach einem packenden Finale erfolgreich.',
+    fullText: `Vor 419 Zuschauern im Paul-Janes-Stadion schlugen unsere U19-Jungs die SG Unterrath mit 5:1. Von Beginn an übernahmen sie die Spielkontrolle und belohnten sich früh mit der Führung. Bis zur 10. Minute stand es bereits 2:0. Auch im Anschluss blieb F95 das gefährlichere Team und ließ defensiv nichts zu. Kurz vor dem Pausenpfiff kam es zum dritten Treffer.
+
+Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus der Kabine kam und per Foulelfmeter auf 1:3 verkürzte (54.). Doch die Fortuna schüttelte den Gegentreffer schnell ab und stellte nur sieben Minuten später den alten Abstand wieder her. In der 84. Minute setzte unsere U19 mit dem 5:1 den Schlusspunkt. Damit stand am Ende ein verdienter Erfolg und der Titelgewinn im Niederrheinpokal! Für eine Fortuna-U19 war es in diesem Wettbewerb der erste Pokalsieg seit 2019.`,
   },
   {
     id: 2,
@@ -36,6 +39,7 @@ const NEWS_ITEMS = [
 export default function NewsSection({ images }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [openItem, setOpenItem] = useState(null);
 
   return (
     <section id="news" ref={ref} className="relative py-24 md:py-32 bg-stadium-concrete overflow-hidden">
@@ -79,7 +83,6 @@ export default function NewsSection({ images }) {
                     <span className="skew-x-[6deg] inline-block">{item.category}</span>
                   </span>
                 </div>
-                {/* Angled bottom */}
                 <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-stadium-concrete to-transparent" />
               </div>
 
@@ -96,13 +99,72 @@ export default function NewsSection({ images }) {
                 {item.excerpt}
               </p>
 
-              <span className="inline-flex items-center gap-2 font-display text-xs tracking-[0.15em] uppercase text-victory-red group-hover:gap-3 transition-all duration-300">
-                Weiterlesen <ArrowRight className="w-4 h-4" />
-              </span>
+              {item.fullText ? (
+                <button
+                  onClick={() => setOpenItem(item)}
+                  className="inline-flex items-center gap-2 font-display text-xs tracking-[0.15em] uppercase text-victory-red hover:gap-3 transition-all duration-300"
+                >
+                  Weiterlesen <ArrowRight className="w-4 h-4" />
+                </button>
+              ) : (
+                <span className="inline-flex items-center gap-2 font-display text-xs tracking-[0.15em] uppercase text-victory-red group-hover:gap-3 transition-all duration-300">
+                  Weiterlesen <ArrowRight className="w-4 h-4" />
+                </span>
+              )}
             </motion.article>
           ))}
         </div>
       </div>
+
+      {/* Full article modal */}
+      <AnimatePresence>
+        {openItem && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-pitch-black/80 backdrop-blur-sm z-50"
+              onClick={() => setOpenItem(null)}
+            />
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 40 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl top-1/2 -translate-y-1/2 z-50 bg-pure-oxygen shadow-2xl max-h-[80vh] overflow-y-auto"
+            >
+              <div className="sticky top-0 bg-pure-oxygen border-b border-stadium-concrete px-6 py-4 flex items-start justify-between gap-4">
+                <div>
+                  <span className="inline-block px-3 py-1 bg-victory-red text-white font-display text-[10px] tracking-[0.2em] uppercase skew-x-[-6deg] mb-2">
+                    <span className="skew-x-[6deg] inline-block">{openItem.category}</span>
+                  </span>
+                  <h2 className="font-display text-xl md:text-2xl uppercase tracking-tight text-pitch-black leading-tight">
+                    {openItem.title}
+                  </h2>
+                  <div className="flex items-center gap-2 mt-1 text-muted-foreground">
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span className="font-body text-xs">{openItem.date}</span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setOpenItem(null)}
+                  className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-pitch-black/40 hover:text-pitch-black transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="px-6 py-6 space-y-4">
+                {openItem.fullText.split('\n\n').map((para, i) => (
+                  <p key={i} className="font-body text-[15px] text-pitch-black/80 leading-relaxed">
+                    {para}
+                  </p>
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
