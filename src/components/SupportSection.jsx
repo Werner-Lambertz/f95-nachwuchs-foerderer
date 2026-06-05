@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Shield, Star, Crown, Trophy, Users, Dumbbell, GraduationCap, Heart } from 'lucide-react';
+import { Shield, Star, Crown, Trophy, Users, Dumbbell, GraduationCap, Heart, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const TIERS = [
   {
@@ -85,10 +86,16 @@ export default function SupportSection() {
           <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tight text-white mb-4">
             Unter<span className="text-victory-red">stützung</span>
           </h2>
-          <p className="font-body text-lg text-white/50 max-w-2xl leading-relaxed">
+          <p className="font-body text-lg text-white/50 max-w-2xl leading-relaxed mb-6">
             Jeder Beitrag formt die Zukunft des Düsseldorfer Fußballs. 
             Wählen Sie Ihre Mitgliedschaft und sehen Sie die direkte Wirkung Ihrer Unterstützung.
           </p>
+          <Link
+            to="/foerderbereiche"
+            className="inline-flex items-center gap-2 font-display text-xs tracking-[0.2em] uppercase text-victory-red hover:text-white transition-colors duration-300"
+          >
+            Alle Förderbereiche entdecken <ArrowRight className="w-4 h-4" />
+          </Link>
         </motion.div>
 
         {/* Impact Meter */}
