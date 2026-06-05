@@ -87,7 +87,7 @@ export default function HeroSection({ heroImage }) {
           {[
             { number: '270+', label: 'Nachwuchsspieler/-innen' },
             { number: '15', label: 'Profidebüts' },
-            { number: '2003', label: 'Gegründet' },
+            { number: '2010', label: 'Gegründet' },
           ].map((stat) => (
             <div key={stat.label} className="border-l-2 border-victory-red/50 pl-4">
               <p className="font-display text-2xl md:text-3xl text-white font-bold">{stat.number}</p>
