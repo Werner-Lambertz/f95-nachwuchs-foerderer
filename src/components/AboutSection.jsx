@@ -107,16 +107,16 @@ export default function AboutSection({ facilityImage, teamImage }) {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="space-y-6 lg:sticky lg:top-24 lg:self-start">
             
-            <div className="relative overflow-hidden bg-pitch-black">
+            <a href="https://www.f95.de/verein/nlz/ueberblick/" target="_blank" rel="noopener noreferrer" className="relative overflow-hidden bg-pitch-black block group">
               <img
                 src={facilityImage}
                 alt="Trainingsanlage des Leistungszentrums"
-                className="w-full h-64 md:h-80 object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-700" />
+                className="w-full h-64 md:h-80 object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
               
               <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-pitch-black/80 to-transparent">
                 <p className="font-display text-xs tracking-[0.2em] uppercase text-white/80">Das Leistungszentrum</p>
               </div>
-            </div>
+            </a>
             <div className="relative overflow-hidden bg-pitch-black">
               <img
                 src={teamImage}
