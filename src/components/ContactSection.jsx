@@ -85,7 +85,7 @@ export default function ContactSection() {
               <div className="space-y-2 font-body text-sm text-white/60">
                 <p>Förderverein Fortuna Düsseldorf</p>
                 <p>Leistungszentrum e.V.</p>
-                <p className="pt-2 border-t border-white/10">Vereinsregister: VR XXXXX</p>
+                <p className="pt-2 border-t border-white/10">Vereinsregister: VR 10317</p>
                 <p>Amtsgericht Düsseldorf</p>
               </div>
             </div>
