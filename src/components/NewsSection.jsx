@@ -7,8 +7,8 @@ const NEWS_ITEMS = [
     id: 1,
     date: '28. Mai 2026',
     category: 'Erfolg',
-    title: 'U17 gewinnt Westdeutsche Meisterschaft',
-    excerpt: 'Ein historischer Erfolg für unsere Jugendabteilung — die U17 sichert sich den Titel nach einem packenden Finale.',
+    title: 'U17 verteidigt den Niederrheinpokal',
+    excerpt: 'Ein weiterer großartiger Erfolg für unsere Jugendabteilung — die U17 verteidigt den Niederrheinpokal nach einem packenden Finale erfolgreich.',
   },
   {
     id: 2,
