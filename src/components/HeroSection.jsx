@@ -85,7 +85,7 @@ export default function HeroSection({ heroImage }) {
           className="mt-16 grid grid-cols-3 gap-6 md:gap-12 max-w-2xl"
         >
           {[
-            { number: '270+', label: 'Nachwuchsspieler' },
+            { number: '270+', label: 'Nachwuchsspieler/-innen' },
             { number: '15', label: 'Profidebüts' },
             { number: '2003', label: 'Gegründet' },
           ].map((stat) => (
