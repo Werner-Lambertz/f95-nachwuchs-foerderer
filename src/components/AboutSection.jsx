@@ -30,7 +30,7 @@ const TIMELINE = [
 {
   year: 'Heute',
   title: 'Die Zukunft gestalten',
-  desc: "\xDCber 270 Nachwuchsspieler und\nSpielerinnen werden in unserem Leistungszentrum auf h\xF6chstem Niveau ausgebildet und betreut."
+  desc: "\xDCber 270 Nachwuchsspieler und Spielerinnen werden in unserem Leistungszentrum auf h\xF6chstem Niveau ausgebildet und betreut."
 }];
 
 
