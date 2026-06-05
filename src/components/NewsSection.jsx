@@ -63,7 +63,7 @@ export default function NewsSection({ images }) {
         </motion.div>
 
         {/* Film-strip scroll */}
-        <div className="flex gap-6 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide justify-center" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div className="flex gap-6 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={(el) => { if (el) { const firstCard = el.querySelector('article'); if (firstCard) { el.scrollLeft = firstCard.offsetLeft - (el.offsetWidth / 2) + (firstCard.offsetWidth / 2); } } }}>
           {NEWS_ITEMS.map((item, i) => (
             <motion.article
               key={item.id}
