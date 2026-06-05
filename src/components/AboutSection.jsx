@@ -10,7 +10,7 @@ const TIMELINE = [
   {
     year: '2013',
     title: 'Das Musical-Projekt',
-    desc: 'Mit vereinten Kräften werden die ersten Trainingsanlagen modernisiert und neue Geräte angeschafft.',
+    desc: '95 OLE - Das Düsseldorfer Fußballmusical für die ganze Familie - Der Förderverein richtet in Zusammenarbeit mit dem Schauspielhaus ein Musical aus.',
   },
   {
     year: '2014',
