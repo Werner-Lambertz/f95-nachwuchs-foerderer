@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 
 const TIMELINE = [
   {
-    year: '2003',
+    year: '2010',
     title: 'Gründung des Fördervereins',
     desc: 'Engagierte Fans und Eltern schließen sich zusammen, um die Nachwuchsarbeit von Fortuna Düsseldorf nachhaltig zu stärken.',
   },
