@@ -2,37 +2,37 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const TIMELINE = [
-  {
-    year: '2010',
-    title: 'Gründung des Fördervereins',
-    desc: 'Engagierte Fans und Eltern schließen sich zusammen, um die Nachwuchsarbeit von Fortuna Düsseldorf nachhaltig zu stärken.',
-  },
-  {
-    year: '2013',
-    title: 'Das Musical-Projekt',
-    desc: '95 OLE - Das Düsseldorfer Fußballmusical für die ganze Familie - Der Förderverein richtet in Zusammenarbeit mit dem Schauspielhaus ein Musical aus.',
-  },
-  {
-    year: '2014',
-    title: 'Leistungszentrum wird Realität',
-    desc: 'Das offizielle Leistungszentrum wird eröffnet — ein Meilenstein für die professionelle Jugendausbildung.',
-  },
-  {
-    year: '2019',
-    title: 'DFB-Zertifizierung',
-    desc: 'Das Leistungszentrum erhält die Drei-Sterne-Zertifizierung des DFB und zählt damit zu den besten in Deutschland.',
-  },
-  {
-    year: '2024',
-    title: 'Digitalisierung & Expansion',
-    desc: 'Investition in modernste Videoanalyse-Technologie und Ausbau des sportpsychologischen Betreuungskonzepts.',
-  },
-  {
-    year: 'Heute',
-    title: 'Die Zukunft gestalten',
-    desc: 'Über 120 Nachwuchsspieler werden in unserem Leistungszentrum auf höchstem Niveau ausgebildet und betreut.',
-  },
-];
+{
+  year: '2010',
+  title: 'Gründung des Fördervereins',
+  desc: 'Engagierte Fans und Eltern schließen sich zusammen, um die Nachwuchsarbeit von Fortuna Düsseldorf nachhaltig zu stärken.'
+},
+{
+  year: '2013',
+  title: 'Das Musical-Projekt',
+  desc: '95 OLE - Das Düsseldorfer Fußballmusical für die ganze Familie - Der Förderverein richtet in Zusammenarbeit mit dem Schauspielhaus ein Musical aus.'
+},
+{
+  year: '2014',
+  title: 'Leistungszentrum wird Realität',
+  desc: 'Das offizielle Leistungszentrum wird eröffnet — ein Meilenstein für die professionelle Jugendausbildung.'
+},
+{
+  year: '2019',
+  title: 'DFB-Zertifizierung',
+  desc: 'Das Leistungszentrum erhält die Drei-Sterne-Zertifizierung des DFB und zählt damit zu den besten in Deutschland.'
+},
+{
+  year: '2024',
+  title: 'Digitalisierung & Expansion',
+  desc: 'Investition in modernste Videoanalyse-Technologie und Ausbau des sportpsychologischen Betreuungskonzepts.'
+},
+{
+  year: 'Heute',
+  title: 'Die Zukunft gestalten',
+  desc: "\xDCber 270 Nachwuchsspieler und -Spielerinnen werden in unserem Leistungszentrum auf h\xF6chstem Niveau ausgebildet und betreut."
+}];
+
 
 export default function AboutSection({ facilityImage, teamImage }) {
   const ref = useRef(null);
@@ -55,8 +55,8 @@ export default function AboutSection({ facilityImage, teamImage }) {
           initial={{ opacity: 0, x: -30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
+          className="mb-16">
+          
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-[2px] bg-victory-red" />
             <span className="font-display text-xs tracking-[0.3em] uppercase text-victory-red">Unsere Geschichte</span>
@@ -72,14 +72,14 @@ export default function AboutSection({ facilityImage, teamImage }) {
           <div className="relative">
             <div className="absolute left-[7px] top-0 bottom-0 w-[2px] bg-stadium-concrete" />
             <div className="space-y-10">
-              {TIMELINE.map((item, i) => (
-                <motion.div
-                  key={item.year}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-                  className="relative pl-10 group"
-                >
+              {TIMELINE.map((item, i) =>
+              <motion.div
+                key={item.year}
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+                className="relative pl-10 group">
+                
                   {/* Dot */}
                   <div className="absolute left-0 top-1 w-4 h-4 border-2 border-victory-red bg-pure-oxygen group-hover:bg-victory-red transition-colors duration-300" />
                   
@@ -91,7 +91,7 @@ export default function AboutSection({ facilityImage, teamImage }) {
                     {item.desc}
                   </p>
                 </motion.div>
-              ))}
+              )}
             </div>
           </div>
 
@@ -100,14 +100,14 @@ export default function AboutSection({ facilityImage, teamImage }) {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="space-y-6 lg:sticky lg:top-24 lg:self-start"
-          >
+            className="space-y-6 lg:sticky lg:top-24 lg:self-start">
+            
             <div className="relative overflow-hidden bg-pitch-black">
               <img
                 src={facilityImage}
                 alt="Trainingsanlage des Leistungszentrums"
-                className="w-full h-64 md:h-80 object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-700"
-              />
+                className="w-full h-64 md:h-80 object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-700" />
+              
               <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-pitch-black/80 to-transparent">
                 <p className="font-display text-xs tracking-[0.2em] uppercase text-white/80">Das Leistungszentrum</p>
               </div>
@@ -116,8 +116,8 @@ export default function AboutSection({ facilityImage, teamImage }) {
               <img
                 src={teamImage}
                 alt="Mannschaftsgeist im Nachwuchszentrum"
-                className="w-full h-48 md:h-60 object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-700"
-              />
+                className="w-full h-48 md:h-60 object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-700" />
+              
               <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-pitch-black/80 to-transparent">
                 <p className="font-display text-xs tracking-[0.2em] uppercase text-white/80">Gemeinsam stark</p>
               </div>
@@ -135,6 +135,6 @@ export default function AboutSection({ facilityImage, teamImage }) {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
