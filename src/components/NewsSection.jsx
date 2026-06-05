@@ -7,8 +7,8 @@ const NEWS_ITEMS = [
     id: 1,
     date: '28. Mai 2026',
     category: 'Erfolg',
-    title: 'U17 verteidigt den Niederrheinpokal',
-    excerpt: 'Ein weiterer großartiger Erfolg für unsere Jugendabteilung — die U17 verteidigt den Niederrheinpokal nach einem packenden Finale erfolgreich.',
+    title: 'U17 holt den Niederrheinpokal',
+    excerpt: 'Ein weiterer großartiger Erfolg für unsere Jugendabteilung — die U17 holt den Niederrheinpokal nach einem packenden Finale erfolgreich.',
     fullText: `Vor 419 Zuschauern im Paul-Janes-Stadion schlugen unsere U19-Jungs die SG Unterrath mit 5:1. Von Beginn an übernahmen sie die Spielkontrolle und belohnten sich früh mit der Führung. Bis zur 10. Minute stand es bereits 2:0. Auch im Anschluss blieb F95 das gefährlichere Team und ließ defensiv nichts zu. Kurz vor dem Pausenpfiff kam es zum dritten Treffer.
 
 Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus der Kabine kam und per Foulelfmeter auf 1:3 verkürzte (54.). Doch die Fortuna schüttelte den Gegentreffer schnell ab und stellte nur sieben Minuten später den alten Abstand wieder her. In der 84. Minute setzte unsere U19 mit dem 5:1 den Schlusspunkt. Damit stand am Ende ein verdienter Erfolg und der Titelgewinn im Niederrheinpokal! Für eine Fortuna-U19 war es in diesem Wettbewerb der erste Pokalsieg seit 2019.`,
