@@ -15,7 +15,7 @@ Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus d
   },
   {
     id: 2,
-    date: '02. Mai 2026',
+    date: '02. Juni 2026',
     category: 'Förderung',
     title: 'Förderverein übernimmt neue Aufgaben',
     excerpt: 'Die im Zuge des erlittenen Abstiegs unserer Profis in die Dritte Liga auftretenden Engpässe werden vom Förderverein gesehen. Der Förderverein startet eine breit angelegte Mitgliederkampagne.',
