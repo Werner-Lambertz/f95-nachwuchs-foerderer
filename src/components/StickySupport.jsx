@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function StickySupport() {
   const [visible, setVisible] = useState(false);
@@ -31,20 +32,20 @@ export default function StickySupport() {
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <Heart className="w-4 h-4 text-victory-red flex-shrink-0" />
-              <p className="font-body text-sm text-white/70 hidden sm:block">
+              <Link to="/mitgliedsantrag" className="font-body text-sm text-white/70 hidden sm:block hover:text-white transition-colors underline-offset-2 hover:underline">
                 Werden Sie Mitglied und fördern Sie die nächste Generation.
-              </p>
-              <p className="font-body text-sm text-white/70 sm:hidden">
+              </Link>
+              <Link to="/mitgliedsantrag" className="font-body text-sm text-white/70 sm:hidden hover:text-white transition-colors">
                 Jetzt Mitglied werden
-              </p>
+              </Link>
             </div>
             <div className="flex items-center gap-3">
-              <a
-                href="#support"
+              <Link
+                to="/mitgliedsantrag"
                 className="px-6 py-2 bg-victory-red text-white font-display text-[10px] tracking-[0.15em] uppercase skew-x-[-6deg] hover:bg-red-700 transition-colors"
               >
                 <span className="skew-x-[6deg] inline-block">Unterstützen</span>
-              </a>
+              </Link>
               <button
                 onClick={() => setDismissed(true)}
                 className="text-white/40 hover:text-white transition-colors p-1"

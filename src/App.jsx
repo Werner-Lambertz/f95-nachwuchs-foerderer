@@ -8,6 +8,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Foerderbereiche from './pages/Foerderbereiche';
+import Mitgliedsantrag from './pages/Mitgliedsantrag';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -38,6 +39,7 @@ const AuthenticatedApp = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/foerderbereiche" element={<Foerderbereiche />} />
+      <Route path="/mitgliedsantrag" element={<Mitgliedsantrag />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
