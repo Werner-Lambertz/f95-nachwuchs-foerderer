@@ -29,7 +29,7 @@ export default function Footer() {
               {['Startseite', 'Neuigkeiten', 'Unterstützung', 'Über uns', 'Kontakt'].map((item) => (
                 <a
                   key={item}
-                  href={`#${item === 'Startseite' ? 'hero' : item === 'Neuigkeiten' ? 'news' : item === 'Unterstützung' ? 'support' : item === 'Über uns' ? 'about' : 'contact'}`}
+                  href={`#${item === 'Startseite' ? 'hero' : item === 'Neuigkeiten' ? 'news' : item === 'Unterstützung' ? '/mitgliedsantrag' : item === 'Über uns' ? 'about' : 'contact'}`}
                   className="block font-body text-sm text-white/40 hover:text-victory-red transition-colors duration-300"
                 >
                   {item}
