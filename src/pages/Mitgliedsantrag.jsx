@@ -113,11 +113,11 @@ export default function Mitgliedsantrag() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="max-w-3xl mx-auto px-6 md:px-16 pb-24 space-y-12">
+      <form onSubmit={handleSubmit} className="max-w-3xl mx-auto px-6 md:px-16 pb-24 space-y-0">
 
         {/* 1. Mitgliedschaftsstufe */}
-        <section>
-          <SectionTitle number="01" title="Mitgliedschaftsstufe" />
+        <section className="pb-12">
+          <SectionTitle number="01" title="Mitgliedschaftsstufe" dark />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {TIERS.map((t) => {
               const Icon = t.icon;
@@ -149,33 +149,36 @@ export default function Mitgliedsantrag() {
           </div>
         </section>
 
+        {/* Light sections wrapper */}
+        <div className="bg-white -mx-6 md:-mx-16 px-6 md:px-16 py-12 space-y-12">
+
         {/* 2. Persönliche Daten */}
         <section>
           <SectionTitle number="02" title="Persönliche Daten" />
           <div className="space-y-4">
             <div>
-              <Label>Anrede *</Label>
+              <LabelLight>Anrede *</LabelLight>
               <div className="relative">
                 <select
                   name="anrede"
                   value={form.anrede}
                   onChange={handleChange}
                   required
-                  className="w-full bg-white/[0.03] border border-white/15 text-white font-body text-sm px-4 py-3 appearance-none focus:outline-none focus:border-victory-red transition-colors"
+                  className="w-full bg-white border border-gray-300 text-pitch-black font-body text-sm px-4 py-3 appearance-none focus:outline-none focus:border-victory-red transition-colors"
                 >
                   <option value="" disabled>Bitte wählen</option>
                   <option value="Herr">Herr</option>
                   <option value="Frau">Frau</option>
                   <option value="Divers">Divers</option>
                 </select>
-                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 pointer-events-none" />
+                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <FormField label="Vorname *" name="vorname" value={form.vorname} onChange={handleChange} placeholder="Max" required />
-              <FormField label="Nachname *" name="nachname" value={form.nachname} onChange={handleChange} placeholder="Mustermann" required />
+              <FormFieldLight label="Vorname *" name="vorname" value={form.vorname} onChange={handleChange} placeholder="Max" required />
+              <FormFieldLight label="Nachname *" name="nachname" value={form.nachname} onChange={handleChange} placeholder="Mustermann" required />
             </div>
-            <FormField label="Geburtsdatum *" name="geburtsdatum" value={form.geburtsdatum} onChange={handleChange} type="date" required />
+            <FormFieldLight label="Geburtsdatum *" name="geburtsdatum" value={form.geburtsdatum} onChange={handleChange} type="date" required />
           </div>
         </section>
 
@@ -183,11 +186,11 @@ export default function Mitgliedsantrag() {
         <section>
           <SectionTitle number="03" title="Adresse" />
           <div className="space-y-4">
-            <FormField label="Straße & Hausnummer *" name="strasse" value={form.strasse} onChange={handleChange} placeholder="Musterstraße 42" required />
+            <FormFieldLight label="Straße & Hausnummer *" name="strasse" value={form.strasse} onChange={handleChange} placeholder="Musterstraße 42" required />
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <FormField label="PLZ *" name="plz" value={form.plz} onChange={handleChange} placeholder="40235" required />
+              <FormFieldLight label="PLZ *" name="plz" value={form.plz} onChange={handleChange} placeholder="40235" required />
               <div className="sm:col-span-2">
-                <FormField label="Ort *" name="ort" value={form.ort} onChange={handleChange} placeholder="Düsseldorf" required />
+                <FormFieldLight label="Ort *" name="ort" value={form.ort} onChange={handleChange} placeholder="Düsseldorf" required />
               </div>
             </div>
           </div>
@@ -197,37 +200,37 @@ export default function Mitgliedsantrag() {
         <section>
           <SectionTitle number="04" title="Kontaktdaten" />
           <div className="space-y-4">
-            <FormField label="E-Mail-Adresse *" name="email" value={form.email} onChange={handleChange} type="email" placeholder="max@beispiel.de" required />
-            <FormField label="Telefon" name="telefon" value={form.telefon} onChange={handleChange} placeholder="+49 211 XXXXXXX" />
+            <FormFieldLight label="E-Mail-Adresse *" name="email" value={form.email} onChange={handleChange} type="email" placeholder="max@beispiel.de" required />
+            <FormFieldLight label="Telefon" name="telefon" value={form.telefon} onChange={handleChange} placeholder="+49 211 XXXXXXX" />
           </div>
         </section>
 
         {/* 5. Bankverbindung & SEPA */}
         <section>
           <SectionTitle number="05" title="Bankverbindung & SEPA-Lastschrift" />
-          <div className="p-5 border border-white/10 bg-white/[0.02] mb-5">
-            <p className="font-body text-sm text-white/50 leading-relaxed">
+          <div className="p-5 border border-gray-200 bg-gray-50 mb-5">
+            <p className="font-body text-sm text-gray-600 leading-relaxed">
               Durch Angabe Ihrer Bankverbindung erteilen Sie dem Förderverein Fortuna Düsseldorf Leistungszentrum e.V. 
               ein SEPA-Lastschriftmandat. Der Beitrag wird entsprechend dem gewählten Zahlungsrhythmus von Ihrem Konto abgebucht.
             </p>
           </div>
           <div className="space-y-4">
             <div>
-              <Label>Zahlungsrhythmus *</Label>
+              <LabelLight>Zahlungsrhythmus *</LabelLight>
               <div className="relative">
                 <select
                   name="zahlungsrhythmus"
                   value={form.zahlungsrhythmus}
                   onChange={handleChange}
-                  className="w-full bg-white/[0.03] border border-white/15 text-white font-body text-sm px-4 py-3 appearance-none focus:outline-none focus:border-victory-red transition-colors"
+                  className="w-full bg-white border border-gray-300 text-pitch-black font-body text-sm px-4 py-3 appearance-none focus:outline-none focus:border-victory-red transition-colors"
                 >
                   {ZAHLUNGSRHYTHMUS.map(r => <option key={r} value={r}>{r}</option>)}
                 </select>
-                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 pointer-events-none" />
+                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
               </div>
             </div>
-            <FormField label="Kontoinhaber *" name="kontoinhaber" value={form.kontoinhaber} onChange={handleChange} placeholder="Max Mustermann" required />
-            <FormField label="IBAN *" name="iban" value={form.iban} onChange={handleChange} placeholder="DE00 0000 0000 0000 0000 00" required />
+            <FormFieldLight label="Kontoinhaber *" name="kontoinhaber" value={form.kontoinhaber} onChange={handleChange} placeholder="Max Mustermann" required />
+            <FormFieldLight label="IBAN *" name="iban" value={form.iban} onChange={handleChange} placeholder="DE00 0000 0000 0000 0000 00" required />
           </div>
         </section>
 
@@ -235,19 +238,19 @@ export default function Mitgliedsantrag() {
         <section>
           <SectionTitle number="06" title="Zustimmungen" />
           <div className="space-y-4">
-            <CheckboxField
+            <CheckboxFieldLight
               name="sepa"
               checked={form.sepa}
               onChange={handleChange}
               label="Ich erteile dem Förderverein Fortuna Düsseldorf Leistungszentrum e.V. ein SEPA-Lastschriftmandat und ermächtige ihn, Zahlungen von meinem Konto einzuziehen. *"
             />
-            <CheckboxField
+            <CheckboxFieldLight
               name="satzung"
               checked={form.satzung}
               onChange={handleChange}
               label="Ich habe die Vereinssatzung gelesen und erkenne sie als verbindlich an. *"
             />
-            <CheckboxField
+            <CheckboxFieldLight
               name="datenschutz"
               checked={form.datenschutz}
               onChange={handleChange}
@@ -255,6 +258,8 @@ export default function Mitgliedsantrag() {
             />
           </div>
         </section>
+
+        </div>
 
         {/* Summary & Submit */}
         <section className="border border-victory-red/20 bg-victory-red/5 p-6">
@@ -284,13 +289,13 @@ export default function Mitgliedsantrag() {
   );
 }
 
-function SectionTitle({ number, title }) {
+function SectionTitle({ number, title, dark }) {
   return (
     <div className="flex items-center gap-4 mb-6">
       <span className="font-display text-3xl text-victory-red/30 font-bold">{number}</span>
       <div>
         <div className="w-8 h-[2px] bg-victory-red mb-1" />
-        <h2 className="font-display text-xl uppercase tracking-wider text-white">{title}</h2>
+        <h2 className={`font-display text-xl uppercase tracking-wider ${dark ? 'text-white' : 'text-victory-red'}`}>{title}</h2>
       </div>
     </div>
   );
@@ -299,6 +304,14 @@ function SectionTitle({ number, title }) {
 function Label({ children }) {
   return (
     <label className="font-display text-[10px] tracking-[0.2em] uppercase text-white/60 mb-2 block">
+      {children}
+    </label>
+  );
+}
+
+function LabelLight({ children }) {
+  return (
+    <label className="font-display text-[10px] tracking-[0.2em] uppercase text-pitch-black mb-2 block">
       {children}
     </label>
   );
@@ -321,6 +334,23 @@ function FormField({ label, name, value, onChange, type = 'text', placeholder, r
   );
 }
 
+function FormFieldLight({ label, name, value, onChange, type = 'text', placeholder, required }) {
+  return (
+    <div>
+      <LabelLight>{label}</LabelLight>
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        required={required}
+        className="w-full bg-white border border-gray-300 text-pitch-black font-body text-sm px-4 py-3 focus:outline-none focus:border-victory-red transition-colors placeholder:text-gray-400"
+      />
+    </div>
+  );
+}
+
 function CheckboxField({ name, checked, onChange, label }) {
   return (
     <label className="flex items-start gap-3 cursor-pointer group">
@@ -331,6 +361,20 @@ function CheckboxField({ name, checked, onChange, label }) {
         <input type="checkbox" name={name} checked={checked} onChange={onChange} className="sr-only" />
       </div>
       <span className="font-body text-sm text-white/50 leading-relaxed">{label}</span>
+    </label>
+  );
+}
+
+function CheckboxFieldLight({ name, checked, onChange, label }) {
+  return (
+    <label className="flex items-start gap-3 cursor-pointer group">
+      <div className={`w-5 h-5 flex-shrink-0 border mt-0.5 flex items-center justify-center transition-colors ${
+        checked ? 'bg-victory-red border-victory-red' : 'border-gray-300 bg-white group-hover:border-gray-500'
+      }`}>
+        {checked && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
+        <input type="checkbox" name={name} checked={checked} onChange={onChange} className="sr-only" />
+      </div>
+      <span className="font-body text-sm text-gray-600 leading-relaxed">{label}</span>
     </label>
   );
 }
