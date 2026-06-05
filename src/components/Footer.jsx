@@ -13,7 +13,7 @@ export default function Footer() {
                 <span className="font-display text-white font-bold text-lg skew-x-[6deg]">F95</span>
               </div>
               <div>
-                <p className="font-display text-white text-sm tracking-[0.15em] uppercase">Förderverein</p>
+                <p className="font-display text-white text-sm tracking-[0.15em] uppercase">Förderverein Fortuna Düsseldorf</p>
                 <p className="font-body text-white/40 text-[10px] tracking-[0.1em] uppercase">Leistungszentrum e.V.</p>
               </div>
             </div>

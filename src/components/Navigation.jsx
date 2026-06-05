@@ -38,8 +38,8 @@ export default function Navigation() {
               <span className="font-display text-white font-bold text-lg skew-x-[6deg]">F95</span>
             </div>
             <div className="hidden sm:block">
-              <p className="font-display text-white text-sm tracking-[0.2em] uppercase leading-tight">Förderverein</p>
-              <p className="font-body text-white/60 text-[10px] tracking-[0.15em] uppercase">Leistungszentrum</p>
+              <p className="font-display text-white text-sm tracking-[0.2em] uppercase leading-tight">Förderverein Fortuna Düsseldorf</p>
+              <p className="font-body text-white/60 text-[10px] tracking-[0.15em] uppercase">Leistungszentrum e.V.</p>
             </div>
           </button>
 
