@@ -29,10 +29,10 @@ Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus d
   },
   {
     id: 4,
-    date: '18. April 2026',
+    date: '14. April 2026',
     category: 'Event',
-    title: 'Jahreshauptversammlung 2026',
-    excerpt: 'Die diesjährige Hauptversammlung findet am 15. Juni im Paul-Janes-Stadion statt. Alle Mitglieder sind herzlich eingeladen.',
+    title: 'Neuausrichtung des Fördervereins',
+    excerpt: 'Der Förderverein definiert ein neues Arbeitsprofil und stellt sich den anstehenden Projekten.',
   },
 ];
 
