@@ -2,17 +2,18 @@ import React, { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Calendar, X } from 'lucide-react';
 
-const NEWS_ITEMS = [
-  {
-    id: 1,
-    date: '20. Mai 2026',
-    category: 'Erfolg',
-    title: 'U17 holt den Niederrheinpokal',
-    excerpt: 'Ein weiterer großartiger Erfolg für unsere Jugendabteilung — die U17 holt den Niederrheinpokal nach einem packenden Finale erfolgreich.',
-    fullText: `Vor 419 Zuschauern im Paul-Janes-Stadion schlugen unsere U19-Jungs die SG Unterrath mit 5:1. Von Beginn an übernahmen sie die Spielkontrolle und belohnten sich früh mit der Führung. Bis zur 10. Minute stand es bereits 2:0. Auch im Anschluss blieb F95 das gefährlichere Team und ließ defensiv nichts zu. Kurz vor dem Pausenpfiff kam es zum dritten Treffer.
+const FEATURED_ITEM = {
+  id: 1,
+  date: '20. Mai 2026',
+  category: 'Erfolg',
+  title: 'U17 holt den Niederrheinpokal',
+  excerpt: 'Ein weiterer großartiger Erfolg für unsere Jugendabteilung — die U17 holt den Niederrheinpokal nach einem packenden Finale erfolgreich.',
+  fullText: `Vor 419 Zuschauern im Paul-Janes-Stadion schlugen unsere U19-Jungs die SG Unterrath mit 5:1. Von Beginn an übernahmen sie die Spielkontrolle und belohnten sich früh mit der Führung. Bis zur 10. Minute stand es bereits 2:0. Auch im Anschluss blieb F95 das gefährlichere Team und ließ defensiv nichts zu. Kurz vor dem Pausenpfiff kam es zum dritten Treffer.
 
 Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus der Kabine kam und per Foulelfmeter auf 1:3 verkürzte (54.). Doch die Fortuna schüttelte den Gegentreffer schnell ab und stellte nur sieben Minuten später den alten Abstand wieder her. In der 84. Minute setzte unsere U19 mit dem 5:1 den Schlusspunkt. Damit stand am Ende ein verdienter Erfolg und der Titelgewinn im Niederrheinpokal! Für eine Fortuna-U19 war es in diesem Wettbewerb der erste Pokalsieg seit 2019.`,
-  },
+};
+
+const NEWS_ITEMS = [
   {
     id: 2,
     date: '15. Mai 2026',
@@ -51,7 +52,7 @@ export default function NewsSection({ images }) {
           initial={{ opacity: 0, x: -30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-12"
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-[2px] bg-victory-red" />
@@ -62,19 +63,63 @@ export default function NewsSection({ images }) {
           </h2>
         </motion.div>
 
-        {/* Film-strip scroll */}
-        <div className="flex gap-6 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={(el) => { if (el) { const firstCard = el.querySelector('article'); if (firstCard) { el.scrollLeft = firstCard.offsetLeft - (el.offsetWidth / 2) + (firstCard.offsetWidth / 2); } } }}>
+        {/* Featured article */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-12"
+        >
+          <div className="max-w-3xl mx-auto bg-pitch-black group cursor-pointer" onClick={() => setOpenItem(FEATURED_ITEM)}>
+            <div className="relative h-64 md:h-80 overflow-hidden">
+              <img
+                src={images[0]}
+                alt={FEATURED_ITEM.title}
+                className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-pitch-black via-pitch-black/30 to-transparent" />
+              <div className="absolute top-5 left-5">
+                <span className="inline-block px-3 py-1 bg-victory-red text-white font-display text-[10px] tracking-[0.2em] uppercase skew-x-[-6deg]">
+                  <span className="skew-x-[6deg] inline-block">{FEATURED_ITEM.category}</span>
+                </span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="flex items-center gap-2 mb-2 text-white/50">
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span className="font-body text-xs tracking-wider">{FEATURED_ITEM.date}</span>
+                </div>
+                <h3 className="font-display text-2xl md:text-4xl uppercase tracking-tight text-white leading-tight group-hover:text-victory-red transition-colors duration-300">
+                  {FEATURED_ITEM.title}
+                </h3>
+              </div>
+            </div>
+            <div className="p-6 border-t border-white/5">
+              <p className="font-body text-sm text-white/60 leading-relaxed mb-4">
+                {FEATURED_ITEM.excerpt}
+              </p>
+              <button
+                onClick={(e) => { e.stopPropagation(); setOpenItem(FEATURED_ITEM); }}
+                className="inline-flex items-center gap-2 font-display text-xs tracking-[0.15em] uppercase text-victory-red hover:gap-3 transition-all duration-300"
+              >
+                Weiterlesen <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Other articles scroll */}
+        <div className="flex gap-6 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {NEWS_ITEMS.map((item, i) => (
             <motion.article
               key={item.id}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex-shrink-0 w-[85vw] sm:w-[400px] md:w-[440px] snap-start group cursor-pointer"
+              transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+              className="flex-shrink-0 w-[85vw] sm:w-[360px] md:w-[400px] snap-start group cursor-pointer"
             >
-              <div className="relative h-56 md:h-64 overflow-hidden mb-5 bg-pitch-black">
+              <div className="relative h-48 md:h-56 overflow-hidden mb-4 bg-pitch-black">
                 <img
-                  src={images[i % images.length]}
+                  src={images[(i + 1) % images.length]}
                   alt={item.title}
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                 />
@@ -91,7 +136,7 @@ export default function NewsSection({ images }) {
                 <span className="font-body text-xs tracking-wider">{item.date}</span>
               </div>
 
-              <h3 className="font-display text-xl md:text-2xl uppercase tracking-tight text-pitch-black mb-3 group-hover:text-victory-red transition-colors duration-300 leading-tight">
+              <h3 className="font-display text-xl uppercase tracking-tight text-pitch-black mb-3 group-hover:text-victory-red transition-colors duration-300 leading-tight">
                 {item.title}
               </h3>
 
@@ -99,18 +144,9 @@ export default function NewsSection({ images }) {
                 {item.excerpt}
               </p>
 
-              {item.fullText ? (
-                <button
-                  onClick={() => setOpenItem(item)}
-                  className="inline-flex items-center gap-2 font-display text-xs tracking-[0.15em] uppercase text-victory-red hover:gap-3 transition-all duration-300"
-                >
-                  Weiterlesen <ArrowRight className="w-4 h-4" />
-                </button>
-              ) : (
-                <span className="inline-flex items-center gap-2 font-display text-xs tracking-[0.15em] uppercase text-victory-red group-hover:gap-3 transition-all duration-300">
-                  Weiterlesen <ArrowRight className="w-4 h-4" />
-                </span>
-              )}
+              <span className="inline-flex items-center gap-2 font-display text-xs tracking-[0.15em] uppercase text-victory-red group-hover:gap-3 transition-all duration-300">
+                Weiterlesen <ArrowRight className="w-4 h-4" />
+              </span>
             </motion.article>
           ))}
         </div>
