@@ -63,7 +63,7 @@ export default function NewsSection({ images }) {
         </motion.div>
 
         {/* Film-strip scroll */}
-        <div className="flex gap-6 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide justify-center" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div className="flex gap-6 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {NEWS_ITEMS.map((item, i) => (
             <motion.article
               key={item.id}
