@@ -62,7 +62,7 @@ export default function ContactSection() {
               {[
                 { icon: MapPin, label: 'Adresse', value: 'Flinger Broich 87\n40235 Düsseldorf' },
                 { icon: Mail, label: 'E-Mail', value: 'info@fv-f95-nlz.de' },
-                { icon: Phone, label: 'Telefon', value: '+49 211 XXXXXXX' },
+                { icon: Phone, label: 'Telefon', value: '+49 211 2380128' },
               ].map((item) => {
                 const Icon = item.icon;
                 return (
