@@ -18,8 +18,7 @@ export default function ContactSection() {
     e.preventDefault();
     setSending(true);
     try {
-      await base44.integrations.Core.SendEmail({
-        to: 'info@fv-f95-nlz.de',
+      await base44.functions.invoke('sendEmail', {
         subject: `Kontaktformular: ${form.subject}`,
         body: `Name: ${form.name}\nE-Mail: ${form.email}\n\n${form.message}`,
         from_name: form.name,

@@ -84,8 +84,7 @@ Vereinssatzung anerkannt: Ja
 Datenschutzerklärung zugestimmt: Ja
     `.trim();
 
-    await base44.integrations.Core.SendEmail({
-      to: 'info@fv-f95-nlz.de',
+    await base44.functions.invoke('sendEmail', {
       subject: `Neuer Mitgliedsantrag: ${form.anrede} ${form.vorname} ${form.nachname} (${tier.name})`,
       body,
       from_name: `${form.vorname} ${form.nachname}`,

@@ -1,6 +1,6 @@
 Deno.serve(async (req) => {
   try {
-    const { to, subject, body, from_name } = await req.json();
+    const { subject, body, from_name } = await req.json();
 
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -10,7 +10,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         from: `${from_name || "Förderverein F95 NLZ"} <onboarding@resend.dev>`,
-        to: [to],
+        to: ["berufsberatung.nlz@f95.de"],
         subject,
         text: body,
       }),
