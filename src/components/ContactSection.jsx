@@ -12,6 +12,7 @@ export default function ContactSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,9 +23,9 @@ export default function ContactSection() {
       body: `Name: ${form.name}\nE-Mail: ${form.email}\n\n${form.message}`,
       from_name: form.name,
     });
-    toast.success('Vielen Dank! Ihre Nachricht wurde gesendet.');
     setForm({ name: '', email: '', subject: '', message: '' });
     setSending(false);
+    setSent(true);
   };
 
   return (
@@ -103,6 +104,21 @@ export default function ContactSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="lg:col-span-3"
           >
+            {sent ? (
+              <div className="bg-pure-oxygen p-8 border border-pitch-black/5 flex flex-col items-center justify-center text-center min-h-[300px] gap-4">
+                <div className="w-14 h-14 bg-victory-red flex items-center justify-center mb-2">
+                  <Send className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-display text-2xl uppercase tracking-tight text-pitch-black">Danke für Ihre Nachricht</h3>
+                <p className="font-body text-sm text-muted-foreground">Wir werden uns so bald wie möglich bei Ihnen melden.</p>
+                <button
+                  onClick={() => setSent(false)}
+                  className="mt-4 px-8 py-3 border border-pitch-black/20 font-display text-xs tracking-[0.15em] uppercase text-pitch-black hover:border-victory-red hover:text-victory-red transition-all duration-300"
+                >
+                  Neue Nachricht
+                </button>
+              </div>
+            ) : (
             <form onSubmit={handleSubmit} className="bg-pure-oxygen p-6 md:p-8 border border-pitch-black/5 space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
@@ -159,6 +175,7 @@ export default function ContactSection() {
                 </span>
               </button>
             </form>
+            )}
           </motion.div>
         </div>
       </div>
