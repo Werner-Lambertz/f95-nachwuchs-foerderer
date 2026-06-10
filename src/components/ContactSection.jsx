@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { MapPin, Mail, Phone, Send, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
+import { base44 } from '@/api/base44Client';
 
 export default function ContactSection() {
   const ref = useRef(null);
@@ -15,8 +16,12 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
-    // Simulate sending
-    await new Promise(r => setTimeout(r, 1000));
+    await base44.integrations.Core.SendEmail({
+      to: 'info@fv-f95-nlz.de',
+      subject: `Kontaktformular: ${form.subject}`,
+      body: `Name: ${form.name}\nE-Mail: ${form.email}\n\n${form.message}`,
+      from_name: form.name,
+    });
     toast.success('Vielen Dank! Ihre Nachricht wurde gesendet.');
     setForm({ name: '', email: '', subject: '', message: '' });
     setSending(false);
