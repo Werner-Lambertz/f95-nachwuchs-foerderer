@@ -17,15 +17,21 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
-    await base44.integrations.Core.SendEmail({
-      to: 'info@fv-f95-nlz.de',
-      subject: `Kontaktformular: ${form.subject}`,
-      body: `Name: ${form.name}\nE-Mail: ${form.email}\n\n${form.message}`,
-      from_name: form.name,
-    });
-    setForm({ name: '', email: '', subject: '', message: '' });
-    setSending(false);
-    setSent(true);
+    try {
+      await base44.integrations.Core.SendEmail({
+        to: 'info@fv-f95-nlz.de',
+        subject: `Kontaktformular: ${form.subject}`,
+        body: `Name: ${form.name}\nE-Mail: ${form.email}\n\n${form.message}`,
+        from_name: form.name,
+      });
+      setForm({ name: '', email: '', subject: '', message: '' });
+      setSent(true);
+    } catch (err) {
+      console.error('E-Mail senden fehlgeschlagen:', err);
+      toast.error('Fehler beim Senden. Bitte versuchen Sie es erneut.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
