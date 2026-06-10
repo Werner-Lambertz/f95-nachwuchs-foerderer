@@ -1,23 +1,26 @@
-import { SMTPClient } from "npm:emailjs@4.0.3";
-
 Deno.serve(async (req) => {
   try {
     const { to, subject, body, from_name } = await req.json();
 
-    const client = new SMTPClient({
-      user: Deno.env.get("SMTP_USER"),
-      password: Deno.env.get("SMTP_PASS"),
-      host: Deno.env.get("SMTP_HOST"),
-      port: 587,
-      tls: true,
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${Deno.env.get("RESEND_API_KEY")}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: `${from_name || "Förderverein F95 NLZ"} <onboarding@resend.dev>`,
+        to: [to],
+        subject,
+        text: body,
+      }),
     });
 
-    await client.sendAsync({
-      from: `${from_name || "Kontaktformular"} <${Deno.env.get("SMTP_USER")}>`,
-      to,
-      subject,
-      text: body,
-    });
+    const data = await res.json();
+
+    if (!res.ok) {
+      return Response.json({ error: data.message || "Fehler beim Senden" }, { status: 500 });
+    }
 
     return Response.json({ success: true });
   } catch (error) {
