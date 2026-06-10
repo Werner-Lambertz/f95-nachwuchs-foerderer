@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Shield, Star, Crown, Trophy, CheckCircle2, Send, ChevronDown } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
+import { base44 } from '@/api/base44Client';
 
 const TIERS = [
   { id: 'bronze', name: 'Bronze', price: '5', icon: Shield, color: 'from-amber-700 to-amber-900' },
@@ -40,12 +41,56 @@ export default function Mitgliedsantrag() {
     setForm(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   };
 
-  const handleSubmit = (e) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.datenschutz || !form.satzung || !form.sepa) {
       toast.error('Bitte stimmen Sie allen Pflichtfeldern zu.');
       return;
     }
+    setSending(true);
+    const tier = TIERS.find(t => t.id === selectedTier);
+    const body = `
+NEUER MITGLIEDSANTRAG
+=====================
+
+MITGLIEDSCHAFTSSTUFE
+Stufe: ${tier.name} (${tier.price}€ / Monat)
+Zahlungsrhythmus: ${form.zahlungsrhythmus}
+
+PERSÖNLICHE DATEN
+Anrede: ${form.anrede}
+Vorname: ${form.vorname}
+Nachname: ${form.nachname}
+Geburtsdatum: ${form.geburtsdatum}
+
+ADRESSE
+Straße: ${form.strasse}
+PLZ: ${form.plz}
+Ort: ${form.ort}
+
+KONTAKTDATEN
+E-Mail: ${form.email}
+Telefon: ${form.telefon || '—'}
+
+BANKVERBINDUNG
+Kontoinhaber: ${form.kontoinhaber}
+IBAN: ${form.iban}
+
+ZUSTIMMUNGEN
+SEPA-Lastschriftmandat: Ja
+Vereinssatzung anerkannt: Ja
+Datenschutzerklärung zugestimmt: Ja
+    `.trim();
+
+    await base44.integrations.Core.SendEmail({
+      to: 'info@fv-f95-nlz.de',
+      subject: `Neuer Mitgliedsantrag: ${form.anrede} ${form.vorname} ${form.nachname} (${tier.name})`,
+      body,
+      from_name: `${form.vorname} ${form.nachname}`,
+    });
+    setSending(false);
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -275,10 +320,11 @@ export default function Mitgliedsantrag() {
 
           <button
             type="submit"
-            className="w-full sm:w-auto px-10 py-4 bg-victory-red text-white font-display text-sm tracking-[0.15em] uppercase skew-x-[-6deg] hover:bg-red-700 transition-all duration-300 flex items-center gap-3"
+            disabled={sending}
+            className="w-full sm:w-auto px-10 py-4 bg-victory-red text-white font-display text-sm tracking-[0.15em] uppercase skew-x-[-6deg] hover:bg-red-700 transition-all duration-300 flex items-center gap-3 disabled:opacity-50"
           >
             <span className="skew-x-[6deg] inline-flex items-center gap-2">
-              Mitgliedsantrag absenden <Send className="w-4 h-4" />
+              {sending ? 'Wird gesendet...' : 'Mitgliedsantrag absenden'} <Send className="w-4 h-4" />
             </span>
           </button>
           <p className="font-body text-xs text-white/30 mt-3">* Pflichtfelder</p>
