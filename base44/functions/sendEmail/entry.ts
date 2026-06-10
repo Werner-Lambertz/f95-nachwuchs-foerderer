@@ -9,8 +9,8 @@ Deno.serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `${from_name || "Förderverein F95 NLZ"} <onboarding@resend.dev>`,
-        to: ["berufsberatung.nlz@f95.de"],
+        from: `${from_name || "Förderverein F95 NLZ"} <noreply@fv-f95-nlz.de>`,
+        to: ["info@fv-f95-nlz.de"],
         subject,
         text: body,
       }),
