@@ -146,9 +146,9 @@ const PARAGRAPHEN = [
   },
   {
     nr: '§ 12',
-    titel: 'Protokoll',
+    titel: 'Auflösung des Vereins',
     inhalt: [
-      'Über die Beschlüsse der Mitgliederversammlung und des Vorstands ist ein Protokoll aufzunehmen, das vom Versammlungsleiter und dem Protokollführer zu unterzeichnen ist.',
+      'Bei Auflösung oder Aufhebung der Körperschaft oder bei Wegfall steuerbegünstigter Zwecke fällt das Vermögen der Körperschaft an den Düsseldorfer Turn- und Sportverein Fortuna 1895 e.V., der es unmittelbar und ausschließlich für gemeinnützige Zwecke zu verwenden hat.',
     ],
   },
 ];
