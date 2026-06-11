@@ -75,11 +75,27 @@ const PARAGRAPHEN = [
     nr: '§ 8',
     titel: 'Mitgliederversammlung',
     inhalt: [
-      'Die ordentliche Mitgliederversammlung findet einmal jährlich statt. Sie wird vom Vorstand unter Bekanntgabe der Tagesordnung mit einer Frist von mindestens zwei Wochen schriftlich oder per E-Mail einberufen.',
-      'Eine außerordentliche Mitgliederversammlung ist einzuberufen, wenn es das Interesse des Vereins erfordert oder wenn mindestens ein Drittel der Mitglieder dies schriftlich unter Angabe des Grundes verlangt.',
-      'Die Mitgliederversammlung ist ohne Rücksicht auf die Anzahl der erschienenen Mitglieder beschlussfähig.',
-      'Die Mitgliederversammlung beschließt mit einfacher Mehrheit der abgegebenen gültigen Stimmen. Stimmenthaltungen bleiben außer Betracht. Bei Stimmengleichheit gilt ein Antrag als abgelehnt.',
-      'Zu den Aufgaben der Mitgliederversammlung gehören insbesondere: Wahl und Abberufung des Vorstands, Entgegennahme des Jahresberichts und der Jahresabrechnung, Entlastung des Vorstands, Festsetzung der Mitgliedsbeiträge sowie Satzungsänderungen und Auflösung des Vereins.',
+      {
+        text: 'Oberstes Organ des Vereins ist die Mitgliederversammlung, sie hat insbesondere folgende Aufgaben:',
+        bullets: [
+          'die Jahresberichte entgegenzunehmen,',
+          'den Vorstand zu entlasten,',
+          'im Wahljahr den Vorstand zu wählen,',
+          'über die Satzung, Änderungen der Satzung sowie die Auflösung des Vereins zu bestimmen,',
+          'die Kassenprüfer zu wählen, die weder dem Vorstand noch einem von dem Vorstand berufenen Gremium angehören und nicht Angestellte des Vereins sein dürfen.',
+        ],
+      },
+      { text: 'Eine ordentliche Mitgliederversammlung wird vom Vorstand des Vereins nach Bedarf, mindestens aber einmal im Geschäftsjahr, nach Möglichkeit im ersten Halbjahr des Geschäftsjahres, einberufen. Die Einladung erfolgt einen Monat vorher schriftlich durch den Vorstand mit Bekanntgabe der vorläufig festgesetzten Tagesordnung an die dem Verein zuletzt bekannte Mitgliedsadresse.' },
+      {
+        text: 'Die Tagesordnung der ordentlichen Mitgliederversammlung hat insbesondere folgende Punkte zu umfassen:',
+        bullets: [
+          'Bericht des Vorstands',
+          'Bericht des Schatzmeisters',
+          'Entlastung des Vorstands',
+          'Wahl von zwei Kassenprüfern',
+          'Genehmigung des vom Vorstand vorzulegenden Haushaltsvorschlages für das laufende Geschäftsjahr',
+        ],
+      },
     ],
   },
   {
@@ -183,12 +199,27 @@ export default function Satzung() {
               <div className="flex-1">
                 <h2 className="font-display text-xl uppercase tracking-wider text-white mb-5">{para.titel}</h2>
                 <ol className="space-y-3">
-                  {para.inhalt.map((abs, j) => (
-                    <li key={j} className="flex gap-3">
-                      <span className="font-display text-victory-red/60 text-xs mt-1.5 flex-shrink-0">({j + 1})</span>
-                      <p className="font-body text-sm text-white/60 leading-relaxed">{abs}</p>
-                    </li>
-                  ))}
+                  {para.inhalt.map((abs, j) => {
+                    const item = typeof abs === 'string' ? { text: abs } : abs;
+                    return (
+                      <li key={j} className="flex gap-3">
+                        <span className="font-display text-victory-red/60 text-xs mt-1.5 flex-shrink-0">({j + 1})</span>
+                        <div className="flex-1">
+                          <p className="font-body text-sm text-white/60 leading-relaxed">{item.text}</p>
+                          {item.bullets && (
+                            <ul className="mt-2 space-y-1 pl-2">
+                              {item.bullets.map((b, k) => (
+                                <li key={k} className="flex gap-2">
+                                  <span className="text-victory-red/50 text-xs mt-1.5 flex-shrink-0">•</span>
+                                  <p className="font-body text-sm text-white/50 leading-relaxed">{b}</p>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      </li>
+                    );
+                  })}
                 </ol>
               </div>
             </div>
