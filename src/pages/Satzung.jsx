@@ -107,12 +107,9 @@ const PARAGRAPHEN = [
   },
   {
     nr: '§ 9',
-    titel: 'Vorstand',
+    titel: 'Stimmrecht/Beschlussfähigkeit',
     inhalt: [
-      'Der Vorstand besteht aus dem 1. Vorsitzenden, dem 2. Vorsitzenden und dem Schatzmeister.',
-      'Der Verein wird gerichtlich und außergerichtlich durch zwei Mitglieder des Vorstands gemeinsam vertreten.',
-      'Der Vorstand wird von der Mitgliederversammlung auf die Dauer von zwei Jahren gewählt. Er bleibt bis zur Neuwahl im Amt.',
-      'Scheidet ein Vorstandsmitglied vor Ablauf seiner Amtszeit aus, kann der verbleibende Vorstand für die restliche Amtszeit ein Ersatzmitglied bestellen.',
+      'Stimmberechtigt sind ordentliche Mitglieder, also aktive Mitglieder und Fördermitglieder sowie Ehrenmitglieder. Jedes Mitglied hat mit Vollendung des 16. Lebensjahres eine Stimme, die nur persönlich ausgeübt werden darf. Eine Stimmrechtsübertragung ist ausgeschlossen.',
     ],
   },
   {
