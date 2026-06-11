@@ -119,10 +119,13 @@ const PARAGRAPHEN = [
   },
   {
     nr: '§ 10',
-    titel: 'Satzungsänderungen',
+    titel: 'Der Vorstand',
     inhalt: [
-      'Satzungsänderungen bedürfen einer Mehrheit von drei Vierteln der in der Mitgliederversammlung abgegebenen gültigen Stimmen.',
-      'Änderungen oder Ergänzungen der Satzung, die von der Registerbehörde oder dem Finanzamt vorgeschrieben werden, kann der Vorstand von sich aus vornehmen.',
+      'Vorstand im Sinne des § 26 BGB sind der Vorstandssprecher, der Schatzmeister und der Protokollführer. Diese werden ins Vereinsregister eingetragen.',
+      'Zusätzliche Mitglieder des Vorstands als geborene Mitglieder des Vorstands sind der aktuelle Leiter des Leistungszentrums und ein aus dem Vorstand des Vereins Fortuna Düsseldorf 1895 e.V. berufenes Vorstandsmitglied.',
+      'Nicht geborene Mitglieder des Vorstands werden von der Mitgliederversammlung für die Dauer von zwei Jahren gewählt. Die unbegrenzte Wiederwahl von Vorstandsmitgliedern ist zulässig. Nach Fristablauf bleiben die Vorstandsmitglieder bis zum Amtsantritt ihrer Nachfolger im Amt.',
+      'Der Vorstand leitet verantwortlich die Vereinsarbeit. Er kann sich eine Geschäftsordnung geben, kann Mitglieder dazu bitten, besondere Aufgaben zu übernehmen oder kann Ausschüsse für deren Bearbeitung einsetzen.',
+      'Jeweils zwei Vorstandsmitglieder im Sinne des § 26 BGB vertreten den Verein gerichtlich und außergerichtlich.',
     ],
   },
   {
