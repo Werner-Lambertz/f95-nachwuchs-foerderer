@@ -110,6 +110,11 @@ const PARAGRAPHEN = [
     titel: 'Stimmrecht/Beschlussfähigkeit',
     inhalt: [
       'Stimmberechtigt sind ordentliche Mitglieder, also aktive Mitglieder und Fördermitglieder sowie Ehrenmitglieder. Jedes Mitglied hat mit Vollendung des 16. Lebensjahres eine Stimme, die nur persönlich ausgeübt werden darf. Eine Stimmrechtsübertragung ist ausgeschlossen.',
+      'Die Mitgliederversammlung ist ohne Rücksicht auf die Anzahl der erschienenen Mitglieder beschlussfähig.',
+      'Die Mitgliederversammlung fasst ihre Beschlüsse mit einfacher Mehrheit. Stimmenthaltungen und ungültige Stimmen bleiben außer Betracht. Bei Stimmengleichheit gilt der gestellte Antrag als abgelehnt.',
+      'Abstimmungen in der Mitgliederversammlung sind nur dann schriftlich und geheim durchzuführen, wenn dies auf Verlangen der einfachen Mehrheit der an der Beschlussfassung teilnehmenden Mitglieder ausdrücklich verlangt wird.',
+      'Für Satzungsänderungen und Beschlüsse zur Auflösung des Vereins ist eine Dreiviertel-Mehrheit der erschienenen Stimmberechtigten erforderlich, bei Zweckänderungen des Vereins ist die Zustimmung aller Mitglieder erforderlich. Die Zustimmung nicht erschienener Mitglieder ist schriftlich einzuholen.',
+      'Satzungsänderungen werden allen Vereinsmitgliedern schriftlich mitgeteilt.',
     ],
   },
   {
