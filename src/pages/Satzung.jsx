@@ -98,6 +98,11 @@ const PARAGRAPHEN = [
           'Beschlussfassung über vorliegende Anträge.',
         ],
       },
+      { text: 'Anträge der Mitglieder zur Tagesordnung sind spätestens zwei Wochen vor der Mitgliederversammlung beim Vereinsvorstand schriftlich einzureichen. Nachträglich eingereichte Tagesordnungspunkte müssen den Mitgliedern rechtzeitig vor Beginn der Mitgliederversammlung mitgeteilt werden.' },
+      { text: 'Spätere Anträge – auch während der Mitgliederversammlung eingereichte Anträge – müssen auf die Tagesordnung gesetzt werden, wenn in der Mitgliederversammlung die Mehrheit der erschienenen stimmberechtigten Mitglieder der Behandlung der Anträge aufgrund von Dringlichkeit zustimmt (Dringlichkeitsanträge).' },
+      { text: 'Der Vorstand hat eine außerordentliche Mitgliederversammlung unverzüglich einzuberufen, wenn es das Interesse des Vereins erfordert oder wenn die Einberufung von mindestens einem Drittel der erschienenen stimmberechtigten Vereinsmitglieder, dies schriftlich unter Angabe des Zwecks und der Gründe, vom Vorstand verlangt wird.' },
+      { text: 'Der Vorsitzende oder sein Stellvertreter leitet die Mitgliederversammlung. Auf Vorschlag des Vorsitzenden kann die Mitgliederversammlung einen besonderen Versammlungsleiter bestimmen.' },
+      { text: 'Beschlüsse der Mitgliederversammlung werden in einem Protokoll innerhalb von zwei Monaten nach der Mitgliederversammlung niedergelegt und von einem vertretungsberechtigten Vorstandsmitglied sowie dem Protokollführer unterzeichnet. Das Protokoll kann von jedem Mitglied auf der Geschäftsstelle eingesehen werden.' },
     ],
   },
   {
