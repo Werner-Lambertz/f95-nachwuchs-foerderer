@@ -7,18 +7,22 @@ const PARAGRAPHEN = [
     titel: 'Name, Sitz und Geschäftsjahr',
     inhalt: [
       'Der Verein führt den Namen „Förderverein Fortuna Düsseldorf Leistungszentrum e.V."',
-      'Er hat seinen Sitz in Düsseldorf und ist im Vereinsregister des Amtsgerichts Düsseldorf unter VR 10317 eingetragen.',
+      'Der Verein hat seinen Sitz in Düsseldorf und ist im Vereinsregister beim Amtsgericht Düsseldorf eingetragen.',
       'Das Geschäftsjahr ist das Kalenderjahr.',
     ],
   },
   {
     nr: '§ 2',
-    titel: 'Zweck des Vereins',
+    titel: 'Zweckbestimmung',
     inhalt: [
-      'Zweck des Vereins ist die Förderung des Sports, insbesondere die ideelle und materielle Unterstützung der Nachwuchsarbeit des Leistungszentrums von Fortuna Düsseldorf 1895 e.V.',
+      'Zweck des Vereins ist die Beschaffung von Mitteln zur Förderung des Sports und der Jugendhilfe. Es soll das Leistungszentrum von Fortuna Düsseldorf in ideeller, organisatorischer und finanzieller Weise unterstützt werden. Dabei gilt das Förderziel allen Jugendmannschaften.',
+      'Es darf keine Person durch Ausgaben, die dem Zweck der Körperschaft fremd sind, oder durch unverhältnismäßig hohe Vergütungen begünstigt werden.',
+      'Für die Erfüllung dieser satzungsgemäßen Zwecke sollen geeignete Mittel durch Mitgliedsbeiträge, Veranstaltungen, Spenden, Zuschüsse, Sponsoring und sonstige Zuwendungen eingesetzt werden.',
+      'Der Verein verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke im Sinn des Abschnitts „Steuerbegünstigte Zwecke" der Abgabenordnung in der jeweiligen gültigen Fassung. Er wird als Förderverein nach § 58 Nr. 1 AO tätig.',
       'Der Verein ist selbstlos tätig; er verfolgt nicht in erster Linie eigenwirtschaftliche Zwecke.',
-      'Mittel des Vereins dürfen nur für satzungsgemäße Zwecke verwendet werden. Die Mitglieder erhalten keine Zuwendungen aus Mitteln des Vereins.',
-      'Es darf keine Person durch Ausgaben, die dem Zweck des Vereins fremd sind, oder durch unverhältnismäßig hohe Vergütungen begünstigt werden.',
+      'Mittel des Vereins dürfen nur für satzungsgemäße Zwecke verwendet werden. Die Mitglieder des Vereins erhalten in ihrer Eigenschaft als Mitglieder keine Zuwendungen aus Mitteln des Vereins.',
+      'Der Verein ist politisch und konfessionell neutral.',
+      'Die Ausübung von Ehrenämtern nach den Satzungsvorgaben erfolgt ehrenamtlich.',
     ],
   },
   {
