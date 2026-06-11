@@ -109,6 +109,15 @@ const PARAGRAPHEN = [
   },
 ];
 
+const PRAAMBEL = [
+  'Der „Förderverein Fortuna Düsseldorf Leistungszentrum e.V." hat sich zum Ziel gesetzt, das Leistungszentrum der Fortuna Düsseldorf 1895 e.V. zu unterstützen. Nutznießer der Förderung sind alle Jugendmannschaften der Fortuna, derzeit beginnend bei der U9 bis einschließlich zur U23.',
+  'Der Förderverein lässt sich in seinen Aktivitäten von Werten leiten, die im Konzept der Jugendabteilung formuliert sind: „In unserer Jugendarbeit steht der Mensch an erster Stelle. Als Sportler kann man gewinnen oder verlieren, aber wir sehen unsere wichtigste Aufgabe darin, jenseits von Gewinnen und Verlieren für eine positive menschliche Entwicklung unserer Kinder und Jugendlichen zu sorgen."',
+  'Ziel der Förderung ist es, das Leistungszentrum darin zu unterstützen, auf exzellente Weise individuell und gleichzeitig teamorientiert fußballerisch auszubilden. Aber das ist nicht alles. Im Leistungszentrum gerät auch die ganzheitliche Entwicklung und Bildung des jungen Menschen in den Blickpunkt des Interesses. So soll auf der Basis eines positiven Menschen- und Weltbildes der geistige und kulturelle Horizont eines jeden jungen Spielers erweitert werden.',
+  'Ziel des Fördervereins ist es also auch, für ein Grundklima im Leistungszentrum zu sorgen, in dem ein gleichberechtigter interkultureller Dialog stattfinden, zwischenmenschliche Toleranz geübt und multikulturelles Verständnis gelebt werden kann.',
+  'Damit interessiert sich der Förderverein auch für die Auswahl und die Weiterbildung der Trainer: Denn dem einzelnen Trainer obliegt es, in den ihm anvertrauten Kindern und Jugendlichen Potentiale zu entdecken und individuell zu stützen, die Teamentwicklung in dem in dieser Präambel formulierten Verständnis zu fördern, und die einzelnen Jugendteams zu herausragenden Spitzenleistungen anzutreiben (siehe Anhang der Satzung: Aus dem Konzept der Jugendabteilung, S. 12-13).',
+  'Daraus ergibt sich auch als ein weiteres Ziel des Leistungszentrums, die pädagogische Kompetenz der Trainer ständig zu kontrollieren und zu verbessern, die psychologische Kompetenz der Trainer zu erweitern und die Führungskompetenz der Trainer auf eine werteorientierte Basis zu stellen.',
+];
+
 export default function Satzung() {
   return (
     <div className="min-h-screen bg-pitch-black">
@@ -139,6 +148,21 @@ export default function Satzung() {
           <p className="font-body text-white/50 leading-relaxed">
             Satzung des Fördervereins Fortuna Düsseldorf Leistungszentrum e.V. — eingetragen im Vereinsregister des Amtsgerichts Düsseldorf, VR 10317.
           </p>
+        </div>
+      </div>
+
+      {/* Präambel */}
+      <div className="max-w-3xl mx-auto px-6 md:px-16 pb-12">
+        <div className="border border-victory-red/20 bg-victory-red/5 p-8">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-8 h-[2px] bg-victory-red" />
+            <h2 className="font-display text-xl uppercase tracking-wider text-victory-red">Präambel</h2>
+          </div>
+          <div className="space-y-4">
+            {PRAAMBEL.map((abs, i) => (
+              <p key={i} className="font-body text-sm text-white/70 leading-relaxed">{abs}</p>
+            ))}
+          </div>
         </div>
       </div>
 
