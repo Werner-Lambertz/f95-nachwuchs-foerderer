@@ -27,28 +27,27 @@ const PARAGRAPHEN = [
   },
   {
     nr: '§ 3',
-    titel: 'Gemeinnützigkeit',
+    titel: 'Mitgliedschaft',
     inhalt: [
-      'Der Verein verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke im Sinne des Abschnitts „Steuerbegünstigte Zwecke" der Abgabenordnung.',
-      'Der Verein ist berechtigt, Spenden und Mitgliedsbeiträge entgegenzunehmen und hierfür Zuwendungsbestätigungen auszustellen.',
+      'Mitglied kann jede natürliche oder juristische Person, Personvereinigung werden, die bereit ist, Ziele und Satzungszwecke des Vereins nachhaltig zu fördern.',
+      'Neben den aktiven Mitgliedern gibt es passive Mitglieder, die sich zwar nicht aktiv innerhalb des Vereins betätigen, jedoch die Ziele und auch den Zweck des Vereins in geeigneter Weise fördern und unterstützen.',
+      'Zum Ehrenmitglied werden Mitglieder ernannt, die sich in besonderer Weise um den Verein verdient gemacht haben. Hierfür ist ein Beschluss der Mitgliederversammlung erforderlich.',
+      'Ehrenmitglieder sind von der Beitragszahlung befreit, sie haben jedoch die gleichen Rechte und Pflichten wie ordentliche Mitglieder und können insbesondere an sämtlichen Veranstaltungen und Sitzungen teilnehmen.',
     ],
   },
   {
     nr: '§ 4',
-    titel: 'Erwerb der Mitgliedschaft',
+    titel: 'Rechte und Pflichten der Mitglieder',
     inhalt: [
-      'Mitglied des Vereins kann jede natürliche Person werden.',
-      'Der Aufnahmeantrag ist schriftlich oder in elektronischer Form an den Vorstand zu richten. Über die Aufnahme entscheidet der Vorstand. Eine Ablehnung muss nicht begründet werden.',
-      'Die Mitgliedschaft beginnt mit der schriftlichen Bestätigung durch den Vorstand.',
+      'Die Mitglieder sind berechtigt, an allen angebotenen Veranstaltungen des Vereins teilzunehmen. Sie haben darüber hinaus das Recht, gegenüber dem Vorstand und der Mitgliederversammlung Anträge zu stellen. In der Mitgliederversammlung kann das Stimmrecht nur persönlich ausgeübt werden.',
+      'Die Mitglieder sind verpflichtet, den Verein und den Vereinszweck – auch in der Öffentlichkeit – in ordnungsgemäßer Weise zu unterstützen und zu schützen.',
     ],
   },
   {
     nr: '§ 5',
-    titel: 'Beendigung der Mitgliedschaft',
+    titel: 'Beginn und Ende der Mitgliedschaft',
     inhalt: [
-      'Die Mitgliedschaft endet durch Tod, Austritt oder Ausschluss.',
-      'Der Austritt ist jederzeit zum Ende eines Kalenderquartals möglich und muss dem Vorstand schriftlich oder in elektronischer Form mitgeteilt werden.',
-      'Ein Mitglied kann durch Beschluss des Vorstands ausgeschlossen werden, wenn es den Vereinszielen zuwiderhandelt, seinen Beitragspflichten trotz Mahnung nicht nachkommt oder das Ansehen des Vereins schädigt.',
+      'Die Mitgliedschaft muss gegenüber dem Vorstand schriftlich beantragt werden. Über den schriftlichen Aufnahmeantrag entscheidet der Vorstand mit einfacher Stimmenmehrheit abschließend. Der Vorstand ist nicht verpflichtet, Ablehnungsgründe dem Antragsteller mitzuteilen, ein Aufnahmeanspruch ist ausgeschlossen.',
     ],
   },
   {
