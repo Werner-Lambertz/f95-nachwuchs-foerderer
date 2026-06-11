@@ -126,6 +126,9 @@ const PARAGRAPHEN = [
       'Nicht geborene Mitglieder des Vorstands werden von der Mitgliederversammlung für die Dauer von zwei Jahren gewählt. Die unbegrenzte Wiederwahl von Vorstandsmitgliedern ist zulässig. Nach Fristablauf bleiben die Vorstandsmitglieder bis zum Amtsantritt ihrer Nachfolger im Amt.',
       'Der Vorstand leitet verantwortlich die Vereinsarbeit. Er kann sich eine Geschäftsordnung geben, kann Mitglieder dazu bitten, besondere Aufgaben zu übernehmen oder kann Ausschüsse für deren Bearbeitung einsetzen.',
       'Jeweils zwei Vorstandsmitglieder im Sinne des § 26 BGB vertreten den Verein gerichtlich und außergerichtlich.',
+      'Die Vorstandschaft beschließt mit einfacher Stimmenmehrheit. Der Vorstand ist beschlussfähig, wenn mindestens zwei Mitglieder anwesend sind oder einer Beschlussfassung im schriftlichen Umlaufverfahren zustimmen. Bei Stimmengleichheit gilt der Antrag als abgelehnt.',
+      'Beschlüsse des Vorstands werden in einem Sitzungsprotokoll niedergelegt und von mindestens zwei vertretungsberechtigten Vorstandsmitgliedern unterzeichnet.',
+      'Scheidet ein Vorstandsmitglied vor Ablauf seiner Wahlzeit aus, ist der Vorstand berechtigt, ein kommissarisches Vorstandsmitglied zu berufen. Auf diese Weise bestimmte Vorstandsmitglieder bleiben bis zur nächsten Mitgliederversammlung im Amt.',
     ],
   },
   {
