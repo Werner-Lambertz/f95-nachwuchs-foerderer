@@ -133,10 +133,15 @@ const PARAGRAPHEN = [
   },
   {
     nr: '§ 11',
-    titel: 'Auflösung des Vereins',
+    titel: 'Kassenprüfer',
     inhalt: [
-      'Die Auflösung des Vereins kann nur von einer zu diesem Zweck einberufenen außerordentlichen Mitgliederversammlung mit einer Mehrheit von drei Vierteln der abgegebenen gültigen Stimmen beschlossen werden.',
-      'Bei Auflösung oder Aufhebung des Vereins oder bei Wegfall steuerbegünstigter Zwecke fällt das Vereinsvermögen an den Fortuna Düsseldorf 1895 e.V., der es unmittelbar und ausschließlich für die Förderung des Jugendfußballs zu verwenden hat.',
+      'Über die Jahresmitgliederversammlung sind zwei Kassenprüfer für die Dauer von zwei Jahren zu wählen.',
+      'Die Kassenprüfung des Vereins ist jährlich durch zwei Kassenprüfer durchzuführen.',
+      'Die Kassenprüfer haben die Aufgabe, Rechnungsbelege sowie deren ordnungsgemäße Verbuchung und die Mittelverwendung zu überprüfen sowie mindestens einmal jährlich den Kassenbestand des abgelaufenen Kalenderjahres festzustellen.',
+      'Die Prüfung erstreckt sich nicht auf die Zweckmäßigkeit der vom Vorstand getätigten Ausgaben. Das Ergebnis der Prüfung ist schriftlich niederzulegen und zu unterzeichnen.',
+      'Die Kassenprüfer haben die Mitgliederversammlung über das Ergebnis der Kassenprüfung zu unterrichten.',
+      'Die Kassenprüfer dürfen nicht dem Vorstand angehören.',
+      'Über das Ergebnis wird in der Mitgliederversammlung Bericht erstattet. Diese bestätigt den Bericht.',
     ],
   },
   {
