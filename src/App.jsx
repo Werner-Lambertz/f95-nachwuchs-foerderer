@@ -10,6 +10,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Foerderbereiche from './pages/Foerderbereiche';
 import Mitgliedsantrag from './pages/Mitgliedsantrag';
+import Satzung from './pages/Satzung';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -41,6 +42,7 @@ const AuthenticatedApp = () => {
       <Route path="/" element={<Home />} />
       <Route path="/foerderbereiche" element={<Foerderbereiche />} />
       <Route path="/mitgliedsantrag" element={<Mitgliedsantrag />} />
+      <Route path="/satzung" element={<Satzung />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

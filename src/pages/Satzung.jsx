@@ -1,0 +1,173 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const PARAGRAPHEN = [
+  {
+    nr: '§ 1',
+    titel: 'Name, Sitz und Geschäftsjahr',
+    inhalt: [
+      'Der Verein führt den Namen „Förderverein Fortuna Düsseldorf Leistungszentrum e.V."',
+      'Er hat seinen Sitz in Düsseldorf und ist im Vereinsregister des Amtsgerichts Düsseldorf unter VR 10317 eingetragen.',
+      'Das Geschäftsjahr ist das Kalenderjahr.',
+    ],
+  },
+  {
+    nr: '§ 2',
+    titel: 'Zweck des Vereins',
+    inhalt: [
+      'Zweck des Vereins ist die Förderung des Sports, insbesondere die ideelle und materielle Unterstützung der Nachwuchsarbeit des Leistungszentrums von Fortuna Düsseldorf 1895 e.V.',
+      'Der Verein ist selbstlos tätig; er verfolgt nicht in erster Linie eigenwirtschaftliche Zwecke.',
+      'Mittel des Vereins dürfen nur für satzungsgemäße Zwecke verwendet werden. Die Mitglieder erhalten keine Zuwendungen aus Mitteln des Vereins.',
+      'Es darf keine Person durch Ausgaben, die dem Zweck des Vereins fremd sind, oder durch unverhältnismäßig hohe Vergütungen begünstigt werden.',
+    ],
+  },
+  {
+    nr: '§ 3',
+    titel: 'Gemeinnützigkeit',
+    inhalt: [
+      'Der Verein verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke im Sinne des Abschnitts „Steuerbegünstigte Zwecke" der Abgabenordnung.',
+      'Der Verein ist berechtigt, Spenden und Mitgliedsbeiträge entgegenzunehmen und hierfür Zuwendungsbestätigungen auszustellen.',
+    ],
+  },
+  {
+    nr: '§ 4',
+    titel: 'Erwerb der Mitgliedschaft',
+    inhalt: [
+      'Mitglied des Vereins kann jede natürliche Person werden.',
+      'Der Aufnahmeantrag ist schriftlich oder in elektronischer Form an den Vorstand zu richten. Über die Aufnahme entscheidet der Vorstand. Eine Ablehnung muss nicht begründet werden.',
+      'Die Mitgliedschaft beginnt mit der schriftlichen Bestätigung durch den Vorstand.',
+    ],
+  },
+  {
+    nr: '§ 5',
+    titel: 'Beendigung der Mitgliedschaft',
+    inhalt: [
+      'Die Mitgliedschaft endet durch Tod, Austritt oder Ausschluss.',
+      'Der Austritt ist jederzeit zum Ende eines Kalenderquartals möglich und muss dem Vorstand schriftlich oder in elektronischer Form mitgeteilt werden.',
+      'Ein Mitglied kann durch Beschluss des Vorstands ausgeschlossen werden, wenn es den Vereinszielen zuwiderhandelt, seinen Beitragspflichten trotz Mahnung nicht nachkommt oder das Ansehen des Vereins schädigt.',
+    ],
+  },
+  {
+    nr: '§ 6',
+    titel: 'Mitgliedsbeiträge',
+    inhalt: [
+      'Von den Mitgliedern werden Beiträge erhoben. Die Höhe und Fälligkeit der Beiträge werden durch die Mitgliederversammlung festgesetzt.',
+      'Ehrenmitglieder sind von der Beitragspflicht befreit.',
+      'Der Vorstand kann in begründeten Einzelfällen Beitragsstundungen oder -befreiungen gewähren.',
+    ],
+  },
+  {
+    nr: '§ 7',
+    titel: 'Organe des Vereins',
+    inhalt: [
+      'Organe des Vereins sind die Mitgliederversammlung und der Vorstand.',
+    ],
+  },
+  {
+    nr: '§ 8',
+    titel: 'Mitgliederversammlung',
+    inhalt: [
+      'Die ordentliche Mitgliederversammlung findet einmal jährlich statt. Sie wird vom Vorstand unter Bekanntgabe der Tagesordnung mit einer Frist von mindestens zwei Wochen schriftlich oder per E-Mail einberufen.',
+      'Eine außerordentliche Mitgliederversammlung ist einzuberufen, wenn es das Interesse des Vereins erfordert oder wenn mindestens ein Drittel der Mitglieder dies schriftlich unter Angabe des Grundes verlangt.',
+      'Die Mitgliederversammlung ist ohne Rücksicht auf die Anzahl der erschienenen Mitglieder beschlussfähig.',
+      'Die Mitgliederversammlung beschließt mit einfacher Mehrheit der abgegebenen gültigen Stimmen. Stimmenthaltungen bleiben außer Betracht. Bei Stimmengleichheit gilt ein Antrag als abgelehnt.',
+      'Zu den Aufgaben der Mitgliederversammlung gehören insbesondere: Wahl und Abberufung des Vorstands, Entgegennahme des Jahresberichts und der Jahresabrechnung, Entlastung des Vorstands, Festsetzung der Mitgliedsbeiträge sowie Satzungsänderungen und Auflösung des Vereins.',
+    ],
+  },
+  {
+    nr: '§ 9',
+    titel: 'Vorstand',
+    inhalt: [
+      'Der Vorstand besteht aus dem 1. Vorsitzenden, dem 2. Vorsitzenden und dem Schatzmeister.',
+      'Der Verein wird gerichtlich und außergerichtlich durch zwei Mitglieder des Vorstands gemeinsam vertreten.',
+      'Der Vorstand wird von der Mitgliederversammlung auf die Dauer von zwei Jahren gewählt. Er bleibt bis zur Neuwahl im Amt.',
+      'Scheidet ein Vorstandsmitglied vor Ablauf seiner Amtszeit aus, kann der verbleibende Vorstand für die restliche Amtszeit ein Ersatzmitglied bestellen.',
+    ],
+  },
+  {
+    nr: '§ 10',
+    titel: 'Satzungsänderungen',
+    inhalt: [
+      'Satzungsänderungen bedürfen einer Mehrheit von drei Vierteln der in der Mitgliederversammlung abgegebenen gültigen Stimmen.',
+      'Änderungen oder Ergänzungen der Satzung, die von der Registerbehörde oder dem Finanzamt vorgeschrieben werden, kann der Vorstand von sich aus vornehmen.',
+    ],
+  },
+  {
+    nr: '§ 11',
+    titel: 'Auflösung des Vereins',
+    inhalt: [
+      'Die Auflösung des Vereins kann nur von einer zu diesem Zweck einberufenen außerordentlichen Mitgliederversammlung mit einer Mehrheit von drei Vierteln der abgegebenen gültigen Stimmen beschlossen werden.',
+      'Bei Auflösung oder Aufhebung des Vereins oder bei Wegfall steuerbegünstigter Zwecke fällt das Vereinsvermögen an den Fortuna Düsseldorf 1895 e.V., der es unmittelbar und ausschließlich für die Förderung des Jugendfußballs zu verwenden hat.',
+    ],
+  },
+  {
+    nr: '§ 12',
+    titel: 'Protokoll',
+    inhalt: [
+      'Über die Beschlüsse der Mitgliederversammlung und des Vorstands ist ein Protokoll aufzunehmen, das vom Versammlungsleiter und dem Protokollführer zu unterzeichnen ist.',
+    ],
+  },
+];
+
+export default function Satzung() {
+  return (
+    <div className="min-h-screen bg-pitch-black">
+      {/* Top bar */}
+      <div className="bg-pitch-black border-b border-white/5 px-6 md:px-16 py-4 sticky top-0 z-50 backdrop-blur-md">
+        <Link to="/" className="flex items-center gap-3 group w-fit">
+          <div className="w-8 h-8 bg-victory-red flex items-center justify-center skew-x-[-6deg]">
+            <span className="font-display text-white font-bold text-sm skew-x-[6deg]">F95</span>
+          </div>
+          <span className="font-display text-white/60 text-xs tracking-[0.2em] uppercase group-hover:text-white transition-colors">
+            ← Zurück zur Startseite
+          </span>
+        </Link>
+      </div>
+
+      {/* Header */}
+      <div className="relative py-16 md:py-24 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-victory-red" />
+        <div className="absolute inset-0 grain-overlay opacity-20" />
+        <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-16">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-[2px] bg-victory-red" />
+            <span className="font-display text-xs tracking-[0.3em] uppercase text-victory-red">Über uns</span>
+          </div>
+          <h1 className="font-display text-4xl md:text-6xl uppercase tracking-tight text-white mb-4">
+            Sat<span className="text-victory-red">zung</span>
+          </h1>
+          <p className="font-body text-white/50 leading-relaxed">
+            Satzung des Fördervereins Fortuna Düsseldorf Leistungszentrum e.V. — eingetragen im Vereinsregister des Amtsgerichts Düsseldorf, VR 10317.
+          </p>
+        </div>
+      </div>
+
+      {/* Paragraphen */}
+      <div className="max-w-3xl mx-auto px-6 md:px-16 pb-24 space-y-0">
+        {PARAGRAPHEN.map((para, i) => (
+          <div key={para.nr} className={`py-10 border-b border-white/10 ${i === 0 ? 'border-t border-white/10' : ''}`}>
+            <div className="flex items-start gap-6">
+              <span className="font-display text-victory-red text-2xl font-bold flex-shrink-0 w-12 pt-0.5">{para.nr}</span>
+              <div className="flex-1">
+                <h2 className="font-display text-xl uppercase tracking-wider text-white mb-5">{para.titel}</h2>
+                <ol className="space-y-3">
+                  {para.inhalt.map((abs, j) => (
+                    <li key={j} className="flex gap-3">
+                      <span className="font-display text-victory-red/60 text-xs mt-1.5 flex-shrink-0">({j + 1})</span>
+                      <p className="font-body text-sm text-white/60 leading-relaxed">{abs}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {/* Stand */}
+        <p className="pt-8 font-body text-xs text-white/30 tracking-wider uppercase">
+          Stand der Satzung: Düsseldorf, 2024
+        </p>
+      </div>
+    </div>
+  );
+}
