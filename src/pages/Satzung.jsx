@@ -151,6 +151,13 @@ const PARAGRAPHEN = [
       'Bei Auflösung oder Aufhebung der Körperschaft oder bei Wegfall steuerbegünstigter Zwecke fällt das Vermögen der Körperschaft an den Düsseldorfer Turn- und Sportverein Fortuna 1895 e.V., der es unmittelbar und ausschließlich für gemeinnützige Zwecke zu verwenden hat.',
     ],
   },
+  {
+    nr: '§ 13',
+    titel: 'Liquidatoren',
+    inhalt: [
+      'Als Liquidatoren werden die im Amt befindlichen vertretungsberechtigten Vorstandsmitglieder bestimmt, soweit die Mitgliederversammlung nichts anderes abweichend beschließt.',
+    ],
+  },
 ];
 
 const PRAAMBEL = [
