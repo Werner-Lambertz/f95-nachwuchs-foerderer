@@ -94,6 +94,8 @@ const PARAGRAPHEN = [
           'Entlastung des Vorstands',
           'Wahl von zwei Kassenprüfern',
           'Genehmigung des vom Vorstand vorzulegenden Haushaltsvorschlages für das laufende Geschäftsjahr',
+          'Festsetzung der Beiträge/Umlagen für das laufende Geschäftsjahr bzw. zur Verabschiedung von Beitragsordnungen',
+          'Beschlussfassung über vorliegende Anträge.',
         ],
       },
     ],
