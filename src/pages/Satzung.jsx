@@ -61,9 +61,7 @@ const PARAGRAPHEN = [
     nr: '§ 6',
     titel: 'Mitgliedsbeiträge',
     inhalt: [
-      'Von den Mitgliedern werden Beiträge erhoben. Die Höhe und Fälligkeit der Beiträge werden durch die Mitgliederversammlung festgesetzt.',
-      'Ehrenmitglieder sind von der Beitragspflicht befreit.',
-      'Der Vorstand kann in begründeten Einzelfällen Beitragsstundungen oder -befreiungen gewähren.',
+      'Für die Höhe der jährlichen Mitgliedsbeiträge, Förderbeiträge, Aufnahmegebühren und Umlagen ist die jeweils gültige Beitragsordnung maßgeblich, die von der Mitgliederversammlung beschlossen wird.',
     ],
   },
   {
