@@ -48,6 +48,13 @@ const PARAGRAPHEN = [
     titel: 'Beginn und Ende der Mitgliedschaft',
     inhalt: [
       'Die Mitgliedschaft muss gegenüber dem Vorstand schriftlich beantragt werden. Über den schriftlichen Aufnahmeantrag entscheidet der Vorstand mit einfacher Stimmenmehrheit abschließend. Der Vorstand ist nicht verpflichtet, Ablehnungsgründe dem Antragsteller mitzuteilen, ein Aufnahmeanspruch ist ausgeschlossen.',
+      'Ummeldungen in der Mitgliedschaft (von aktiver Mitgliedschaft auf Fördermitgliedschaft) müssen mit einer Frist von einem Monat zum Monatsende dem Vorstand schriftlich mitgeteilt werden, ohne dass dies die Beitragspflicht für das laufende Vereinsjahr berührt.',
+      'Die Mitgliedschaft endet durch freiwilligen Austritt, Ausschluss, Tod des Mitglieds oder Verlust der Rechtsfähigkeit bei juristischen Personen.',
+      'Die freiwillige Beendigung der Mitgliedschaft muss durch schriftliche Kündigung gegenüber dem Vorstand erklärt werden, dies ein Monat zum Monatsende.',
+      'Der Ausschluss eines Mitglieds kann mit sofortiger Wirkung und aus wichtigem Grund dann ausgesprochen werden, wenn das Mitglied in grober Weise gegen die Satzung, Ordnungen, den Satzungszweck, die Vereinsinteressen oder die Philosophie des Fördervereins verstößt. Über den Ausschluss eines Mitglieds entscheidet der Vorstand mit einfacher Stimmenmehrheit.',
+      'Auch ein Vorstandsmitglied kann mit sofortiger Wirkung und aus wichtigem Grund ausgeschlossen werden. Das Vorstandsmitglied nimmt in diesem Fall an der Abstimmung teil.',
+      'Dem auszuschließenden Mitglied ist unter Fristsetzung von zwei Wochen Gelegenheit zu geben, sich vor dem Vereinsausschuss zu den erhobenen Vorwürfen zu äußern.',
+      'Bei Beendigung der Mitgliedschaft, gleich aus welchem Grund, erlöschen alle Ansprüche aus dem Mitgliedsverhältnis. Eine Rückgewähr von Beiträgen, Spenden oder sonstigen Unterstützungsleistungen ist grundsätzlich ausgeschlossen. Der Anspruch des Vereins auf rückständige Beitragsforderungen bleibt hiervon unberührt.',
     ],
   },
   {
