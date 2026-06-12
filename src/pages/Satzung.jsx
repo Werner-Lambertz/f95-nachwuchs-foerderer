@@ -171,7 +171,7 @@ const PRAAMBEL = [
 
 export default function Satzung() {
   return (
-    <div className="min-h-screen bg-white select-none" onCopy={(e) => e.preventDefault()} onContextMenu={(e) => e.preventDefault()}>
+    <div className="min-h-screen bg-pitch-black select-none" onCopy={(e) => e.preventDefault()} onContextMenu={(e) => e.preventDefault()}>
       {/* Top bar */}
       <div className="bg-pitch-black border-b border-black/10 px-6 md:px-16 py-4 sticky top-0 z-50 backdrop-blur-md">
         <Link to="/" className="flex items-center gap-3 group w-fit">
@@ -203,7 +203,7 @@ export default function Satzung() {
       </div>
 
       {/* Präambel */}
-      <div className="max-w-3xl mx-auto px-6 md:px-16 pb-12">
+      <div className="max-w-3xl mx-auto px-6 md:px-16 pb-12 bg-white">
         <div className="border border-victory-red/30 bg-white p-8 shadow-sm">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-8 h-[2px] bg-victory-red" />
@@ -218,7 +218,7 @@ export default function Satzung() {
       </div>
 
       {/* Paragraphen */}
-      <div className="max-w-3xl mx-auto px-6 md:px-16 pb-24 space-y-0">
+      <div className="max-w-3xl mx-auto px-6 md:px-16 pb-24 space-y-0 bg-white">
         {PARAGRAPHEN.map((para, i) => (
           <div key={para.nr} className={`py-10 border-b border-black/10 ${i === 0 ? 'border-t border-black/10' : ''}`}>
             <div className="flex items-start gap-6">
