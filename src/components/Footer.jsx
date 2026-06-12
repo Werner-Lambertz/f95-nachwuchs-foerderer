@@ -46,9 +46,9 @@ export default function Footer() {
               <Link to="/impressum" className="block font-body text-sm text-white/40 hover:text-victory-red transition-colors duration-300">
                 Impressum
               </Link>
-              <a href="#" className="block font-body text-sm text-white/40 hover:text-victory-red transition-colors duration-300">
+              <Link to="/datenschutz" className="block font-body text-sm text-white/40 hover:text-victory-red transition-colors duration-300">
                 Datenschutz
-              </a>
+              </Link>
               <Link to="/satzung" className="block font-body text-sm text-white/40 hover:text-victory-red transition-colors duration-300">
                 Satzung
               </Link>

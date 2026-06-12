@@ -13,6 +13,7 @@ import Mitgliedsantrag from './pages/Mitgliedsantrag';
 import Satzung from './pages/Satzung';
 import Vorstand from './pages/Vorstand';
 import Impressum from './pages/Impressum';
+import Datenschutz from './pages/Datenschutz';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -47,6 +48,7 @@ const AuthenticatedApp = () => {
       <Route path="/satzung" element={<Satzung />} />
       <Route path="/vorstand" element={<Vorstand />} />
       <Route path="/impressum" element={<Impressum />} />
+      <Route path="/datenschutz" element={<Datenschutz />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
