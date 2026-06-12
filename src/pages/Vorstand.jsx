@@ -15,12 +15,12 @@ const VORSTAND = [
   },
   {
     rolle: 'Protokollführer',
-    name: '',
-    beschreibung: '',
+    name: 'Hans-J. Krause',
+    beschreibung: 'in Aufgabenunion',
   },
   {
     rolle: 'Leiter des Leistungszentrums',
-    name: '',
+    name: 'Patrick Fabian',
     beschreibung: 'Geborenes Vorstandsmitglied',
   },
   {
