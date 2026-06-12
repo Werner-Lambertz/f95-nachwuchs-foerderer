@@ -43,15 +43,12 @@ export default function Footer() {
           <div>
             <p className="font-display text-xs tracking-[0.2em] uppercase text-victory-red mb-4">Rechtliches</p>
             <div className="space-y-2">
-              {['Impressum', 'Datenschutz'].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="block font-body text-sm text-white/40 hover:text-victory-red transition-colors duration-300"
-                >
-                  {item}
-                </a>
-              ))}
+              <Link to="/impressum" className="block font-body text-sm text-white/40 hover:text-victory-red transition-colors duration-300">
+                Impressum
+              </Link>
+              <a href="#" className="block font-body text-sm text-white/40 hover:text-victory-red transition-colors duration-300">
+                Datenschutz
+              </a>
               <Link to="/satzung" className="block font-body text-sm text-white/40 hover:text-victory-red transition-colors duration-300">
                 Satzung
               </Link>

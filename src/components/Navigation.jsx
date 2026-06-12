@@ -14,6 +14,7 @@ const NAV_ITEMS = [
       { label: 'Über uns', href: '#about' },
       { label: 'Satzung', href: '/satzung', external: true },
       { label: 'Vorstand', href: '/vorstand', external: true },
+      { label: 'Impressum', href: '/impressum', external: true },
     ],
   },
   { label: 'Kontakt', href: '#contact' },
