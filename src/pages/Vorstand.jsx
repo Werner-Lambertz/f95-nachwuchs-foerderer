@@ -23,11 +23,6 @@ const VORSTAND = [
     name: 'Patrick Fabian',
     beschreibung: 'Geborenes Vorstandsmitglied',
   },
-  {
-    rolle: 'Vorstandsmitglied Fortuna Düsseldorf 1895 e.V.',
-    name: '',
-    beschreibung: 'Geborenes Vorstandsmitglied',
-  },
 ];
 
 export default function Vorstand() {
