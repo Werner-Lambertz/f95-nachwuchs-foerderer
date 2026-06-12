@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -42,7 +43,7 @@ export default function Footer() {
           <div>
             <p className="font-display text-xs tracking-[0.2em] uppercase text-victory-red mb-4">Rechtliches</p>
             <div className="space-y-2">
-              {['Impressum', 'Datenschutz', 'Satzung'].map((item) => (
+              {['Impressum', 'Datenschutz'].map((item) => (
                 <a
                   key={item}
                   href="#"
@@ -51,6 +52,12 @@ export default function Footer() {
                   {item}
                 </a>
               ))}
+              <Link to="/satzung" className="block font-body text-sm text-white/40 hover:text-victory-red transition-colors duration-300">
+                Satzung
+              </Link>
+              <Link to="/vorstand" className="block font-body text-sm text-white/40 hover:text-victory-red transition-colors duration-300">
+                Vorstand
+              </Link>
             </div>
           </div>
         </div>

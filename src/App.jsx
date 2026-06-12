@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import Foerderbereiche from './pages/Foerderbereiche';
 import Mitgliedsantrag from './pages/Mitgliedsantrag';
 import Satzung from './pages/Satzung';
+import Vorstand from './pages/Vorstand';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -43,6 +44,7 @@ const AuthenticatedApp = () => {
       <Route path="/foerderbereiche" element={<Foerderbereiche />} />
       <Route path="/mitgliedsantrag" element={<Mitgliedsantrag />} />
       <Route path="/satzung" element={<Satzung />} />
+      <Route path="/vorstand" element={<Vorstand />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

@@ -13,6 +13,7 @@ const NAV_ITEMS = [
     sub: [
       { label: 'Über uns', href: '#about' },
       { label: 'Satzung', href: '/satzung', external: true },
+      { label: 'Vorstand', href: '/vorstand', external: true },
     ],
   },
   { label: 'Kontakt', href: '#contact' },
