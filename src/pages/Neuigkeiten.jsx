@@ -50,8 +50,8 @@ Zudem wurden erste Weichen für neue Förderprojekte im Bereich Ausrüstung, Bil
   },
   {
     id: 5,
-    date: '2025-11-10',
-    dateLabel: '10. November 2025',
+    date: '2025-04-28',
+    dateLabel: '28. April 2025',
     category: 'Event',
     title: 'Jahreshauptversammlung 2025',
     excerpt: 'Die Jahreshauptversammlung des Fördervereins fand erfolgreich statt. Vorstand entlastet, Kassenprüfer gewählt.',
