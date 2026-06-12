@@ -14,6 +14,7 @@ import Satzung from './pages/Satzung';
 import Vorstand from './pages/Vorstand';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
+import Neuigkeiten from './pages/Neuigkeiten';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -49,6 +50,7 @@ const AuthenticatedApp = () => {
       <Route path="/vorstand" element={<Vorstand />} />
       <Route path="/impressum" element={<Impressum />} />
       <Route path="/datenschutz" element={<Datenschutz />} />
+      <Route path="/neuigkeiten" element={<Neuigkeiten />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

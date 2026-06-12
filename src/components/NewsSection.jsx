@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Calendar, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const NEWS_ITEMS = [
   {
@@ -64,9 +65,17 @@ export default function NewsSection({ images }) {
             <div className="w-12 h-[2px] bg-victory-red" />
             <span className="font-display text-xs tracking-[0.3em] uppercase text-victory-red">Aktuelles</span>
           </div>
-          <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tight text-pitch-black">
-            Neuig<span className="text-victory-red">keiten</span>
-          </h2>
+          <div className="flex flex-col sm:flex-row sm:items-end gap-4">
+            <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tight text-pitch-black">
+              Neuig<span className="text-victory-red">keiten</span>
+            </h2>
+            <Link
+              to="/neuigkeiten"
+              className="mb-1 sm:ml-auto inline-flex items-center gap-2 font-display text-xs tracking-[0.2em] uppercase text-victory-red hover:gap-3 transition-all duration-300 flex-shrink-0"
+            >
+              Alle Beiträge <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </motion.div>
 
         {/* Scroll buttons */}
