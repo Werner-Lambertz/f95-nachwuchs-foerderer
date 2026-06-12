@@ -171,9 +171,9 @@ const PRAAMBEL = [
 
 export default function Satzung() {
   return (
-    <div className="min-h-screen bg-pitch-black select-none" onCopy={(e) => e.preventDefault()} onContextMenu={(e) => e.preventDefault()}>
+    <div className="min-h-screen bg-white select-none" onCopy={(e) => e.preventDefault()} onContextMenu={(e) => e.preventDefault()}>
       {/* Top bar */}
-      <div className="bg-pitch-black border-b border-white/5 px-6 md:px-16 py-4 sticky top-0 z-50 backdrop-blur-md">
+      <div className="bg-pitch-black border-b border-black/10 px-6 md:px-16 py-4 sticky top-0 z-50 backdrop-blur-md">
         <Link to="/" className="flex items-center gap-3 group w-fit">
           <div className="w-8 h-8 bg-victory-red flex items-center justify-center skew-x-[-6deg]">
             <span className="font-display text-white font-bold text-sm skew-x-[6deg]">F95</span>
@@ -185,7 +185,7 @@ export default function Satzung() {
       </div>
 
       {/* Header */}
-      <div className="relative py-16 md:py-24 overflow-hidden">
+      <div className="relative py-16 md:py-24 overflow-hidden bg-pitch-black">
         <div className="absolute top-0 left-0 w-full h-1 bg-victory-red" />
         <div className="absolute inset-0 grain-overlay opacity-20" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-16">
@@ -204,14 +204,14 @@ export default function Satzung() {
 
       {/* Präambel */}
       <div className="max-w-3xl mx-auto px-6 md:px-16 pb-12">
-        <div className="border border-victory-red/20 bg-victory-red/5 p-8">
+        <div className="border border-victory-red/30 bg-white p-8 shadow-sm">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-8 h-[2px] bg-victory-red" />
             <h2 className="font-display text-xl uppercase tracking-wider text-victory-red">Präambel</h2>
           </div>
           <div className="space-y-4">
             {PRAAMBEL.map((abs, i) => (
-              <p key={i} className="font-body text-sm text-white/70 leading-relaxed">{abs}</p>
+              <p key={i} className="font-body text-sm text-pitch-black/80 leading-relaxed">{abs}</p>
             ))}
           </div>
         </div>
@@ -220,11 +220,11 @@ export default function Satzung() {
       {/* Paragraphen */}
       <div className="max-w-3xl mx-auto px-6 md:px-16 pb-24 space-y-0">
         {PARAGRAPHEN.map((para, i) => (
-          <div key={para.nr} className={`py-10 border-b border-white/10 ${i === 0 ? 'border-t border-white/10' : ''}`}>
+          <div key={para.nr} className={`py-10 border-b border-black/10 ${i === 0 ? 'border-t border-black/10' : ''}`}>
             <div className="flex items-start gap-6">
               <span className="font-display text-victory-red text-2xl font-bold flex-shrink-0 w-12 pt-0.5">{para.nr}</span>
               <div className="flex-1">
-                <h2 className="font-display text-xl uppercase tracking-wider text-white mb-5">{para.titel}</h2>
+                <h2 className="font-display text-xl uppercase tracking-wider text-pitch-black mb-5">{para.titel}</h2>
                 <ol className="space-y-3">
                   {para.inhalt.map((abs, j) => {
                     const item = typeof abs === 'string' ? { text: abs } : abs;
@@ -232,13 +232,13 @@ export default function Satzung() {
                       <li key={j} className="flex gap-3">
                         <span className="font-display text-victory-red/60 text-xs mt-1.5 flex-shrink-0">({j + 1})</span>
                         <div className="flex-1">
-                          <p className="font-body text-sm text-white/60 leading-relaxed">{item.text}</p>
+                          <p className="font-body text-sm text-pitch-black/80 leading-relaxed">{item.text}</p>
                           {item.bullets && (
                             <ul className="mt-2 space-y-1 pl-2">
                               {item.bullets.map((b, k) => (
                                 <li key={k} className="flex gap-2">
                                   <span className="text-victory-red/50 text-xs mt-1.5 flex-shrink-0">•</span>
-                                  <p className="font-body text-sm text-white/50 leading-relaxed">{b}</p>
+                                  <p className="font-body text-sm text-pitch-black/70 leading-relaxed">{b}</p>
                                 </li>
                               ))}
                             </ul>
@@ -254,7 +254,7 @@ export default function Satzung() {
         ))}
 
         {/* Stand */}
-        <p className="pt-8 font-body text-xs text-white/30 tracking-wider uppercase">
+        <p className="pt-8 font-body text-xs text-pitch-black/40 tracking-wider uppercase">
           Stand der Satzung: Düsseldorf, 2024
         </p>
       </div>
