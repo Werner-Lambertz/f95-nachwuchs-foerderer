@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const TIMELINE = [
 {
@@ -10,7 +11,7 @@ const TIMELINE = [
 {
   year: '2013',
   title: 'Eintragung in das Vereinsregister',
-  desc: <>Der Förderverein erhält seine <a href="https://media.base44.com/files/public/6a21b8605426a2a9bf55a069/33d5b4a5f_101112SatzungFrdervereinEndfassungMitgliederbrief.pdf" target="_blank" rel="noopener noreferrer" className="text-victory-red underline hover:text-red-700 transition-colors">offizielle Satzung</a> und wird in das Vereinsregister eingetragen.</>
+  desc: <>Der Förderverein erhält seine <Link to="/satzung" className="text-victory-red underline hover:text-red-700 transition-colors">offizielle Satzung</Link> und wird in das Vereinsregister eingetragen.</>  
 },
 {
   year: '2013',
