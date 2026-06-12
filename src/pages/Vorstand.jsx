@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 const VORSTAND = [
   {
     rolle: 'Vorstandssprecher',
-    name: '',
+    name: 'Werner Lambertz',
     beschreibung: '',
   },
   {
     rolle: 'Schatzmeister',
-    name: '',
+    name: 'Hans-J. Krause',
     beschreibung: '',
   },
   {
