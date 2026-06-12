@@ -171,7 +171,7 @@ const PRAAMBEL = [
 
 export default function Satzung() {
   return (
-    <div className="min-h-screen bg-pitch-black">
+    <div className="min-h-screen bg-pitch-black select-none" onCopy={(e) => e.preventDefault()} onContextMenu={(e) => e.preventDefault()}>
       {/* Top bar */}
       <div className="bg-pitch-black border-b border-white/5 px-6 md:px-16 py-4 sticky top-0 z-50 backdrop-blur-md">
         <Link to="/" className="flex items-center gap-3 group w-fit">
