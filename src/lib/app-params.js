@@ -23,6 +23,7 @@ const getAppParamValue = (paramName, { defaultValue = undefined, removeFromUrl =
 		storage.setItem(storageKey, searchParam);
 		return searchParam;
 	}
+	// Env-Variable (eingebaut beim Build) hat immer Vorrang vor localStorage
 	if (defaultValue) {
 		storage.setItem(storageKey, defaultValue);
 		return defaultValue;
