@@ -52,6 +52,8 @@ Bei den jüngeren Spielerinnen und Spielern steht dabei die sozial-kulturelle Or
 
 Für die älteren Jahrgänge richtet sich der Blick gezielt auf die berufliche Zukunft: Der Förderverein unterstützt Maßnahmen, die den Weg in eine Berufsausbildung oder ein Studium begleiten und erleichtern. Damit soll sichergestellt werden, dass jede Nachwuchskraft — unabhängig vom sportlichen Werdegang — auf eine gesicherte Lebensperspektive bauen kann.
 
+Die älteren Spielerinnen und Spieler erhalten Förderung im Sinne der beruflichen Orientierung bzw. einer Studiumsperspektive.
+
 Der Plan B ist kein Rückzugsplan, sondern ein Zeichen von Stärke und Weitblick. Der Förderverein freut sich auf die enge Zusammenarbeit mit dem Leistungszentrum, den Familien und weiteren Partnern, um dieses Projekt mit Leben zu füllen.`,
   },
   {
