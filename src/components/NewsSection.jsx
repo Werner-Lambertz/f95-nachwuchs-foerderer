@@ -25,8 +25,8 @@ Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus d
     id: 3,
     date: '2. Mai 2026',
     category: 'Profis',
-    title: 'Drei Talente schaffen den Sprung in den Profikader',
-    excerpt: 'Die Nachwuchsspieler Leon, Emre und Finn wurden in den Profikader von Fortuna Düsseldorf berufen.',
+    title: 'Chance für Talente in der dritten Liga',
+    excerpt: 'Der Abstieg der Profimannschaft in die Dritte Liga eröffnet Nachwuchstalenten aus dem Leistungszentrum neue Chancen auf Einsatzzeiten im Profikader.',
   },
   {
     id: 4,

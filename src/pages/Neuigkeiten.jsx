@@ -31,11 +31,13 @@ Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus d
     date: '2026-05-02',
     dateLabel: '2. Mai 2026',
     category: 'Profis',
-    title: 'Drei Talente schaffen den Sprung in den Profikader',
-    excerpt: 'Die Nachwuchsspieler Leon, Emre und Finn wurden in den Profikader von Fortuna Düsseldorf berufen.',
-    fullText: `Eine besondere Auszeichnung für drei unserer Talente aus dem Leistungszentrum: Leon, Emre und Finn haben durch ihre herausragenden Leistungen in den Jugendmannschaften den Sprung in den Profikader von Fortuna Düsseldorf 1895 e.V. geschafft.
+    title: 'Chance für Talente in der dritten Liga',
+    excerpt: 'Der Abstieg der Profimannschaft in die Dritte Liga eröffnet Nachwuchstalenten aus dem Leistungszentrum neue Chancen auf Einsatzzeiten im Profikader.',
+    fullText: `Der Abstieg von Fortuna Düsseldorf in die Dritte Liga ist sportlich schmerzhaft — doch er birgt auch eine Chance: Talente aus dem Leistungszentrum rücken näher an den Profikader heran und können wertvolle Spielpraxis auf höherem Niveau sammeln.
 
-Der Förderverein gratuliert den drei Spielern und ihren Familien zu diesem großartigen Erfolg. Er ist ein Beleg dafür, dass die Förderarbeit im Leistungszentrum Früchte trägt und junge Talente systematisch auf den Profibereich vorbereitet werden.`,
+Der Förderverein sieht darin eine wichtige Entwicklungsmöglichkeit für die Nachwuchsspielerinnen und -spieler. Gerade in der dritten Liga sind junge Akteure gefragt, die mit Einsatz, Lernbereitschaft und Qualität überzeugen wollen.
+
+Wir begleiten unsere Talente auf diesem Weg und unterstützen das Leistungszentrum dabei, die Brücke zwischen Jugend- und Profifußball so eng wie möglich zu gestalten.`,
   },
   {
     id: 4,
