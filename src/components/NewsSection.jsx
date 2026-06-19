@@ -23,7 +23,7 @@ Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus d
   },
   {
     id: 3,
-    date: '2. Mai 2026',
+    date: '17. Juni 2026',
     category: 'Profis',
     title: 'Chance für Talente in der dritten Liga',
     excerpt: 'Der Abstieg der Profimannschaft in die Dritte Liga eröffnet Nachwuchstalenten aus dem Leistungszentrum neue Chancen auf Einsatzzeiten im Profikader.',
