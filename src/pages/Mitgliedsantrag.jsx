@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Shield, Star, Crown, Trophy, CheckCircle2, Send, ChevronDown } from 'lucide-react';
+import { Shield, Star, Crown, Trophy, CheckCircle2, Send, ChevronDown, Users } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { base44 } from '@/api/base44Client';
 
-const TIERS = [
-  { id: 'bronze', name: 'Bronze', price: '5', icon: Shield, color: 'from-amber-700 to-amber-900' },
-  { id: 'silber', name: 'Silber', price: '15', icon: Star, color: 'from-gray-400 to-gray-600' },
-  { id: 'gold', name: 'Gold', price: '30', icon: Crown, color: 'from-yellow-500 to-yellow-700', featured: true },
-  { id: 'platin', name: 'Platin', price: '50', icon: Trophy, color: 'from-slate-300 to-slate-500' },
+const SPONSOR_TIERS = [
+  { id: 'bronze', name: 'Bronze', priceMonthly: '20', priceYearly: '240', icon: Shield, color: 'from-amber-700 to-amber-900', impact: '3 Trainingsbälle pro Jahr' },
+  { id: 'silber', name: 'Silber', priceMonthly: '35', priceYearly: '420', icon: Star, color: 'from-gray-400 to-gray-600', impact: '7 Trainingseinheiten Coaching' },
+  { id: 'gold', name: 'Gold', priceMonthly: '50', priceYearly: '600', icon: Crown, color: 'from-yellow-500 to-yellow-700', impact: 'Komplette Ausrüstung für zwei Spieler', featured: true },
+  { id: 'platin', name: 'Platin', priceMonthly: '70', priceYearly: '840', icon: Trophy, color: 'from-slate-300 to-slate-500', impact: '1 Stipendium für einen Nachwuchsspieler' },
 ];
 
-const ZAHLUNGSRHYTHMUS = ['Monatlich', 'Vierteljährlich', 'Halbjährlich', 'Jährlich'];
+const ZAHLUNGSRHYTHMUS = ['Monatlich', 'Jährlich'];
 
 export default function Mitgliedsantrag() {
+  const [selectedLevel, setSelectedLevel] = useState('mitglied');
   const [selectedTier, setSelectedTier] = useState('gold');
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
@@ -50,14 +51,22 @@ export default function Mitgliedsantrag() {
       return;
     }
     setSending(true);
-    const tier = TIERS.find(t => t.id === selectedTier);
+    const isSponsor = selectedLevel === 'sponsor';
+    const tier = isSponsor ? SPONSOR_TIERS.find(t => t.id === selectedTier) : null;
+    const stufeLabel = isSponsor ? `Sponsor (${tier.name})` : 'Mitglied';
+    const price = isSponsor
+      ? (form.zahlungsrhythmus === 'Monatlich' ? `${tier.priceMonthly}€ / Monat` : `${tier.priceYearly}€ / Jahr`)
+      : (form.zahlungsrhythmus === 'Monatlich' ? '5€ / Monat' : '60€ / Jahr');
     const body = `
 NEUER MITGLIEDSANTRAG
 =====================
 
-MITGLIEDSCHAFTSSTUFE
-Stufe: ${tier.name} (${tier.price}€ / Monat)
+UNTERSTÜTZUNGSART
+Art: ${isSponsor ? 'Sponsor' : 'Mitglied'}
+Stufe: ${stufeLabel}
+Beitrag: ${price}
 Zahlungsrhythmus: ${form.zahlungsrhythmus}
+${isSponsor ? `Wirkung: ${tier.impact}` : ''}
 
 PERSÖNLICHE DATEN
 Anrede: ${form.anrede}
@@ -85,7 +94,7 @@ Datenschutzerklärung zugestimmt: Ja
     `.trim();
 
     await base44.functions.invoke('sendEmail', {
-      subject: `Neuer Mitgliedsantrag: ${form.anrede} ${form.vorname} ${form.nachname} (${tier.name})`,
+      subject: `Neuer Mitgliedsantrag: ${form.anrede} ${form.vorname} ${form.nachname} (${isSponsor ? 'Sponsor ' + tier.name : 'Mitglied'})`,
       body,
       from_name: `${form.vorname} ${form.nachname}`,
     });
@@ -94,8 +103,13 @@ Datenschutzerklärung zugestimmt: Ja
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const tier = TIERS.find(t => t.id === selectedTier);
-  const TierIcon = tier.icon;
+  const isSponsor = selectedLevel === 'sponsor';
+  const tier = isSponsor ? SPONSOR_TIERS.find(t => t.id === selectedTier) : null;
+  const TierIcon = tier ? tier.icon : Users;
+  const summaryLabel = isSponsor ? `Sponsor ${tier.name}` : 'Mitglied';
+  const summaryPrice = isSponsor
+    ? (form.zahlungsrhythmus === 'Monatlich' ? `${tier.priceMonthly}€` : `${tier.priceYearly}€`)
+    : (form.zahlungsrhythmus === 'Monatlich' ? '5€' : '60€');
 
   if (submitted) {
     return (
@@ -159,38 +173,78 @@ Datenschutzerklärung zugestimmt: Ja
 
       <form onSubmit={handleSubmit} className="max-w-3xl mx-auto px-6 md:px-16 pb-24 space-y-0">
 
-        {/* 1. Mitgliedschaftsstufe */}
+        {/* 1. Unterstützungsart */}
         <section className="pb-12">
-          <SectionTitle number="01" title="Mitgliedschaftsstufe" dark />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {TIERS.map((t) => {
-              const Icon = t.icon;
-              const isSelected = selectedTier === t.id;
-              return (
-                <button
-                  key={t.id}
-                  type="button"
-                  onClick={() => setSelectedTier(t.id)}
-                  className={`relative p-4 text-left border transition-all duration-300 ${
-                    isSelected
-                      ? 'border-victory-red bg-victory-red/10'
-                      : 'border-white/10 bg-white/[0.02] hover:border-white/20'
-                  }`}
-                >
-                  {t.featured && (
-                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-victory-red text-white font-display text-[8px] tracking-widest uppercase">
-                      Beliebt
-                    </span>
-                  )}
-                  <div className={`w-8 h-8 rounded-sm bg-gradient-to-br ${t.color} flex items-center justify-center mb-3`}>
-                    <Icon className="w-4 h-4 text-white" />
-                  </div>
-                  <p className="font-display text-base uppercase tracking-wider text-white">{t.name}</p>
-                  <p className="font-body text-sm text-white/50">{t.price}€ / Monat</p>
-                </button>
-              );
-            })}
+          <SectionTitle number="01" title="Unterstützungsart" dark />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <button
+              type="button"
+              onClick={() => setSelectedLevel('mitglied')}
+              className={`relative p-5 text-left border transition-all duration-300 ${
+                selectedLevel === 'mitglied'
+                  ? 'border-victory-red bg-victory-red/10'
+                  : 'border-white/10 bg-white/[0.02] hover:border-white/20'
+              }`}
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-victory-red to-red-700 flex items-center justify-center">
+                  <Users className="w-4 h-4 text-white" />
+                </div>
+                <p className="font-display text-base uppercase tracking-wider text-white">Mitglied</p>
+              </div>
+              <p className="font-body text-sm text-white/50">Die Basis — ab 5€ / Monat oder 60€ / Jahr</p>
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedLevel('sponsor')}
+              className={`relative p-5 text-left border transition-all duration-300 ${
+                selectedLevel === 'sponsor'
+                  ? 'border-victory-red bg-victory-red/10'
+                  : 'border-white/10 bg-white/[0.02] hover:border-white/20'
+              }`}
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700 flex items-center justify-center">
+                  <Trophy className="w-4 h-4 text-white" />
+                </div>
+                <p className="font-display text-base uppercase tracking-wider text-white">Sponsor</p>
+              </div>
+              <p className="font-body text-sm text-white/50">Inklusive Mitgliedschaft — ab 20€ / Monat</p>
+            </button>
           </div>
+
+          {selectedLevel === 'sponsor' && (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {SPONSOR_TIERS.map((t) => {
+                const Icon = t.icon;
+                const isSelected = selectedTier === t.id;
+                return (
+                  <button
+                    key={t.id}
+                    type="button"
+                    onClick={() => setSelectedTier(t.id)}
+                    className={`relative p-4 text-left border transition-all duration-300 ${
+                      isSelected
+                        ? 'border-victory-red bg-victory-red/10'
+                        : 'border-white/10 bg-white/[0.02] hover:border-white/20'
+                    }`}
+                  >
+                    {t.featured && (
+                      <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-victory-red text-white font-display text-[8px] tracking-widest uppercase">
+                        Beliebt
+                      </span>
+                    )}
+                    <div className={`w-8 h-8 rounded-sm bg-gradient-to-br ${t.color} flex items-center justify-center mb-3`}>
+                      <Icon className="w-4 h-4 text-white" />
+                    </div>
+                    <p className="font-display text-base uppercase tracking-wider text-white">{t.name}</p>
+                    <p className="font-body text-sm text-white/50">{t.priceMonthly}€ / Monat</p>
+                    <p className="font-body text-xs text-white/30">{t.priceYearly}€ / Jahr</p>
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </section>
 
         {/* Light sections wrapper */}
@@ -309,11 +363,11 @@ Datenschutzerklärung zugestimmt: Ja
         <section className="border border-victory-red/20 bg-victory-red/5 p-6">
           <p className="font-display text-xs tracking-[0.2em] uppercase text-victory-red mb-3">Zusammenfassung</p>
           <div className="flex items-center gap-3 mb-2">
-            <div className={`w-8 h-8 rounded-sm bg-gradient-to-br ${tier.color} flex items-center justify-center`}>
+            <div className={`w-8 h-8 rounded-sm bg-gradient-to-br ${isSponsor && tier ? tier.color : 'from-victory-red to-red-700'} flex items-center justify-center`}>
               <TierIcon className="w-4 h-4 text-white" />
             </div>
-            <span className="font-display text-white text-lg uppercase">{tier.name}-Mitgliedschaft</span>
-            <span className="font-display text-victory-red text-lg ml-auto">{tier.price}€ / Monat</span>
+            <span className="font-display text-white text-lg uppercase">{summaryLabel}</span>
+            <span className="font-display text-victory-red text-lg ml-auto">{summaryPrice}{form.zahlungsrhythmus === 'Monatlich' ? ' / Monat' : ' / Jahr'}</span>
           </div>
           <p className="font-body text-sm text-white/40 mb-6">Zahlungsrhythmus: {form.zahlungsrhythmus}</p>
 
