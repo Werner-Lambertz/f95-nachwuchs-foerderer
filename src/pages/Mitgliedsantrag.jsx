@@ -209,7 +209,7 @@ Datenschutzerklärung zugestimmt: Ja
                 </div>
                 <p className="font-display text-base uppercase tracking-wider text-white">Spender</p>
               </div>
-              <p className="font-body text-sm text-white/50">Inklusive Mitgliedschaft — ab 20€ / Monat</p>
+              <p className="font-body text-sm text-white/50">Ohne automatische Mitgliedschaft — ab 20€ / Monat</p>
             </button>
           </div>
 

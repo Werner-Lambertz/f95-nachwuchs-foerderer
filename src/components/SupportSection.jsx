@@ -13,7 +13,7 @@ const SPONSOR_TIERS = [
     borderColor: 'border-amber-700/40',
     icon: Shield,
     impact: '3 Trainingsbälle pro Jahr',
-    benefits: ['Automatisch Mitglied', 'Vereinsnewsletter', 'Mitgliedsurkunde', 'Einladung zur Jahresversammlung'],
+    benefits: ['Spenderurkunde', 'Vereinsnewsletter', 'Jahresbericht der Nachwuchsarbeit', 'Einladung zu Förderveranstaltungen'],
   },
   {
     id: 'silber',
@@ -90,7 +90,7 @@ export default function SupportSection() {
           </h2>
           <p className="font-body text-lg text-white/50 max-w-2xl leading-relaxed mb-6">
             Zwei Wege, die Nachwuchsarbeit von Fortuna Düsseldorf zu stärken: 
-            Werden Sie Mitglied oder gehen Sie als Sponsor noch weiter.
+            Werden Sie Mitglied oder unterstützen Sie uns als Spender.
           </p>
           <Link
             to="/foerderbereiche"
@@ -162,7 +162,7 @@ export default function SupportSection() {
               Spender <span className="text-victory-red">werden</span>
             </h3>
             <p className="font-body text-sm text-white/40 sm:ml-auto">
-              Spender sind automatisch Mitglied.
+              Reine Förderung — eigenständig zur Mitgliedschaft.
             </p>
           </div>
 
