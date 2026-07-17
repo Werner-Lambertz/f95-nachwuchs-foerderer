@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Shield, Star, Crown, Trophy, CheckCircle2, Send, ChevronDown, Users } from 'lucide-react';
+import { Shield, Star, Crown, Trophy, CheckCircle2, Send, ChevronDown, Users, Printer } from 'lucide-react';
 import { Input } from '@/components/ui/input';
+import { generateAntragPdf } from '@/lib/antragPdf';
 import { toast } from 'sonner';
 import { base44 } from '@/api/base44Client';
 
@@ -101,6 +102,10 @@ Datenschutzerklärung zugestimmt: Ja
     setSending(false);
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handlePrint = () => {
+    generateAntragPdf({ isSponsor, tier, form });
   };
 
   const isSponsor = selectedLevel === 'sponsor';
@@ -401,15 +406,26 @@ Datenschutzerklärung zugestimmt: Ja
           </div>
           <p className="font-body text-sm text-white/40 mb-6">Zahlungsrhythmus: {form.zahlungsrhythmus}</p>
 
-          <button
-            type="submit"
-            disabled={sending}
-            className="w-full sm:w-auto px-10 py-4 bg-victory-red text-white font-display text-sm tracking-[0.15em] uppercase skew-x-[-6deg] hover:bg-red-700 transition-all duration-300 flex items-center gap-3 disabled:opacity-50"
-          >
-            <span className="skew-x-[6deg] inline-flex items-center gap-2">
-              {sending ? 'Wird gesendet...' : 'Mitgliedsantrag absenden'} <Send className="w-4 h-4" />
-            </span>
-          </button>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <button
+              type="submit"
+              disabled={sending}
+              className="w-full sm:w-auto px-10 py-4 bg-victory-red text-white font-display text-sm tracking-[0.15em] uppercase skew-x-[-6deg] hover:bg-red-700 transition-all duration-300 flex items-center gap-3 disabled:opacity-50"
+            >
+              <span className="skew-x-[6deg] inline-flex items-center gap-2">
+                {sending ? 'Wird gesendet...' : 'Mitgliedsantrag absenden'} <Send className="w-4 h-4" />
+              </span>
+            </button>
+            <button
+              type="button"
+              onClick={handlePrint}
+              className="w-full sm:w-auto px-8 py-4 border border-white/20 text-white/70 font-display text-sm tracking-[0.15em] uppercase skew-x-[-6deg] hover:border-victory-red hover:text-white transition-all duration-300 flex items-center gap-3"
+            >
+              <span className="skew-x-[6deg] inline-flex items-center gap-2">
+                {isSponsor ? 'Spender-Antrag drucken' : 'Mitgliedsantrag drucken'} <Printer className="w-4 h-4" />
+              </span>
+            </button>
+          </div>
           <p className="font-body text-xs text-white/30 mt-3">* Pflichtfelder</p>
         </section>
 
