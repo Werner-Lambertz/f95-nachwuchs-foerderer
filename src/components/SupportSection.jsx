@@ -24,7 +24,7 @@ const SPONSOR_TIERS = [
     borderColor: 'border-gray-400/40',
     icon: Star,
     impact: '7 Trainingseinheiten Coaching',
-    benefits: ['Alle Bronze-Vorteile', 'Exklusive Trainingsbesuche', 'Vereinsschal'],
+    benefits: ['Alle Bronze-Vorteile', 'Eingliederung in die Förderarbeit (auf freiwilliger Basis)'],
   },
   {
     id: 'gold',
