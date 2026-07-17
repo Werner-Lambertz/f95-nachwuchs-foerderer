@@ -58,41 +58,77 @@ export default function Mitgliedsantrag() {
     const price = isSponsor
       ? (form.zahlungsrhythmus === 'Monatlich' ? `${tier.priceMonthly}€ / Monat` : `${tier.priceYearly}€ / Jahr`)
       : (form.zahlungsrhythmus === 'Monatlich' ? '5€ / Monat' : '60€ / Jahr');
-    const body = `
-NEUER MITGLIEDSANTRAG
-=====================
+    const formatDate = (dateStr) => {
+      if (!dateStr) return '—';
+      const parts = dateStr.split('-');
+      if (parts.length !== 3) return dateStr;
+      const [y, m, d] = parts;
+      return `${d}.${m}.${y}`;
+    };
 
-UNTERSTÜTZUNGSART
-Art: ${isSponsor ? 'Spender' : 'Mitglied'}
-Stufe: ${stufeLabel}
-Beitrag: ${price}
-Zahlungsrhythmus: ${form.zahlungsrhythmus}
-${isSponsor ? `Wirkung: ${tier.impact}` : ''}
+    const sections = [
+      {
+        heading: 'UNTERSTÜTZUNGSART',
+        fields: [
+          ['Art', isSponsor ? 'Spender' : 'Mitglied'],
+          ['Stufe', stufeLabel],
+          ['Beitrag', price],
+          ['Zahlungsrhythmus', form.zahlungsrhythmus],
+          ...(isSponsor ? [['Wirkung', tier.impact]] : []),
+        ],
+      },
+      {
+        heading: 'PERSÖNLICHE DATEN',
+        fields: [
+          ['Anrede', form.anrede],
+          ['Vorname', form.vorname],
+          ['Nachname', form.nachname],
+          ['Geburtsdatum', formatDate(form.geburtsdatum)],
+        ],
+      },
+      {
+        heading: 'ADRESSE',
+        fields: [
+          ['Straße', form.strasse],
+          ['PLZ', form.plz],
+          ['Ort', form.ort],
+        ],
+      },
+      {
+        heading: 'KONTAKTDATEN',
+        fields: [
+          ['E-Mail', form.email],
+          ['Telefon', form.telefon || '—'],
+        ],
+      },
+      {
+        heading: 'BANKVERBINDUNG',
+        fields: [
+          ['Kontoinhaber', form.kontoinhaber],
+          ['IBAN', form.iban],
+        ],
+      },
+      {
+        heading: 'ZUSTIMMUNGEN',
+        fields: [
+          ['SEPA-Lastschriftmandat', 'Ja'],
+          ['Vereinssatzung anerkannt', 'Ja'],
+          ['Datenschutzerklärung zugestimmt', 'Ja'],
+        ],
+      },
+    ];
 
-PERSÖNLICHE DATEN
-Anrede: ${form.anrede}
-Vorname: ${form.vorname}
-Nachname: ${form.nachname}
-Geburtsdatum: ${form.geburtsdatum}
-
-ADRESSE
-Straße: ${form.strasse}
-PLZ: ${form.plz}
-Ort: ${form.ort}
-
-KONTAKTDATEN
-E-Mail: ${form.email}
-Telefon: ${form.telefon || '—'}
-
-BANKVERBINDUNG
-Kontoinhaber: ${form.kontoinhaber}
-IBAN: ${form.iban}
-
-ZUSTIMMUNGEN
-SEPA-Lastschriftmandat: Ja
-Vereinssatzung anerkannt: Ja
-Datenschutzerklärung zugestimmt: Ja
-    `.trim();
+    const body = [
+      'NEUER MITGLIEDSANTRAG',
+      '=====================',
+      '',
+      ...sections.flatMap((s) => [
+        s.heading,
+        '--------------------',
+        ...s.fields.flatMap(([label, value]) => [label, value]),
+        '',
+      ]),
+    ].join('\n').trim();
 
     await base44.functions.invoke('sendEmail', {
       subject: `Neuer Mitgliedsantrag: ${form.anrede} ${form.vorname} ${form.nachname} (${isSponsor ? 'Spender ' + tier.name : 'Mitglied'})`,
