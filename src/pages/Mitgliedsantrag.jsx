@@ -257,6 +257,29 @@ Datenschutzerklärung zugestimmt: Ja
         {/* Light sections wrapper */}
         <div className="bg-white -mx-6 md:-mx-16 px-6 md:px-16 py-12 space-y-12">
 
+        {/* Hinweis Antragsart */}
+        <div className="flex items-center gap-4 p-4 border-l-4 border-victory-red bg-victory-red/5">
+          {isSponsor && tier ? (
+            <div className={`w-8 h-8 rounded-sm bg-gradient-to-br ${tier.color} flex items-center justify-center flex-shrink-0`}>
+              <TierIcon className="w-4 h-4 text-white" />
+            </div>
+          ) : (
+            <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-victory-red to-red-700 flex items-center justify-center flex-shrink-0">
+              <TierIcon className="w-4 h-4 text-white" />
+            </div>
+          )}
+          <div>
+            <p className="font-display text-sm uppercase tracking-wider text-pitch-black">
+              {isSponsor ? 'Spender-Antrag' : 'Mitgliedsantrag'}
+            </p>
+            <p className="font-body text-sm text-pitch-black/60">
+              {isSponsor
+                ? `Spendenstufe ${tier?.name} — ${form.zahlungsrhythmus === 'Monatlich' ? tier.priceMonthly + '€ / Monat' : tier.priceYearly + '€ / Jahr'}`
+                : `Mitgliedsbeitrag — ${form.zahlungsrhythmus === 'Monatlich' ? '5€ / Monat' : '60€ / Jahr'}`}
+            </p>
+          </div>
+        </div>
+
         {/* 2. Persönliche Daten */}
         <section>
           <SectionTitle number="02" title="Persönliche Daten" />
