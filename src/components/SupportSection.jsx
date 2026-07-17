@@ -261,6 +261,10 @@ export default function SupportSection() {
               );
             })}
           </div>
+
+          <p className="mt-6 font-body text-xs text-white/40 leading-relaxed max-w-2xl">
+            Die Spenden in den Kategorien Bronze, Silber, Gold und Platin werden als freiwillige Spenderleistung per SEPA-Lastschrift eingezogen. Freiwillige Spenden ohne Kategorie sind jederzeit möglich.
+          </p>
         </div>
       </div>
     </section>

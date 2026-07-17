@@ -214,6 +214,7 @@ Datenschutzerklärung zugestimmt: Ja
           </div>
 
           {selectedLevel === 'sponsor' && (
+            <>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {SPONSOR_TIERS.map((t) => {
                 const Icon = t.icon;
@@ -244,6 +245,12 @@ Datenschutzerklärung zugestimmt: Ja
                 );
               })}
             </div>
+            <div className="mt-5 p-4 border border-victory-red/20 bg-victory-red/5">
+              <p className="font-body text-sm text-white/60 leading-relaxed">
+                <strong className="text-white/80">Hinweis zur Spende:</strong> Die Spenden in den Kategorien Bronze, Silber, Gold und Platin werden als freiwillige Spenderleistung per SEPA-Lastschrift eingezogen. Freiwillige Spenden ohne Kategorie sind jederzeit möglich — wenden Sie sich dazu gerne an den Förderverein.
+              </p>
+            </div>
+            </>
           )}
         </section>
 
