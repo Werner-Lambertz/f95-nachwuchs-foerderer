@@ -154,15 +154,15 @@ export default function SupportSection() {
         {/* Level 2: Sponsor werden */}
         <div>
           <div className="flex items-center gap-3 mb-5">
-            <span className="font-display text-xs tracking-[0.3em] uppercase text-white/40">Ebene 2 — Sponsoring</span>
+            <span className="font-display text-xs tracking-[0.3em] uppercase text-white/40">Ebene 2 — Spenden</span>
             <div className="flex-1 h-[1px] bg-white/10" />
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end gap-4 mb-10">
             <h3 className="font-display text-3xl md:text-4xl uppercase tracking-tight text-white">
-              Sponsor <span className="text-victory-red">werden</span>
+              Spender <span className="text-victory-red">werden</span>
             </h3>
             <p className="font-body text-sm text-white/40 sm:ml-auto">
-              Sponsoren sind automatisch Mitglied.
+              Spender sind automatisch Mitglied.
             </p>
           </div>
 

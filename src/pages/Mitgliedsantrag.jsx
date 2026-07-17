@@ -53,7 +53,7 @@ export default function Mitgliedsantrag() {
     setSending(true);
     const isSponsor = selectedLevel === 'sponsor';
     const tier = isSponsor ? SPONSOR_TIERS.find(t => t.id === selectedTier) : null;
-    const stufeLabel = isSponsor ? `Sponsor (${tier.name})` : 'Mitglied';
+    const stufeLabel = isSponsor ? `Spender (${tier.name})` : 'Mitglied';
     const price = isSponsor
       ? (form.zahlungsrhythmus === 'Monatlich' ? `${tier.priceMonthly}€ / Monat` : `${tier.priceYearly}€ / Jahr`)
       : (form.zahlungsrhythmus === 'Monatlich' ? '5€ / Monat' : '60€ / Jahr');
@@ -62,7 +62,7 @@ NEUER MITGLIEDSANTRAG
 =====================
 
 UNTERSTÜTZUNGSART
-Art: ${isSponsor ? 'Sponsor' : 'Mitglied'}
+Art: ${isSponsor ? 'Spender' : 'Mitglied'}
 Stufe: ${stufeLabel}
 Beitrag: ${price}
 Zahlungsrhythmus: ${form.zahlungsrhythmus}
@@ -94,7 +94,7 @@ Datenschutzerklärung zugestimmt: Ja
     `.trim();
 
     await base44.functions.invoke('sendEmail', {
-      subject: `Neuer Mitgliedsantrag: ${form.anrede} ${form.vorname} ${form.nachname} (${isSponsor ? 'Sponsor ' + tier.name : 'Mitglied'})`,
+      subject: `Neuer Mitgliedsantrag: ${form.anrede} ${form.vorname} ${form.nachname} (${isSponsor ? 'Spender ' + tier.name : 'Mitglied'})`,
       body,
       from_name: `${form.vorname} ${form.nachname}`,
     });
@@ -106,7 +106,7 @@ Datenschutzerklärung zugestimmt: Ja
   const isSponsor = selectedLevel === 'sponsor';
   const tier = isSponsor ? SPONSOR_TIERS.find(t => t.id === selectedTier) : null;
   const TierIcon = tier ? tier.icon : Users;
-  const summaryLabel = isSponsor ? `Sponsor ${tier.name}` : 'Mitglied';
+  const summaryLabel = isSponsor ? `Spender ${tier.name}` : 'Mitglied';
   const summaryPrice = isSponsor
     ? (form.zahlungsrhythmus === 'Monatlich' ? `${tier.priceMonthly}€` : `${tier.priceYearly}€`)
     : (form.zahlungsrhythmus === 'Monatlich' ? '5€' : '60€');
@@ -207,7 +207,7 @@ Datenschutzerklärung zugestimmt: Ja
                 <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700 flex items-center justify-center">
                   <Trophy className="w-4 h-4 text-white" />
                 </div>
-                <p className="font-display text-base uppercase tracking-wider text-white">Sponsor</p>
+                <p className="font-display text-base uppercase tracking-wider text-white">Spender</p>
               </div>
               <p className="font-body text-sm text-white/50">Inklusive Mitgliedschaft — ab 20€ / Monat</p>
             </button>
