@@ -35,7 +35,7 @@ const SPONSOR_TIERS = [
     borderColor: 'border-yellow-500/40',
     icon: Crown,
     impact: 'Komplette Ausrüstung für zwei Spieler',
-    benefits: ['Alle Silber-Vorteile', 'VIP-Bereich bei Jugendspielen', 'Signiertes Trikot'],
+    benefits: ['Alle Silber-Vorteile', 'Namentliche Nennung in der Mitgliederzeitschrift (optional)'],
     featured: true,
   },
   {
