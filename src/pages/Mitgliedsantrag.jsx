@@ -252,7 +252,7 @@ Datenschutzerklärung zugestimmt: Ja
             </div>
             <div className="mt-5 p-4 border border-victory-red/20 bg-victory-red/5">
               <p className="font-body text-sm text-white/60 leading-relaxed">
-                <strong className="text-white/80">Hinweis zur Spende:</strong> Die Spenden in den Kategorien Bronze, Silber, Gold und Platin werden als freiwillige Spenderleistung per SEPA-Lastschrift eingezogen. Freiwillige Spenden ohne Kategorie sind jederzeit möglich — wenden Sie sich dazu gerne an den Förderverein.
+                <strong className="text-white/80">Hinweis zur Spende:</strong> Die Spenden in den Kategorien Bronze, Silber, Gold und Platin werden als freiwillige Spenderleistung per SEPA-Lastschrift eingezogen. Freiwillige Spenden ohne Kategorie sind jederzeit möglich — wenden Sie sich dazu gerne an den Förderverein. Das Auftreten als Spender schließt keine Mitgliedschaft ein; diese ist separat zu beantragen.
               </p>
             </div>
             </>
