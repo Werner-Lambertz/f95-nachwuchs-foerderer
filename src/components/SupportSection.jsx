@@ -34,7 +34,7 @@ const SPONSOR_TIERS = [
     color: 'from-yellow-500 to-yellow-700',
     borderColor: 'border-yellow-500/40',
     icon: Crown,
-    impact: 'Komplette Ausrüstung für zwei Spieler',
+    impact: 'Komplette Ausrüstung für zwei Spieler/-innen',
     benefits: ['Alle Silber-Vorteile', 'Namentliche Nennung in der Mitgliederzeitschrift (optional)'],
     featured: true,
   },
