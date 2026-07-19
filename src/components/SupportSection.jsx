@@ -46,7 +46,7 @@ const SPONSOR_TIERS = [
     color: 'from-slate-300 to-slate-500',
     borderColor: 'border-slate-300/40',
     icon: Trophy,
-    impact: '1 Stipendium für einen Nachwuchsspieler',
+    impact: '1 Stipendium für einen Nachwuchsspieler / -in',
     benefits: ['Alle Gold-Vorteile', 'Namensnennung an der Fördertafel', 'Persönlicher Ansprechpartner', 'Jahresbericht exklusiv'],
   },
 ];

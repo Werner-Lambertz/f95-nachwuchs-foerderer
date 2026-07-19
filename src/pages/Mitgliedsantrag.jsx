@@ -11,7 +11,7 @@ const SPONSOR_TIERS = [
   { id: 'bronze', name: 'Bronze', priceMonthly: '20', priceYearly: '240', icon: Shield, color: 'from-amber-700 to-amber-900', impact: '3 Trainingsbälle pro Jahr' },
   { id: 'silber', name: 'Silber', priceMonthly: '35', priceYearly: '420', icon: Star, color: 'from-gray-400 to-gray-600', impact: '7 Trainingseinheiten Coaching' },
   { id: 'gold', name: 'Gold', priceMonthly: '50', priceYearly: '600', icon: Crown, color: 'from-yellow-500 to-yellow-700', impact: 'Komplette Ausrüstung für zwei Spieler', featured: true },
-  { id: 'platin', name: 'Platin', priceMonthly: '70', priceYearly: '840', icon: Trophy, color: 'from-slate-300 to-slate-500', impact: '1 Stipendium für einen Nachwuchsspieler' },
+  { id: 'platin', name: 'Platin', priceMonthly: '70', priceYearly: '840', icon: Trophy, color: 'from-slate-300 to-slate-500', impact: '1 Stipendium für einen Nachwuchsspieler / -in' },
 ];
 
 const ZAHLUNGSRHYTHMUS = ['Monatlich', 'Jährlich'];
