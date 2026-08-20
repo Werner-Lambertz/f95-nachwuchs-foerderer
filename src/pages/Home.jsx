@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import NewsSection from '../components/NewsSection';
+import FoerdermassnahmenSection from '../components/FoerdermassnahmenSection';
 import SupportSection from '../components/SupportSection';
 import AboutSection from '../components/AboutSection';
 import ContactSection from '../components/ContactSection';
@@ -23,6 +24,7 @@ export default function Home() {
       <Navigation />
       <HeroSection heroImage={IMAGES.hero} />
       <NewsSection images={[IMAGES.facility, IMAGES.player, IMAGES.football, IMAGES.aerial]} />
+      <FoerdermassnahmenSection />
       <SupportSection />
       <AboutSection facilityImage={IMAGES.facility} teamImage={IMAGES.team} />
       <ContactSection />
