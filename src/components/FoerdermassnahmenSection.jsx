@@ -11,7 +11,7 @@ const MEASURES = [
   {
     icon: MapPin,
     title: 'Unterstützung zur Ausrichtung eines Trainingslagers',
-    text: 'Die Mittel zur Saisonvorbereitung der Teams wurden aufgrund der unsicheren Finanzierung stark begrenzt. Damit die U10, wie geplant, das Trainingslager in Straelen aufnehmen kann, wurden die Fahrtkosten für die beteiligten Betreuer und Trainer durch einen Beitrag des Fördervereins übernommen.',
+    text: 'Die Mittel zur Saisonvorbereitung der Teams wurden aufgrund der unsicheren Finanzierung stark begrenzt. Damit die U11, wie geplant, das Trainingslager in Straelen aufnehmen kann, wurden die Fahrtkosten für die beteiligten Betreuer und Trainer durch einen Beitrag des Fördervereins übernommen.',
   },
   {
     icon: GraduationCap,
