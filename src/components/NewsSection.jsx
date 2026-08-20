@@ -10,6 +10,19 @@ const NEWS_ITEMS = [
     category: 'Förderung',
     title: 'Förderverein übernimmt neue Aufgaben',
     excerpt: 'Die im Zuge des erlittenen Abstiegs unserer Profis in die Dritte Liga auftretenden Engpässe werden vom Förderverein gesehen. Der Förderverein startet eine breit angelegte Mitgliederkampagne.',
+    fullText: `Im Zuge des Abstiegs der Profimannschaft in die Dritte Liga entstehen finanzielle und organisatorische Engpässe, die sich auch auf das Leistungszentrum auswirken. Der Förderverein reagiert darauf mit einer breit angelegten Mitgliederkampagne und erweitert sein Förderprofil.
+
+Ziel ist es, die Arbeit des Leistungszentrums weiterhin auf höchstem Niveau zu unterstützen und die Entwicklung der Jugendmannschaften zu sichern. Wir rufen alle Freunde und Unterstützer von Fortuna Düsseldorf dazu auf, Mitglied zu werden und gemeinsam diese wichtige Phase zu gestalten.
+
+Innerhalb der Mitgliederkampagne werden die Aktivitäten der Saisoneröffnung genutzt, um den Förderverein bekannt zu machen. So machte sich der Förderverein beispielsweise beim Kurvenfest am 1.8.2026 am Flinger Broich bekannt.
+
+Unter „Family and Friends" werden Eltern der Spieler und Spielerinnen über die Ziele und Inhalte informiert, aber auch das persönliche Netzwerk der aktiven Mitglieder einbezogen.
+
+Mit dem Schritt „Düsseldorfer Gesichter" sollen bekannte Personen mit Bezug zu Düsseldorf für den Förderverein gewonnen werden.
+
+Ganz besonders wichtig ist die Zusammenarbeit mit den Fangruppierungen über die SCD. Diese ist in der Kampagne „F95 Fans" zusammengefasst.
+
+Last but not least arbeitet der Förderverein mit den Düsseldorfer Medien zusammen.`,
   },
   {
     id: 2,
