@@ -16,6 +16,39 @@ const SPONSOR_TIERS = [
 
 const ZAHLUNGSRHYTHMUS = ['Monatlich', 'Jährlich'];
 
+const IBAN_LENGTHS = { DE: 22, AT: 20, CH: 21, FR: 27, NL: 18, BE: 16, ES: 24, IT: 27, PL: 28, GB: 22 };
+
+const validateIBAN = (iban) => {
+  const cleaned = (iban || '').replace(/\s+/g, '').toUpperCase();
+  if (!cleaned) return { valid: false, message: 'Bitte geben Sie eine IBAN ein.' };
+  if (!/^[A-Z]{2}[0-9]{2}[A-Z0-9]{1,30}$/.test(cleaned)) {
+    return { valid: false, message: 'Ungültiges Format — eine IBAN beginnt mit einem Ländercode, z. B. DE89 3704 0044 0532 0130 00.' };
+  }
+  const cc = cleaned.slice(0, 2);
+  if (IBAN_LENGTHS[cc] && cleaned.length !== IBAN_LENGTHS[cc]) {
+    return { valid: false, message: `Eine ${cc}-IBAN muss ${IBAN_LENGTHS[cc]} Stellen haben (Ihre Eingabe hat ${cleaned.length}).` };
+  }
+  if (cc === 'DE') {
+    const blz = cleaned.slice(4, 12);
+    if (!/^\d{8}$/.test(blz)) {
+      return { valid: false, message: 'Die Bankleitzahl in der IBAN ist ungültig (Stellen 5–12 müssen 8 Ziffern sein).' };
+    }
+    if (/^0{8}$/.test(blz)) {
+      return { valid: false, message: 'Bitte geben Sie eine gültige Bankleitzahl ein — die IBAN darf nicht nur aus Nullen bestehen.' };
+    }
+  }
+  const rearranged = cleaned.slice(4) + cleaned.slice(0, 4);
+  const numeric = rearranged.replace(/[A-Z]/g, (c) => c.charCodeAt(0) - 55);
+  let remainder = 0;
+  for (const ch of numeric) {
+    remainder = (remainder * 10 + parseInt(ch, 10)) % 97;
+  }
+  if (remainder !== 1) {
+    return { valid: false, message: 'Die Prüfziffer stimmt nicht — bitte überprüfen Sie Ihre Bankverbindung.' };
+  }
+  return { valid: true, message: '' };
+};
+
 export default function Mitgliedsantrag() {
   const [selectedLevel, setSelectedLevel] = useState('mitglied');
   const [selectedTier, setSelectedTier] = useState('gold');
@@ -41,14 +74,22 @@ export default function Mitgliedsantrag() {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setForm(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
+    if (name === 'iban') setIbanError('');
   };
 
   const [sending, setSending] = useState(false);
+  const [ibanError, setIbanError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.datenschutz || !form.satzung || !form.sepa) {
       toast.error('Bitte stimmen Sie allen Pflichtfeldern zu.');
+      return;
+    }
+    const ibanCheck = validateIBAN(form.iban);
+    if (!ibanCheck.valid) {
+      setIbanError(ibanCheck.message);
+      toast.error(ibanCheck.message);
       return;
     }
     setSending(true);
@@ -399,7 +440,21 @@ export default function Mitgliedsantrag() {
               </div>
             </div>
             <FormFieldLight label="Kontoinhaber *" name="kontoinhaber" value={form.kontoinhaber} onChange={handleChange} placeholder="Max Mustermann" required />
-            <FormFieldLight label="IBAN *" name="iban" value={form.iban} onChange={handleChange} placeholder="DE00 0000 0000 0000 0000 00" required />
+            <div>
+              <FormFieldLight
+                label="IBAN *"
+                name="iban"
+                value={form.iban}
+                onChange={handleChange}
+                onBlur={() => {
+                  const res = validateIBAN(form.iban);
+                  setIbanError(res.valid ? '' : res.message);
+                }}
+                placeholder="DE00 0000 0000 0000 0000 00"
+                required
+              />
+              {ibanError && <p className="font-body text-xs text-victory-red mt-1.5 leading-relaxed">{ibanError}</p>}
+            </div>
           </div>
         </section>
 
@@ -515,7 +570,7 @@ function FormField({ label, name, value, onChange, type = 'text', placeholder, r
   );
 }
 
-function FormFieldLight({ label, name, value, onChange, type = 'text', placeholder, required }) {
+function FormFieldLight({ label, name, value, onChange, onBlur, type = 'text', placeholder, required }) {
   return (
     <div>
       <LabelLight>{label}</LabelLight>
@@ -524,6 +579,7 @@ function FormFieldLight({ label, name, value, onChange, type = 'text', placehold
         name={name}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
         placeholder={placeholder}
         required={required}
         className="w-full bg-white border border-gray-300 text-pitch-black font-body text-sm px-4 py-3 focus:outline-none focus:border-victory-red transition-colors placeholder:text-gray-400"
