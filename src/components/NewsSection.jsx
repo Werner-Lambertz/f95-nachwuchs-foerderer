@@ -88,6 +88,7 @@ Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus d
     category: 'Event',
     title: 'Neuausrichtung des Fördervereins',
     excerpt: 'Der Förderverein definiert ein neues Arbeitsprofil und stellt sich den anstehenden Projekten.',
+    image: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/13cdf9784_generated_e6c7a3d0.png',
     fullText: `Der Förderverein Fortuna Düsseldorf Leistungszentrum e.V. unterstützt künftig aktiv den sogenannten „Plan B" — eine zusätzliche Karriereperspektive für alle Nachwuchsspielerinnen und -spieler des Leistungszentrums.
 
 Der Fußball steht selbstverständlich weiterhin im Mittelpunkt. Doch der Förderverein ist überzeugt: Eine nachhaltige Förderung bedeutet, den jungen Menschen auch abseits des Platzes Perspektiven zu eröffnen.
