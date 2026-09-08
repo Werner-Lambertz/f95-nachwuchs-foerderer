@@ -43,6 +43,19 @@ Am Ende war klar: Trotz des sportlichen Ehrgeizes stand vor allem das Ziel im Vo
     ],
   },
   {
+    id: 3,
+    date: '17. Juni 2026',
+    category: 'Profis',
+    title: 'Chance für Talente in der dritten Liga',
+    excerpt: 'Der Abstieg der Profimannschaft in die Dritte Liga eröffnet Nachwuchstalenten aus dem Leistungszentrum neue Chancen auf Einsatzzeiten im Profikader.',
+    image: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/76cae97f0_generated_d01aeead.png',
+    fullText: `Der Abstieg von Fortuna Düsseldorf in die Dritte Liga ist sportlich schmerzhaft — doch er birgt auch eine Chance: Talente aus dem Leistungszentrum rücken näher an den Profikader heran und können wertvolle Spielpraxis auf höherem Niveau sammeln.
+
+Der Förderverein sieht darin eine wichtige Entwicklungsmöglichkeit für die Nachwuchsspielerinnen und -spieler. Gerade in der dritten Liga sind junge Akteure gefragt, die mit Einsatz, Lernbereitschaft und Qualität überzeugen wollen.
+
+Wir begleiten unsere Talente auf diesem Weg und unterstützen das Leistungszentrum dabei, die Brücke zwischen Jugend- und Profifußball so eng wie möglich zu gestalten.`,
+  },
+  {
     id: 1,
     date: '02. Juni 2026',
     category: 'Förderung',
@@ -73,14 +86,6 @@ Last but not least arbeitet der Förderverein mit den Düsseldorfer Medien zusam
     fullText: `Vor 419 Zuschauern im Paul-Janes-Stadion schlugen unsere U19-Jungs die SG Unterrath mit 5:1. Von Beginn an übernahmen sie die Spielkontrolle und belohnten sich früh mit der Führung. Bis zur 10. Minute stand es bereits 2:0. Auch im Anschluss blieb F95 das gefährlichere Team und ließ defensiv nichts zu. Kurz vor dem Pausenpfiff kam es zum dritten Treffer.
 
 Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus der Kabine kam und per Foulelfmeter auf 1:3 verkürzte (54.). Doch die Fortuna schüttelte den Gegentreffer schnell ab und stellte nur sieben Minuten später den alten Abstand wieder her. In der 84. Minute setzte unsere U19 mit dem 5:1 den Schlusspunkt. Damit stand am Ende ein verdienter Erfolg und der Titelgewinn im Niederrheinpokal! Für eine Fortuna-U19 war es in diesem Wettbewerb der erste Pokalsieg seit 2019.`,
-  },
-  {
-    id: 3,
-    date: '17. Juni 2026',
-    category: 'Profis',
-    title: 'Chance für Talente in der dritten Liga',
-    excerpt: 'Der Abstieg der Profimannschaft in die Dritte Liga eröffnet Nachwuchstalenten aus dem Leistungszentrum neue Chancen auf Einsatzzeiten im Profikader.',
-    image: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/76cae97f0_generated_d01aeead.png',
   },
   {
     id: 4,
