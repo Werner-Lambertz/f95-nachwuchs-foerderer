@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, X, ChevronDown } from 'lucide-react';
+import NewsParagraph from '../components/NewsParagraph';
 
 const ALL_NEWS = [
   {
@@ -98,7 +99,22 @@ Die Mannschaften haben sich ausdrücklich für die Unterstützung bedankt. Für 
     fullText: `Am 15. September 2024 fand die Gründungsversammlung des Fördervereins Fortuna Düsseldorf Leistungszentrum e.V. statt. Die Anwesenden beschlossen die Satzung, wählten den ersten Vorstand und legten die Grundlagen für die Vereinsarbeit fest.
 
 Der Verein wurde anschließend beim Amtsgericht Düsseldorf unter VR 10317 ins Vereinsregister eingetragen. Mit der Gründung beginnt ein neues Kapitel der organisierten Nachwuchsförderung für die Jugendabteilung von Fortuna Düsseldorf 1895 e.V.`,
-  },
+},
+{
+id: 8,
+date: '2026-08-26',
+dateLabel: '26. August 2026',
+category: 'Partner',
+title: 'SCD und Förderverein kooperieren',
+excerpt: 'Der Förderverein besuchte am 26.08.2026 den Supporter Club Düsseldorf. Im gemeinsamen Gespräch wurden Ziele und Inhalte der Organisationen besprochen.',
+fullText: `Mit großer Begeisterung reagierte der SCD auf die vom Förderverein dargestellten Vereinsziele. Gerade die Hinwendung auf unsere Talente passt hervorragend und wird vom SCD als wesentlicher Baustein angesehen.
+
+Spontan wurde vom Vorstand des SCD entschieden, eine Platin-Förderung einzugehen. Worüber wir uns natürlich sehr gefreut haben.
+
+Ganz praktische Unterstützung wird der SCD in der Weise realisieren, als dass Mitgliedsanträge für den Förderverein über den SCD erhältlich sind. Natürlich ist auch die Homepage des Fördervereins über den SCD zu erreichen.
+
+Besuchen Sie den Supporters Club Düsseldorf im Internet unter www.scd2003.de.`,
+},
 ];
 
 // Sort descending by date
@@ -253,7 +269,9 @@ export default function Neuigkeiten() {
               </div>
               <div className="px-6 py-6 space-y-4">
                 {openItem.fullText.split('\n\n').map((para, i) => (
-                  <p key={i} className="font-body text-[15px] text-pitch-black/80 leading-relaxed">{para}</p>
+                  <p key={i} className="font-body text-[15px] text-pitch-black/80 leading-relaxed">
+                    <NewsParagraph>{para}</NewsParagraph>
+                  </p>
                 ))}
               </div>
             </motion.div>

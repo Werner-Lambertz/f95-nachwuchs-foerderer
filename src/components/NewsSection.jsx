@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Calendar, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import NewsParagraph from './NewsParagraph';
 
 const NEWS_ITEMS = [
   {
@@ -56,6 +57,20 @@ Bei den jüngeren Spielerinnen und Spielern steht dabei die sozial-kulturelle Or
 Für die älteren Jahrgänge richtet sich der Blick gezielt auf die berufliche Zukunft: Der Förderverein unterstützt Maßnahmen, die den Weg in eine Berufsausbildung oder ein Studium begleiten und erleichtern. Damit soll sichergestellt werden, dass jede Nachwuchskraft — unabhängig vom sportlichen Werdegang — auf eine gesicherte Lebensperspektive bauen kann.
 
 Der Plan B ist kein Rückzugsplan, sondern ein Zeichen von Stärke und Weitblick. Der Förderverein freut sich auf die enge Zusammenarbeit mit dem Leistungszentrum, den Familien und weiteren Partnern, um dieses Projekt mit Leben zu füllen.`,
+  },
+  {
+    id: 8,
+    date: '26. August 2026',
+    category: 'Partner',
+    title: 'SCD und Förderverein kooperieren',
+    excerpt: 'Der Förderverein besuchte am 26.08.2026 den Supporter Club Düsseldorf. Im gemeinsamen Gespräch wurden Ziele und Inhalte der Organisationen besprochen.',
+    fullText: `Mit großer Begeisterung reagierte der SCD auf die vom Förderverein dargestellten Vereinsziele. Gerade die Hinwendung auf unsere Talente passt hervorragend und wird vom SCD als wesentlicher Baustein angesehen.
+
+Spontan wurde vom Vorstand des SCD entschieden, eine Platin-Förderung einzugehen. Worüber wir uns natürlich sehr gefreut haben.
+
+Ganz praktische Unterstützung wird der SCD in der Weise realisieren, als dass Mitgliedsanträge für den Förderverein über den SCD erhältlich sind. Natürlich ist auch die Homepage des Fördervereins über den SCD zu erreichen.
+
+Besuchen Sie den Supporters Club Düsseldorf im Internet unter www.scd2003.de.`,
   },
 ];
 
@@ -208,7 +223,7 @@ export default function NewsSection({ images }) {
               <div className="px-6 py-6 space-y-4">
                 {openItem.fullText.split('\n\n').map((para, i) => (
                   <p key={i} className="font-body text-[15px] text-pitch-black/80 leading-relaxed">
-                    {para}
+                    <NewsParagraph>{para}</NewsParagraph>
                   </p>
                 ))}
               </div>
