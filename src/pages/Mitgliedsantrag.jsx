@@ -50,8 +50,13 @@ const validateIBAN = (iban) => {
 };
 
 export default function Mitgliedsantrag() {
-  const [selectedLevel, setSelectedLevel] = useState('mitglied');
-  const [selectedTier, setSelectedTier] = useState('gold');
+  const initialParams = new URLSearchParams(window.location.search);
+  const initialLevel = initialParams.get('level') === 'sponsor' ? 'sponsor' : 'mitglied';
+  const initialTier = initialParams.get('tier') && SPONSOR_TIERS.some(t => t.id === initialParams.get('tier'))
+    ? initialParams.get('tier')
+    : 'gold';
+  const [selectedLevel, setSelectedLevel] = useState(initialLevel);
+  const [selectedTier, setSelectedTier] = useState(initialTier);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     anrede: '',

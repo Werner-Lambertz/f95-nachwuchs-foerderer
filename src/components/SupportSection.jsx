@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Shield, Star, Crown, Trophy, Dumbbell, Users, Shirt, GraduationCap, ArrowRight, Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SPONSOR_TIERS = [
   {
@@ -64,6 +64,11 @@ export default function SupportSection() {
   const [selectedTier, setSelectedTier] = useState('gold');
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const navigate = useNavigate();
+
+  const goToSponsorAntrag = (tierId) => {
+    navigate(`/mitgliedsantrag?level=sponsor&tier=${tierId}`);
+  };
 
   return (
     <section id="support" ref={ref} className="relative py-24 md:py-32 bg-pitch-black overflow-hidden">
@@ -248,6 +253,8 @@ export default function SupportSection() {
                     </ul>
 
                     <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); goToSponsorAntrag(tier.id); }}
                       className={`mt-6 w-full py-3 font-display text-xs tracking-[0.15em] uppercase transition-all duration-300 skew-x-[-4deg] ${
                         isSelected
                           ? 'bg-victory-red text-white hover:bg-red-700'
