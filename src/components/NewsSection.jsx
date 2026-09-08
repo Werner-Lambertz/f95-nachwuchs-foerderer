@@ -25,7 +25,7 @@ Besuchen Sie den Supporters Club Düsseldorf im Internet unter www.scd2003.de.`,
     date: '25. August 2026',
     category: 'Event',
     title: 'Teambuilding für Erste Frauen',
-    excerpt: 'Im Rahmen des Trainingslagers fand ein Bowling-Abend der U17-Mädchenmannschaft statt — ein Highlight der Saisonvorbereitung mit Spaß und Teamgefühl.',
+    excerpt: 'Im Rahmen des Trainingslagers fand ein Bowling-Abend der Erste Frauenmannschaft statt — ein Highlight der Saisonvorbereitung mit Spaß und Teamgefühl.',
     image: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/f4b2c4d20_Image22.jpg',
     fullText: `Die Kosten für diesen Team-Event werden zum Teil durch den Förderverein übernommen.
 
