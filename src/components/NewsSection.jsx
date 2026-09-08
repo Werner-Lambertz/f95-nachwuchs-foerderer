@@ -80,6 +80,7 @@ Nach dem Seitenwechsel war es zunächst die SG Unterrath, die etwas besser aus d
     category: 'Profis',
     title: 'Chance für Talente in der dritten Liga',
     excerpt: 'Der Abstieg der Profimannschaft in die Dritte Liga eröffnet Nachwuchstalenten aus dem Leistungszentrum neue Chancen auf Einsatzzeiten im Profikader.',
+    image: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/76cae97f0_generated_d01aeead.png',
   },
   {
     id: 4,
