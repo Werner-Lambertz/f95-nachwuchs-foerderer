@@ -115,6 +115,28 @@ Ganz praktische Unterstützung wird der SCD in der Weise realisieren, als dass M
 
 Besuchen Sie den Supporters Club Düsseldorf im Internet unter www.scd2003.de.`,
 },
+{
+  id: 9,
+  date: '2026-08-25',
+  dateLabel: '25. August 2026',
+  category: 'Event',
+  title: 'Teambuilding für U17-Mädchen',
+  excerpt: 'Im Rahmen des Trainingslagers fand ein Bowling-Abend der U17-Mädchenmannschaft statt — ein Highlight der Saisonvorbereitung mit Spaß und Teamgefühl.',
+  fullText: `Die Kosten für diesen Team-Event werden zum Teil durch den Förderverein übernommen.
+
+Nach Abschluß der Saison-Vorbereitung erreicht uns folgender Bericht:
+
+Am 25.8.2026 fand im Rahmen unseres Trainingslagers ein besonderer Bowling-Abend statt, der den anstrengenden Tag mit viel Spaß und Teamgefühl abrunden sollte. Wir haben drei Bahnen für zwei Stunden gemietet und uns in drei Gruppen aufgeteilt.
+
+Schon bald entwickelte sich der Wettkampf auf den Bahnen zu einem echten Highlight des Abends: Gleich zweimal gelang es einer unserer Gruppen, den kompletten Rundensieg zu holen. Als kleine Anerkennung bekam die Mannschaft eine Runde ausgegeben – natürlich alkoholfrei. So wurde aus dem Turnier schnell mehr als nur Sport: Der Abend bot Raum für Gespräche, gemeinsames Lachen und das wichtige Miteinander innerhalb des Teams.
+
+Am Ende war klar: Trotz des sportlichen Ehrgeizes stand vor allem das Ziel im Vordergrund, gemeinsam abzuschalten, sich näher kennenzulernen und als Mannschaft noch weiter zusammenzuwachsen.`,
+  gallery: [
+    { src: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/f654e60f4_Image20.jpg', caption: 'Gemeinsames Essen im Trainingslager' },
+    { src: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/a403be0b2_Image21.jpg', caption: 'Bowling-Abend — der Wettkampf auf den Bahnen' },
+    { src: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/f4b2c4d20_Image22.jpg', caption: 'Die U17-Mädchenmannschaft' },
+  ],
+},
 ];
 
 // Sort descending by date
@@ -273,6 +295,16 @@ export default function Neuigkeiten() {
                     <NewsParagraph>{para}</NewsParagraph>
                   </p>
                 ))}
+                {openItem.gallery && openItem.gallery.length > 0 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                    {openItem.gallery.map((g, idx) => (
+                      <figure key={idx} className="space-y-1">
+                        <img src={g.src} alt={g.caption} className="w-full h-32 object-cover" />
+                        <figcaption className="font-body text-[11px] text-pitch-black/50 leading-snug">{g.caption}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           </>
