@@ -26,7 +26,7 @@ Besuchen Sie den Supporters Club Düsseldorf im Internet unter www.scd2003.de.`,
     category: 'Förderung',
     title: 'Förderverein übernimmt neue Aufgaben',
     excerpt: 'Die im Zuge des erlittenen Abstiegs unserer Profis in die Dritte Liga auftretenden Engpässe werden vom Förderverein gesehen. Der Förderverein startet eine breit angelegte Mitgliederkampagne.',
-    image: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/a941dd2f4_generated_image.png',
+    image: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/6deb9e744_generated_image.png',
     fullText: `Im Zuge des Abstiegs der Profimannschaft in die Dritte Liga entstehen finanzielle und organisatorische Engpässe, die sich auch auf das Leistungszentrum auswirken. Der Förderverein reagiert darauf mit einer breit angelegten Mitgliederkampagne und erweitert sein Förderprofil.
 
 Ziel ist es, die Arbeit des Leistungszentrums weiterhin auf höchstem Niveau zu unterstützen und die Entwicklung der Jugendmannschaften zu sichern. Wir rufen alle Freunde und Unterstützer von Fortuna Düsseldorf dazu auf, Mitglied zu werden und gemeinsam diese wichtige Phase zu gestalten.
