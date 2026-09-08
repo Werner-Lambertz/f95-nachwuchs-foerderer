@@ -14,7 +14,7 @@ const IMAGES = {
   player: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/fb96f9062_U19_Niederrheinpokal.jpg',
   facility: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/912fd7e0d_NLZ.jpg',
   football: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/76cae97f0_generated_d01aeead.png',
-  team: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/cd04dcbf9_generated_70f9cb31.png',
+  team: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/14d3b3a1b_generated_image.png',
   aerial: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/13cdf9784_generated_e6c7a3d0.png',
 };
 
