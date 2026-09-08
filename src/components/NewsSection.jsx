@@ -11,6 +11,7 @@ const NEWS_ITEMS = [
     category: 'Partner',
     title: 'SCD und Förderverein kooperieren',
     excerpt: 'Der Förderverein besuchte am 26.08.2026 den Supporter Club Düsseldorf. Im gemeinsamen Gespräch wurden Ziele und Inhalte der Organisationen besprochen.',
+    image: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/622a7fbb6_generated_image.png',
     fullText: `Mit großer Begeisterung reagierte der SCD auf die vom Förderverein dargestellten Vereinsziele. Gerade die Hinwendung auf unsere Talente passt hervorragend und wird vom SCD als wesentlicher Baustein angesehen.
 
 Spontan wurde vom Vorstand des SCD entschieden, eine Platin-Förderung einzugehen. Worüber wir uns natürlich sehr gefreut haben.
@@ -143,7 +144,7 @@ export default function NewsSection({ images }) {
             >
               <div className="relative h-56 md:h-64 overflow-hidden mb-5 bg-pitch-black">
                 <img
-                  src={images[i % images.length]}
+                  src={item.image || images[i % images.length]}
                   alt={item.title}
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                 />
