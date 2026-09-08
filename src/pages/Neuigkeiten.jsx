@@ -6,6 +6,19 @@ import NewsParagraph from '../components/NewsParagraph';
 
 const ALL_NEWS = [
   {
+    id: 10,
+    date: '2026-09-02',
+    dateLabel: '02. September 2026',
+    category: 'Verein',
+    title: 'Strategische Abstimmung mit Fortuna Vorstand',
+    excerpt: 'Förderverein und Fortuna Vorstand stimmen Ziele und Inhalte des Fördervereins ab.',
+    fullText: `Der bisher für den Fortuna Vorstand weitestgehend unbekannte Förderverein wurde mit den Punkten Zielsetzung und Sachinhalte vorgestellt und erreichte die vielfach bekannten "Offenen Türen". Bereits nach den ersten Ausführungen wurde klar, welche Mittel für die Umsetzung der strategischen Zielsetzung des NLZ zur Verfügung stehen.
+
+Auf Seiten von Fortuna wird Oliver Fink als Schirmherr Sprachrrohr und Schutzpatron des Fördervereins sein. Klar ist, dass die vom Förderverein bereitgestellten Leistungen und Mittel ausschließlich für das NLZ bestimmt sind.
+
+Der Förderverein sieht sich als Schutzschild und als Förderer des NLZ. Hierbei wurde betont, dass die Arbeit des NLZ im sportlichen Bereich, die Persönlichkeitsentwicklung, die Vermittlung gesellschaftlicher Werte und die Identifikation mit dem Verein und der Stadt im Vordergrund stehen.`,
+  },
+  {
     id: 1,
     date: '2026-06-02',
     dateLabel: '02. Juni 2026',
