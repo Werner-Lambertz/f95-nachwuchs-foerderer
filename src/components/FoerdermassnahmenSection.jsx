@@ -5,8 +5,8 @@ import { Users, MapPin, GraduationCap, ArrowRight } from 'lucide-react';
 const MEASURES = [
   {
     icon: Users,
-    title: 'Teambuilding U17-Mädchen',
-    text: 'Unsere U17-Mädchenmannschaft plant im Rahmen der Saisonvorbereitung ein Team-Building-Event. Die Kosten für diese Maßnahmen werden zum Teil durch den Förderverein übernommen.',
+    title: 'Teambuilding Erste Frauen',
+    text: 'Unsere Erste Frauenmannschaft plant im Rahmen der Saisonvorbereitung ein Team-Building-Event. Die Kosten für diese Maßnahmen werden zum Teil durch den Förderverein übernommen.',
   },
   {
     icon: MapPin,
