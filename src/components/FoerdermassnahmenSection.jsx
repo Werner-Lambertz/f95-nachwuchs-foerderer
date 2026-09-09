@@ -12,6 +12,12 @@ const MEASURES = [
     icon: MapPin,
     title: 'Unterstützung zur Ausrichtung eines Trainingslagers',
     text: 'Die Mittel zur Saisonvorbereitung der Teams wurden aufgrund der unsicheren Finanzierung stark begrenzt. Damit die U10 und die U11, wie geplant, das Trainingslager in Straelen aufnehmen können, wurden die Fahrtkosten für die beteiligten Betreuer und Trainer durch einen Beitrag des Fördervereins übernommen.',
+    extra: 'Das von U10 und U11 gemeinsam durchgeführte Trainingslager war ein voller Erfolg. Neben der sportlichen Ausbildung wurde die Persönlichkeitsentwicklung und der Gemeinsinn im Programm aufgenommen.',
+    gallery: [
+      { src: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/e74d0be32_U10U11_Straelen_3.jpg', caption: 'U10 und U11 vor dem Trainingslager in Straelen' },
+      { src: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/89318ab18_U10U11_Straelen_2.jpg', caption: 'Gemeinsames Erlebnis im Trainingslager' },
+      { src: 'https://media.base44.com/images/public/6a21b8605426a2a9bf55a069/9ea2a08b2_U10U11_Straelen_1.jpg', caption: 'Teamgeist und Persönlichkeitsentwicklung im Waldcamp' },
+    ],
   },
   {
     icon: GraduationCap,
@@ -79,6 +85,34 @@ export default function FoerdermassnahmenSection() {
             );
           })}
         </div>
+
+        {/* Trainingslager gallery */}
+        {(() => {
+          const camp = MEASURES.find(m => m.gallery);
+          if (!camp) return null;
+          return (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt-10 border border-white/10 bg-white/[0.03] p-7"
+            >
+              <p className="font-body text-sm text-white/55 leading-relaxed mb-6">
+                {camp.extra}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {camp.gallery.map((g, idx) => (
+                  <figure key={idx} className="space-y-2">
+                    <div className="overflow-hidden">
+                      <img src={g.src} alt={g.caption} className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <figcaption className="font-body text-xs text-white/45 leading-snug">{g.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </motion.div>
+          );
+        })()}
 
         <motion.div
           initial={{ opacity: 0 }}
