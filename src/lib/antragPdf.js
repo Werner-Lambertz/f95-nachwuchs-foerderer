@@ -78,6 +78,14 @@ export function generateAntragPdf({ isSponsor, tier, form }) {
   row('Telefon:', form.telefon);
   y += 4;
 
+  if (form.firmenname || form.rechtsform || form.ustid) {
+    sectionTitle('Unternehmensangaben');
+    row('Firma / Organisation:', form.firmenname);
+    row('Rechtsform:', form.rechtsform);
+    row('USt-IdNr.:', form.ustid);
+    y += 4;
+  }
+
   sectionTitle('Bankverbindung & SEPA-Lastschrift');
   row('Kontoinhaber:', form.kontoinhaber);
   row('IBAN:', form.iban);

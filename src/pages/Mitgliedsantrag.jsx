@@ -68,6 +68,9 @@ export default function Mitgliedsantrag() {
     ort: '',
     email: '',
     telefon: '',
+    firmenname: '',
+    rechtsform: '',
+    ustid: '',
     zahlungsrhythmus: 'Monatlich',
     iban: '',
     kontoinhaber: '',
@@ -147,6 +150,16 @@ export default function Mitgliedsantrag() {
           ['Telefon', form.telefon || '—'],
         ],
       },
+      ...(form.firmenname || form.rechtsform || form.ustid
+        ? [{
+            heading: 'UNTERNEHMENSANGABEN',
+            fields: [
+              ['Firma / Organisation', form.firmenname || '—'],
+              ['Rechtsform', form.rechtsform || '—'],
+              ['USt-IdNr.', form.ustid || '—'],
+            ],
+          }]
+        : []),
       {
         heading: 'BANKVERBINDUNG',
         fields: [
@@ -420,9 +433,24 @@ export default function Mitgliedsantrag() {
           </div>
         </section>
 
-        {/* 5. Bankverbindung & SEPA */}
+        {/* 5. Unternehmensangaben */}
         <section>
-          <SectionTitle number="05" title="Bankverbindung & SEPA-Lastschrift" />
+          <SectionTitle number="05" title="Unternehmensangaben (optional)" />
+          <div className="space-y-4">
+            <FormFieldLight label="Firma / Organisation" name="firmenname" value={form.firmenname} onChange={handleChange} placeholder="Muster GmbH" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <FormFieldLight label="Rechtsform" name="rechtsform" value={form.rechtsform} onChange={handleChange} placeholder="z. B. GmbH, e.K., e.V." />
+              <FormFieldLight label="USt-IdNr." name="ustid" value={form.ustid} onChange={handleChange} placeholder="DE123456789" />
+            </div>
+            <p className="font-body text-xs text-gray-500 leading-relaxed">
+              Diese Angaben sind freiwillig. Als Ansprechpartner gelten die oben genannten persönlichen Kontaktdaten.
+            </p>
+          </div>
+        </section>
+
+        {/* 6. Bankverbindung & SEPA */}
+        <section>
+          <SectionTitle number="06" title="Bankverbindung & SEPA-Lastschrift" />
           <div className="p-5 border border-gray-200 bg-gray-50 mb-5">
             <p className="font-body text-sm text-gray-600 leading-relaxed">
               Durch Angabe Ihrer Bankverbindung erteilen Sie dem Förderverein Fortuna Düsseldorf Leistungszentrum e.V. 
@@ -463,9 +491,9 @@ export default function Mitgliedsantrag() {
           </div>
         </section>
 
-        {/* 6. Zustimmungen */}
+        {/* 7. Zustimmungen */}
         <section>
-          <SectionTitle number="06" title="Zustimmungen" />
+          <SectionTitle number="07" title="Zustimmungen" />
           <div className="space-y-4">
             <CheckboxFieldLight
               name="sepa"
