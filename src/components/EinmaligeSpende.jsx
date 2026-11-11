@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Heart, ArrowRight } from 'lucide-react';
 
 export default function EinmaligeSpende({ onRequest }) {
   return (
@@ -34,6 +35,12 @@ export default function EinmaligeSpende({ onRequest }) {
               Ohne Bindung, ohne Mitgliedschaft: Jede einmalige Spende fließt direkt in die Nachwuchsarbeit
               des Leistungszentrums. Wir freuen uns über jeden Betrag — sprechen Sie uns einfach an.
             </p>
+            <Link
+              to="/foerderbereiche"
+              className="inline-flex items-center gap-2 mt-5 font-display text-xs tracking-[0.2em] uppercase text-victory-red hover:text-white transition-colors duration-300"
+            >
+              Alle Förderbereiche entdecken <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
           <div className="flex-shrink-0 md:text-right">
             <button
