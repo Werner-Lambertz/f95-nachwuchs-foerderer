@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Shield, Star, Crown, Trophy, Dumbbell, Users, Shirt, GraduationCap, ArrowRight, Check } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import EinmaligeSpende from './EinmaligeSpende';
 
 const SPONSOR_TIERS = [
   {
@@ -274,6 +275,11 @@ export default function SupportSection() {
             Die Spenden in den Kategorien Bronze, Silber, Gold und Platin werden als freiwillige Spenderleistung per SEPA-Lastschrift eingezogen. Freiwillige Spenden ohne Kategorie sind jederzeit möglich. Das Auftreten als Spender schließt keine Mitgliedschaft ein; diese ist separat zu beantragen.
           </p>
         </div>
+
+        {/* Level 3: Einmalige Spende */}
+        <EinmaligeSpende
+          onRequest={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+        />
       </div>
     </section>
   );
