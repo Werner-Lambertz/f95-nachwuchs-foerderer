@@ -163,14 +163,14 @@ export default function Oeffentlichkeitsarbeit() {
               Sie berichten über den Düsseldorfer Nachwuchs oder planen einen Beitrag über den Förderverein?
               Wir vermitteln Ansprechpartner, Bildmaterial und Hintergründe zu unseren Projekten.
             </p>
-            <a
-              href="/#contact"
+            <Link
+              to="/presseanfrage"
               className="inline-flex items-center px-8 py-4 bg-victory-red text-white font-display text-sm tracking-[0.15em] uppercase skew-x-[-6deg] hover:bg-red-700 transition-colors duration-300"
             >
               <span className="skew-x-[6deg] inline-flex items-center gap-2">
                 Presseanfrage stellen <ArrowRight className="w-4 h-4" />
               </span>
-            </a>
+            </Link>
           </div>
 
           <Schlagzeilen />

@@ -16,6 +16,7 @@ import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
 import Neuigkeiten from './pages/Neuigkeiten';
 import Oeffentlichkeitsarbeit from './pages/Oeffentlichkeitsarbeit';
+import Presseanfrage from './pages/Presseanfrage';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -53,6 +54,7 @@ const AuthenticatedApp = () => {
       <Route path="/datenschutz" element={<Datenschutz />} />
       <Route path="/neuigkeiten" element={<Neuigkeiten />} />
       <Route path="/oeffentlichkeitsarbeit" element={<Oeffentlichkeitsarbeit />} />
+      <Route path="/presseanfrage" element={<Presseanfrage />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

@@ -7,7 +7,14 @@ import { MapPin, Mail, Phone, Send, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
 import { base44 } from '@/api/base44Client';
 
-export default function ContactSection() {
+export default function ContactSection({
+  id = 'contact',
+  eyebrow = 'Sprechen Sie uns an',
+  headingLead = 'Kon',
+  headingAccent = 'takt',
+  intro = 'Haben Sie Fragen zum Förderverein oder möchten Sie sich engagieren? Wir freuen uns über Ihre Nachricht.',
+  subjectPrefix = 'Kontaktformular',
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
@@ -19,7 +26,7 @@ export default function ContactSection() {
     setSending(true);
     try {
       await base44.functions.invoke('sendEmail', {
-        subject: `Kontaktformular: ${form.subject}`,
+        subject: `${subjectPrefix}: ${form.subject}`,
         body: `Name: ${form.name}\nE-Mail: ${form.email}\n\n${form.message}`,
         from_name: form.name,
       });
@@ -34,7 +41,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" ref={ref} className="relative py-24 md:py-32 bg-stadium-concrete overflow-hidden">
+    <section id={id} ref={ref} className="relative py-24 md:py-32 bg-stadium-concrete overflow-hidden">
       <div className="absolute inset-0 grain-overlay opacity-40" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16">
@@ -47,10 +54,10 @@ export default function ContactSection() {
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-[2px] bg-victory-red" />
-            <span className="font-display text-xs tracking-[0.3em] uppercase text-victory-red">Sprechen Sie uns an</span>
+            <span className="font-display text-xs tracking-[0.3em] uppercase text-victory-red">{eyebrow}</span>
           </div>
           <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tight text-pitch-black">
-            Kon<span className="text-victory-red">takt</span>
+            {headingLead}<span className="text-victory-red">{headingAccent}</span>
           </h2>
         </motion.div>
 
@@ -64,8 +71,7 @@ export default function ContactSection() {
           >
             <div>
               <p className="font-body text-muted-foreground leading-relaxed mb-8">
-                Haben Sie Fragen zum Förderverein oder möchten Sie sich engagieren? 
-                Wir freuen uns über Ihre Nachricht.
+                {intro}
               </p>
             </div>
 
