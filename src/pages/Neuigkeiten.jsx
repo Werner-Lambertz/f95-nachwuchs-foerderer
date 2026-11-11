@@ -191,9 +191,15 @@ export default function Neuigkeiten() {
           <h1 className="font-display text-4xl md:text-6xl uppercase tracking-tight text-white mb-4">
             Neuig<span className="text-victory-red">keiten</span>
           </h1>
-          <p className="font-body text-white/50 leading-relaxed">
+          <p className="font-body text-white/50 leading-relaxed mb-6">
             Alle Beiträge und Meldungen des Fördervereins — chronologisch archiviert.
           </p>
+          <Link
+            to="/oeffentlichkeitsarbeit"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 font-display text-[10px] tracking-[0.2em] uppercase text-white/70 hover:border-victory-red hover:text-white transition-all duration-300"
+          >
+            Öffentlichkeitsarbeit <ChevronDown className="w-3.5 h-3.5 -rotate-90" />
+          </Link>
         </div>
       </div>
 
