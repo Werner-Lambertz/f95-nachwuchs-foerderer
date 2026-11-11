@@ -96,6 +96,7 @@ export default function SupportSection() {
           <p className="font-body text-lg text-white/50 max-w-2xl leading-relaxed mb-6">
             Zwei Wege, die Nachwuchsarbeit von Fortuna Düsseldorf zu stärken: 
             Werden Sie Mitglied oder unterstützen Sie uns als Spender.
+            Natürlich freuen wir uns auch über eine einmalige Spende.
           </p>
           <Link
             to="/foerderbereiche"
