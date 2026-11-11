@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const TIMELINE = [
 {
-  year: '2010',
+  year: '15.01.2010',
   title: 'Gründung des Fördervereins',
   desc: 'Engagierte Fans und Eltern schließen sich zusammen, um die Nachwuchsarbeit von Fortuna Düsseldorf nachhaltig zu stärken.'
 },
