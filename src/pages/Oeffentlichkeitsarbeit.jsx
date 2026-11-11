@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Schlagzeilen from '../components/Schlagzeilen';
-import { ArrowRight, Users, Star, Flag, Newspaper, Mail, Calendar, BookOpen } from 'lucide-react';
+import { ArrowRight, Users, Star, Flag, Newspaper, Mail, Calendar, BookOpen, MapPin } from 'lucide-react';
 
 const KAMPAGNEN = [
   {
@@ -47,6 +47,11 @@ const KANAELE = [
     icon: Calendar,
     title: 'Veranstaltungen',
     text: 'Ob Kurvenfest am Flinger Broich oder Saisoneröffnung — der Förderverein ist vor Ort präsent.',
+  },
+  {
+    icon: MapPin,
+    title: 'Spieltag',
+    text: 'Bei jedem Spiel sind wir vor Ort in der Arena. Besuchen Sie uns am Mitgliederstand der Fortuna.',
   },
 ];
 
