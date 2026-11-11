@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Schlagzeilen from '../components/Schlagzeilen';
 import { ArrowRight, Users, Star, Flag, Newspaper, Mail, Calendar, BookOpen } from 'lucide-react';
 
 const KAMPAGNEN = [
@@ -171,6 +172,8 @@ export default function Oeffentlichkeitsarbeit() {
               </span>
             </a>
           </div>
+
+          <Schlagzeilen />
 
           <div className="mt-10">
             <Link
