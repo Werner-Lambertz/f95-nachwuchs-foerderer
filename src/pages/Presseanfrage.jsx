@@ -24,6 +24,7 @@ export default function Presseanfrage() {
         headingAccent="anfrage"
         intro="Sie berichten über den Düsseldorfer Nachwuchs oder planen einen Beitrag über den Förderverein? Wir vermitteln Ansprechpartner, Bildmaterial und Hintergründe zu unseren Projekten."
         subjectPrefix="Presseanfrage"
+        email="pr@fv-f95-nlz.de"
       />
     </div>
   );
