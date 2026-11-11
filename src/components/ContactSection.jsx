@@ -14,6 +14,7 @@ export default function ContactSection({
   headingAccent = 'takt',
   intro = 'Haben Sie Fragen zum Förderverein oder möchten Sie sich engagieren? Wir freuen uns über Ihre Nachricht.',
   subjectPrefix = 'Kontaktformular',
+  email = 'info@fv-f95-nlz.de',
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -78,7 +79,7 @@ export default function ContactSection({
             <div className="space-y-6">
               {[
                 { icon: MapPin, label: 'Adresse', value: 'Flinger Broich 89\n40235 Düsseldorf' },
-                { icon: Mail, label: 'E-Mail', value: 'info@fv-f95-nlz.de' },
+                { icon: Mail, label: 'E-Mail', value: email },
                 { icon: Phone, label: 'Telefon', value: '+49 211 2380128' },
               ].map((item) => {
                 const Icon = item.icon;
