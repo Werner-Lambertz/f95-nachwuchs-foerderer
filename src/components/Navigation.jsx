@@ -5,7 +5,14 @@ import { Menu, X } from 'lucide-react';
 
 const NAV_ITEMS = [
   { label: 'Startseite', href: '#hero' },
-  { label: 'Neuigkeiten', href: '#news' },
+  {
+    label: 'Neuigkeiten',
+    href: '#news',
+    sub: [
+      { label: 'Alle Beiträge', href: '#news' },
+      { label: 'Öffentlichkeitsarbeit', href: '/oeffentlichkeitsarbeit', external: true },
+    ],
+  },
   { label: 'Unterstützung', href: '#support' },
   {
     label: 'Über uns',
