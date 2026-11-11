@@ -39,7 +39,7 @@ export default function Impressum() {
 
         <Section title="Verantwortlicher">
           <p>Förderverein Fortuna Düsseldorf Leistungszentrum e.V.</p>
-          <p>Flinger Broich 87</p>
+          <p>Flinger Broich 89</p>
           <p>40235 Düsseldorf</p>
         </Section>
 
@@ -63,7 +63,7 @@ export default function Impressum() {
 
         <Section title="Inhaltlich verantwortlich gemäß § 18 Abs. 2 MStV">
           <p>Förderverein Fortuna Düsseldorf Leistungszentrum e.V.</p>
-          <p>Flinger Broich 87</p>
+          <p>Flinger Broich 89</p>
           <p>40235 Düsseldorf</p>
         </Section>
 
