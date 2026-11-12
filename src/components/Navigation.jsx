@@ -53,11 +53,11 @@ export default function Navigation() {
         scrolled ? 'bg-pitch-black/95 backdrop-blur-md py-3' : 'bg-transparent py-5'
       }`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <button onClick={() => scrollTo('#hero')} className="flex items-center">
+          <button onClick={() => scrollTo('#hero')} className="flex h-40 md:h-48 shrink-0 items-center">
             <img
               src={LOGO_URL}
               alt="Förderverein Fortuna Düsseldorf NLZ Logo"
-              className="h-20 md:h-24 w-auto object-contain"
+              className="h-full w-auto max-w-none object-contain"
             />
           </button>
 
