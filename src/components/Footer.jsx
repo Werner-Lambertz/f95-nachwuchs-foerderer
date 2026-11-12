@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/5 pt-4 mt-2 -translate-y-[30px] flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-body text-xs text-white/30">
             © {new Date().getFullYear()} Förderverein Fortuna Düsseldorf Leistungszentrum e.V.
           </p>
