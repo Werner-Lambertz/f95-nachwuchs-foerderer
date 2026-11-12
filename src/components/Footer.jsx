@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-16 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
-          <div>
+          <div className="-mt-6 md:-mt-10">
             <Link to="/" className="inline-flex h-24 md:h-28 items-center mb-4">
               <img
                 src={LOGO_URL}
