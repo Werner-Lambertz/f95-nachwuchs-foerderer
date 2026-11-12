@@ -1,6 +1,10 @@
 Deno.serve(async (req) => {
   try {
-    const { subject, body, from_name } = await req.json();
+    const { subject, body, from_name, to } = await req.json();
+
+    const ALLOWED_RECIPIENTS = ["info@fv-f95-nlz.de", "pr@fv-f95-nlz.de"];
+    const requested = String(to || "").toLowerCase();
+    const recipient = ALLOWED_RECIPIENTS.includes(requested) ? requested : "info@fv-f95-nlz.de";
 
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -10,7 +14,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         from: `${from_name || "Förderverein F95 NLZ"} <noreply@fv-f95-nlz.de>`,
-        to: ["info@fv-f95-nlz.de"],
+        to: [recipient],
         subject,
         text: body,
       }),

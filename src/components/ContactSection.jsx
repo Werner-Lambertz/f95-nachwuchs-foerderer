@@ -27,6 +27,7 @@ export default function ContactSection({
     setSending(true);
     try {
       await base44.functions.invoke('sendEmail', {
+        to: email,
         subject: `${subjectPrefix}: ${form.subject}`,
         body: `Name: ${form.name}\nE-Mail: ${form.email}\n\n${form.message}`,
         from_name: form.name,
