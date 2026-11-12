@@ -57,7 +57,7 @@ export default function Navigation() {
             <img
               src={LOGO_URL}
               alt="Förderverein Fortuna Düsseldorf NLZ Logo"
-              className="h-14 md:h-16 w-auto object-contain"
+              className="h-20 md:h-24 w-auto object-contain"
             />
           </button>
 
