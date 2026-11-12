@@ -50,10 +50,10 @@ export default function Navigation() {
     <>
       {/* Fixed top bar */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-pitch-black/95 backdrop-blur-md py-3' : 'bg-transparent py-5'
+        scrolled ? 'bg-pitch-black/95 backdrop-blur-md py-1' : 'bg-transparent py-0'
       }`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <button onClick={() => scrollTo('#hero')} className="flex h-40 md:h-48 shrink-0 items-center">
+          <button onClick={() => scrollTo('#hero')} className="-mt-4 md:-mt-6 flex h-40 md:h-48 shrink-0 items-center">
             <img
               src={LOGO_URL}
               alt="Förderverein Fortuna Düsseldorf NLZ Logo"
