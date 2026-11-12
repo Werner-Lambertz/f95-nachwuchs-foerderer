@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </Link>
             <p className="font-display text-[10px] tracking-[0.2em] uppercase text-white/40 mb-3">
-              Leistungszentrum e.V.
+              Förderverein Fortuna Düsseldorf Nachwuchsleistungszentrum e.V.
             </p>
             <p className="font-body text-sm text-white/40 leading-relaxed">
               Gemeinsam für die Zukunft des Düsseldorfer Nachwuchsfußballs.
