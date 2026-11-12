@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Schlagzeilen from '../components/Schlagzeilen';
+import LogoMark from '@/components/LogoMark';
 import { ArrowRight, Users, Star, Flag, Newspaper, Mail, Calendar, BookOpen, MapPin } from 'lucide-react';
 
 const KAMPAGNEN = [
@@ -61,9 +62,7 @@ export default function Oeffentlichkeitsarbeit() {
       {/* Top bar */}
       <div className="bg-pitch-black border-b border-white/5 px-6 md:px-16 py-4 sticky top-0 z-50 backdrop-blur-md">
         <Link to="/neuigkeiten" className="flex items-center gap-3 group w-fit">
-          <div className="w-8 h-8 bg-victory-red flex items-center justify-center skew-x-[-6deg]">
-            <span className="font-display text-white font-bold text-sm skew-x-[6deg]">F95</span>
-          </div>
+          <LogoMark className="h-10 w-auto" />
           <span className="font-display text-white/60 text-xs tracking-[0.2em] uppercase group-hover:text-white transition-colors">
             ← Zurück zu den Neuigkeiten
           </span>

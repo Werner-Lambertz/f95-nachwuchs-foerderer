@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Trophy, ShieldCheck, Shirt, Users, Star, ArrowRight, Heart, Flag, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import LogoMark from '@/components/LogoMark';
 
 const AREAS = [
   {
@@ -132,9 +133,7 @@ export default function Foerderbereiche() {
       {/* Back nav */}
       <div className="bg-pitch-black border-b border-white/5 px-6 md:px-16 py-4 flex items-center justify-between sticky top-0 z-50 backdrop-blur-md">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 bg-victory-red flex items-center justify-center skew-x-[-6deg]">
-            <span className="font-display text-white font-bold text-sm skew-x-[6deg]">F95</span>
-          </div>
+          <LogoMark className="h-10 w-auto" />
           <span className="font-display text-white/60 text-xs tracking-[0.2em] uppercase group-hover:text-white transition-colors">
             ← Zurück zur Startseite
           </span>

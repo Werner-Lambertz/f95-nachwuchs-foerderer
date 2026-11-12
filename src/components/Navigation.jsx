@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import LogoMark from '@/components/LogoMark';
 
 const LOGO_URL = 'https://base44.app/api/apps/6a21b8605426a2a9bf55a069/files/mp/public/6a21b8605426a2a9bf55a069/09e003b7e_foerderverein-nlz-f95-logo.png';
 
@@ -143,9 +144,7 @@ export default function Navigation() {
             className="fixed inset-0 z-[100] bg-victory-red flex flex-col"
           >
             <div className="flex justify-between items-center p-6">
-              <div className="w-10 h-10 bg-pitch-black flex items-center justify-center skew-x-[-6deg]">
-                <span className="font-display text-white font-bold text-lg skew-x-[6deg]">F95</span>
-              </div>
+              <LogoMark className="h-14 w-auto" />
               <button onClick={() => setIsOpen(false)} className="text-white p-2">
                 <X className="w-8 h-8" />
               </button>

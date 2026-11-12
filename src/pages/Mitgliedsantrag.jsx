@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { generateAntragPdf } from '@/lib/antragPdf';
 import { toast } from 'sonner';
 import { base44 } from '@/api/base44Client';
+import LogoMark from '@/components/LogoMark';
 
 const SPONSOR_TIERS = [
   { id: 'bronze', name: 'Bronze', priceMonthly: '20', priceYearly: '240', icon: Shield, color: 'from-amber-700 to-amber-900', impact: '3 Trainingsbälle pro Jahr' },
@@ -244,9 +245,7 @@ export default function Mitgliedsantrag() {
       {/* Top bar */}
       <div className="bg-pitch-black border-b border-white/5 px-6 md:px-16 py-4 sticky top-0 z-50 backdrop-blur-md">
         <Link to="/" className="flex items-center gap-3 group w-fit">
-          <div className="w-8 h-8 bg-victory-red flex items-center justify-center skew-x-[-6deg]">
-            <span className="font-display text-white font-bold text-sm skew-x-[6deg]">F95</span>
-          </div>
+          <LogoMark className="h-10 w-auto" />
           <span className="font-display text-white/60 text-xs tracking-[0.2em] uppercase group-hover:text-white transition-colors">
             ← Zurück zur Startseite
           </span>
