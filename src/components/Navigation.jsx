@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
+const LOGO_URL = 'https://base44.app/api/apps/6a21b8605426a2a9bf55a069/files/mp/public/6a21b8605426a2a9bf55a069/09e003b7e_foerderverein-nlz-f95-logo.png';
+
 const NAV_ITEMS = [
   { label: 'Startseite', href: '#hero' },
   {
@@ -59,6 +61,11 @@ export default function Navigation() {
               <p className="font-display text-white text-sm tracking-[0.2em] uppercase leading-tight">Förderverein Fortuna Düsseldorf</p>
               <p className="font-body text-white/60 text-[10px] tracking-[0.15em] uppercase">Leistungszentrum e.V.</p>
             </div>
+            <img
+              src={LOGO_URL}
+              alt="Förderverein Fortuna Düsseldorf NLZ Logo"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </button>
 
           {/* Desktop nav */}
