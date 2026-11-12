@@ -33,7 +33,7 @@ export default function EinmaligeSpende({ onRequest }) {
             </div>
             <p className="font-body text-white/50 leading-relaxed max-w-xl">
               Ohne Bindung, ohne Mitgliedschaft: Jede einmalige Spende fließt direkt in die Nachwuchsarbeit
-              des Leistungszentrums. Wir freuen uns über jeden Betrag — sprechen Sie uns einfach an.
+              des Leistungszentrums. Gerne auch zweckgebunden. Wir freuen uns über jeden Betrag — sprechen Sie uns einfach an.
             </p>
             <Link
               to="/foerderbereiche"
