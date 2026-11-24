@@ -17,6 +17,7 @@ const NAV_ITEMS = [
     ],
   },
   { label: 'Unterstützung', href: '#support' },
+  { label: 'Fördertafel', href: '/foerdertafel', external: true },
   {
     label: 'Über uns',
     href: '#about',
@@ -65,7 +66,15 @@ export default function Navigation() {
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
-              item.sub ? (
+              item.external ? (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="font-display text-xs tracking-[0.2em] uppercase text-white/70 hover:text-victory-red transition-colors duration-300"
+                >
+                  {item.label}
+                </Link>
+              ) : item.sub ? (
                 <div key={item.href} className="relative" onMouseEnter={() => setOpenDropdown(item.href)} onMouseLeave={() => setOpenDropdown(null)}>
                   <button
                     onClick={() => scrollTo(item.href)}
@@ -152,6 +161,17 @@ export default function Navigation() {
             <div className="flex-1 flex flex-col justify-center px-8 md:px-16">
               {NAV_ITEMS.map((item, i) => (
                 <div key={item.href}>
+                  {item.external ? (
+                    <Link
+                      to={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block py-3 md:py-4 border-b border-white/20 group w-full"
+                    >
+                      <span className="font-display text-3xl md:text-6xl lg:text-8xl uppercase tracking-wider text-white/90 group-hover:text-pitch-black transition-colors duration-300">
+                        {item.label}
+                      </span>
+                    </Link>
+                  ) : (
                   <motion.button
                     initial={{ x: -60, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
@@ -163,6 +183,7 @@ export default function Navigation() {
                       {item.label}
                     </span>
                   </motion.button>
+                  )}
                   {item.sub && (
                     <motion.div
                       initial={{ x: -40, opacity: 0 }}

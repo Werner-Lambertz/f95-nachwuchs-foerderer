@@ -17,6 +17,7 @@ import Datenschutz from './pages/Datenschutz';
 import Neuigkeiten from './pages/Neuigkeiten';
 import Oeffentlichkeitsarbeit from './pages/Oeffentlichkeitsarbeit';
 import Presseanfrage from './pages/Presseanfrage';
+import Foerdertafel from './pages/Foerdertafel';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -55,6 +56,7 @@ const AuthenticatedApp = () => {
       <Route path="/neuigkeiten" element={<Neuigkeiten />} />
       <Route path="/oeffentlichkeitsarbeit" element={<Oeffentlichkeitsarbeit />} />
       <Route path="/presseanfrage" element={<Presseanfrage />} />
+      <Route path="/foerdertafel" element={<Foerdertafel />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
