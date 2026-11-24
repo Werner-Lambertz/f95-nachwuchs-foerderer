@@ -13,7 +13,7 @@ const PLATIN_SPONSOREN = [
     beschreibung: 'Platin-Spender des Fördervereins.',
   },
   {
-    name: 'Stadtbäckerei',
+    name: 'Supporters Club Düsseldorf 2003 e.V.',
     logo: 'https://base44.app/api/apps/6a21b8605426a2a9bf55a069/files/mp/public/6a21b8605426a2a9bf55a069/8a0d0ed3623e268da87b44452a4dbc39_scd-2003.png',
     url: 'https://www.scd2003.de/',
     logoBg: 'bg-pitch-black',
