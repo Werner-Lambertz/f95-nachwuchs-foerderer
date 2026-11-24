@@ -54,7 +54,7 @@ export default function Foerdertafel() {
             </h1>
             <p className="font-body text-white/50 leading-relaxed max-w-2xl mt-6">
               Wir danken allen Unternehmen und Partnern, die die Nachwuchsarbeit des Leistungszentrums
-              unterstützen. Hier finden Sie unsere Spender nach Stufen.
+              unterstützen.
             </p>
           </motion.div>
 
